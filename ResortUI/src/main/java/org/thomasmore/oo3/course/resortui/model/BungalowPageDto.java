@@ -16,39 +16,35 @@
  */
 package org.thomasmore.oo3.course.resortui.model;
 
+import java.util.LinkedList;
+import java.util.List;
+
 /**
  *
  * @author lucs
  */
-public class UserDto {
+public class BungalowPageDto {
 
-    private String lname;
-    private String fname;
+    private BungalowDetailDto detail = new BungalowDetailDto();
 
-    private boolean loggedIn;
+    private List<BungalowListDetailDto> list = new LinkedList<>();
 
-    public String getLname() {
-        return lname;
+    public BungalowDetailDto getDetail() {
+        return detail;
     }
 
-    public void setLname(String lname) {
-        this.lname = lname;
+    public void setDetail(BungalowDetailDto detail) {
+        this.detail = detail;
     }
 
-    public String getFname() {
-        return fname;
+    public List<BungalowListDetailDto> getList() {
+        return list;
     }
 
-    public void setFname(String fname) {
-        this.fname = fname;
+    public void setList(List<BungalowListDetailDto> list) {
+        this.list = list;
     }
 
-    public boolean isLoggedIn() {
-        return loggedIn;
-    }
-
-    public void setLoggedIn(boolean loggedIn) {
-        this.loggedIn = loggedIn;
-    }
-
+    
+    
 }
