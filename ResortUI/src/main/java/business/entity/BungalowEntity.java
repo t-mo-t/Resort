@@ -24,6 +24,7 @@ public class BungalowEntity {
     private String id;
     
     private String name;
+    private int number;
 
     public String getId() {
         return id;
