@@ -1,22 +1,49 @@
 
 package org.thomasmore.oo3.course.resortui.controller;
 
-import org.thomasmore.oo3.course.resortui.model.ProfilePageDto;
-import javax.enterprise.context.RequestScoped;
-import javax.inject.Named;
+/**
+ *
+ * @author Moegie
+ */
 
+import javax.annotation.PostConstruct;
+import javax.enterprise.context.RequestScoped;
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
+import javax.inject.Inject;
+import javax.inject.Named;
+import org.thomasmore.oo3.course.resortui.model.ProfileDto;
+import org.thomasmore.oo3.course.resortui.model.SessionDto;
 
 @Named(value="profile")
 @RequestScoped
 public class ProfileController {
-    private ProfilePageDto dto = new ProfilePageDto();
+    private ProfileDto dto;
+    
+    @Inject
+    private SessionDto sessionDto;
+    
+    @PostConstruct
+    public void init(){
+        dto = new ProfileDto();
+        
+        
+    }
 
-    public ProfilePageDto getDto() {
+    public ProfileDto getDto() {
         return dto;
     }
 
-    public void setDto(ProfilePageDto dto) {
+    public void setDto(ProfileDto dto) {
         this.dto = dto;
+    }
+
+    public SessionDto getSessionDto() {
+        return sessionDto;
+    }
+
+    public void setSessionDto(SessionDto sessionDto) {
+        this.sessionDto = sessionDto;
     }
     
     
