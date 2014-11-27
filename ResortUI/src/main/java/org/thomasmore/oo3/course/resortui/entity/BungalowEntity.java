@@ -20,6 +20,6 @@ package org.thomasmore.oo3.course.resortui.entity;
  *
  * @author Stephan
  */
-public class Bungalow {
+public class BungalowEntity {
     
 }
