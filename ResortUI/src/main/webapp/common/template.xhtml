@@ -45,7 +45,7 @@
 							<li><a href="#">Parks</a></li>
 							<li><a href="#">Bungalows</a></li>
 							<c:if test="${sessionDto.userDto.loggedIn}">
-								<li><a href="#">Profile</a></li>
+								<li><a href="profile.xhtml">Profile</a></li>
 								<li>
 									<!-- This is true for all pages implementing the template, so we did not have a specific controller for the template.--> 
 									<h:commandLink action="${login.logout()}">Logout</h:commandLink>
