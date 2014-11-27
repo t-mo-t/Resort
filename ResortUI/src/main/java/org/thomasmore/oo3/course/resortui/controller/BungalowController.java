@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014 Stephan
+ * Copyright (C) 2014 lucs
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -16,18 +16,51 @@
  */
 package org.thomasmore.oo3.course.resortui.controller;
 
-import org.thomasmore.oo3.course.resortui.model.BUngalowdto;
+import java.util.Date;
+import javax.annotation.PostConstruct;
+import org.thomasmore.oo3.course.resortui.model.BungalowPageDto;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
+import org.thomasmore.oo3.course.resortui.model.BungalowDetailDto;
+import org.thomasmore.oo3.course.resortui.model.BungalowListDetailDto;
 
 /**
  *
- * @author Stephan
+ * @author lucs
  */
-@Named(value = "Bungalow")
+@Named(value = "bungalow")
 @RequestScoped
 public class BungalowController {
+
+    private BungalowPageDto dto;
+
+    @PostConstruct
+    public void init() {
+        
+        
+        dto = new BungalowPageDto();
+        
+        for (int i = 0; i < 10; i++) {
+            BungalowListDetailDto listDetail = new BungalowListDetailDto();
+            listDetail.setId("@"+i);
+            listDetail.setName("B"+(i+1));
+            dto.getList().add(listDetail);
+        }
+    }
+
+    public void add(){
+        dto.getDetail().setId("NEW");
+        dto.getList().add(dto.getDetail());
+    }
     
-    private BUngalowdto dto;
     
+
+    public BungalowPageDto getDto() {
+        return dto;
+    }
+
+    public void setDto(BungalowPageDto dto) {
+        this.dto = dto;
+    }
+
 }
