@@ -2,7 +2,8 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"> 
 
     <h:head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -43,16 +44,16 @@
 						<ul class="nav navbar-nav navbar-right">
 							<li><a href="#">Parks</a></li>
 							<li><a href="#">Bungalows</a></li>
-							<ui:fragment rendered="${sessionDto.userDto.loggedIn}">
-								<li><a href="profile.xhtml">Profile</a></li>
+							<c:if test="${sessionDto.userDto.loggedIn}">
+								<li><a href="#">Profile</a></li>
 								<li>
 									<!-- This is true for all pages implementing the template, so we did not have a specific controller for the template.--> 
 									<h:commandLink action="${login.logout()}">Logout</h:commandLink>
 								</li>
-							</ui:fragment>
-							<ui:fragment rendered="${!sessionDto.userDto.loggedIn}">
+							</c:if>
+							<c:if test="${!sessionDto.userDto.loggedIn}">
 								<li><a href="login.xhtml">Login</a></li>
-							</ui:fragment>>
+							</c:if>
 						</ul>
 					</div>
 				</h:form>
