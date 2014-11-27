@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+    <body>
+
+        <ui:composition template="./common/template.xhtml">
+
+            <ui:define name="title">
+                title
+            </ui:define>
+
+            <ui:define name="navbar">
+        <h1>Dit is je profiel!</h1>
+			${index.dto.name}
+    </ui:define>
+
+    <ui:define name="content">
+        <div class="col-md-6">
+            <div class="btn btn-success" style="display: block">Dit is een knop!</div>
+            Wij houden van dieren!
+			<br/><br/><br/>
+        </div>
+        <div class="col-md-6">
+            <div class="btn btn-success" style="display: block">Dit is ook een knop!</div>
+            </div>Daarom gebruiken we enkel de beste producten.
+            <br/><br/><br/>
+        
+
+    </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>
