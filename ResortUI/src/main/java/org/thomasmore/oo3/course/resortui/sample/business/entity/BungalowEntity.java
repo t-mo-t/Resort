@@ -14,41 +14,31 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.thomasmore.oo3.course.resortui.model;
+package org.thomasmore.oo3.course.resortui.sample.business.entity;
 
 /**
  *
  * @author lucs
  */
-public class UserDto {
+public class BungalowEntity {
+    
+    private String id;
+    
+    private String name;
 
-    private String lname;
-    private String fname;
-
-    private boolean loggedIn;
-
-    public String getLname() {
-        return lname;
+    public String getId() {
+        return id;
     }
 
-    public void setLname(String lname) {
-        this.lname = lname;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public String getFname() {
-        return fname;
+    public String getName() {
+        return name;
     }
 
-    public void setFname(String fname) {
-        this.fname = fname;
+    public void setName(String name) {
+        this.name = name;
     }
-
-    public boolean isLoggedIn() {
-        return loggedIn;
-    }
-
-    public void setLoggedIn(boolean loggedIn) {
-        this.loggedIn = loggedIn;
-    }
-
 }
