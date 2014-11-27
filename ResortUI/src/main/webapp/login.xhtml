@@ -3,6 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
 	  xmlns:h="http://xmlns.jcp.org/jsf/html"
+	  xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+
 	  xmlns:f="http://xmlns.jcp.org/jsf/core">
 
     <body>
@@ -19,25 +21,34 @@
 
             <ui:define name="content">
                 <h:form>
-					<h:messages styleClass="errorMsg"></h:messages>
-					<h:panelGrid columns="2"  columnClasses="rightAlign,leftAlign">
-						<h:outputText value="Login:">
-						</h:outputText>
-						<h:inputText label="Login"
-									 value="#{login.dto.name}"
-									 required="true">
-							<f:validateLength minimum="4" maximum="30" >
-							</f:validateLength>
-						</h:inputText>
-						<h:outputText value="Password:"></h:outputText>
-						<h:inputSecret label="*******"
-									   value="#{login.dto.password}"
-									   required="true">
-						</h:inputSecret>
-						<h:panelGroup></h:panelGroup>
-						<h:commandButton action="${login.login()}" value="Save">
-						</h:commandButton>
-						￼      </h:panelGrid>
+					<h:messages styleClass="alert alert-danger" p:role="alert"></h:messages>
+					<div class="col-md-6">
+						<div class="input-group">
+							<span class="input-group-addon">Login:</span>
+							<h:inputText label="Login" p:placeholder="jhon@doe.org"
+										 value="${login.dto.name}" class="form-control"
+										 required="true">
+								<f:validateLength minimum="4" maximum="30" >
+								</f:validateLength>
+							</h:inputText>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="input-group">
+							<span class="input-group-addon">Password:</span>
+							<h:inputSecret label="Login" p:placeholder="******"
+										   value="${login.dto.password}" class="form-control"
+										   required="true">
+								<f:validateLength minimum="4"  >
+								</f:validateLength>
+							</h:inputSecret>
+						</div>
+					</div>
+					<div class="col-md-12">
+						<p style="margin-top: 10px">
+							<h:commandButton class="btn btn-primary" action="${login.login()}" value="Save"></h:commandButton>
+						</p>
+					</div>
 				</h:form>
             </ui:define>
 
