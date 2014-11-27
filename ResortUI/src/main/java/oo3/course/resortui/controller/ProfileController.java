@@ -1,5 +1,5 @@
 
-package org.thomasmore.oo3.course.resortui.controller;
+package oo3.course.resortui.controller;
 
 /**
  *
@@ -12,8 +12,8 @@ import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
-import org.thomasmore.oo3.course.resortui.model.ProfileDto;
-import org.thomasmore.oo3.course.resortui.model.SessionDto;
+import oo3.course.resortui.model.ProfileDto;
+import oo3.course.resortui.model.SessionDto;
 
 @Named(value="profile")
 @RequestScoped

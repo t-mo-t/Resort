@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2014 lucs
+ * Hier zijn wat extra comments...
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -14,35 +15,43 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.thomasmore.oo3.course.resortui.model;
+package oo3.course.resortui.controller;
 
-import java.io.Serializable;
+import java.util.Date;
 import javax.annotation.PostConstruct;
-import javax.enterprise.context.SessionScoped;
+import javax.enterprise.context.RequestScoped;
+import javax.inject.Inject;
 import javax.inject.Named;
+import oo3.course.resortui.model.IndexPageDto;
 
 /**
  *
  * @author lucs
  */
-@Named
-@SessionScoped
-public class SessionDto implements Serializable {
+@Named(value = "index")
+@RequestScoped
+public class IndexController
+{
 
-    private UserDto userDto;
+    private IndexPageDto dto;
+    
+    
 
     @PostConstruct
-    public void init() {
-        System.out.println("SessionDto - init");
-        userDto = new UserDto();
+    public void init()
+    {
+        Date date = new Date();
+        System.out.println("IndexController - init");
     }
 
-    public UserDto getUserDto() {
-        return userDto;
+    public IndexPageDto getDto()
+    {
+        return dto;
     }
 
-    public void setUserDto(UserDto UserDto) {
-        this.userDto = UserDto;
+    public void setDto(IndexPageDto dto)
+    {
+        this.dto = dto;
     }
 
 }
