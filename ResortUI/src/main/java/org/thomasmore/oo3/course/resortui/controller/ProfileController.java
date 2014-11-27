@@ -10,8 +10,8 @@ import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
-import org.thomasmore.oo3.course.resortui.model.ProfileDto;
-import org.thomasmore.oo3.course.resortui.model.SessionDto;
+import oo3.course.resortui.model.ProfileDto;
+import oo3.course.resortui.model.SessionDto;
 
 @Named(value="profile")
 @RequestScoped

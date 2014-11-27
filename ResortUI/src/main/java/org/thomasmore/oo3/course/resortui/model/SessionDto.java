@@ -20,6 +20,7 @@ import java.io.Serializable;
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
+import org.thomasmore.oo3.course.resortui.model.UserDto;
 
 /**
  *
