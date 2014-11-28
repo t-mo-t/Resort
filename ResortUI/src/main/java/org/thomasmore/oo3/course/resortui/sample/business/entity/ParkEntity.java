@@ -1,4 +1,3 @@
-
 package org.thomasmore.oo3.course.resortui.sample.business.entity;
 
 /**
@@ -6,8 +5,13 @@ package org.thomasmore.oo3.course.resortui.sample.business.entity;
  * @author Jasper & Nico
  */
 public class ParkEntity {
+
     private String id;
-    private String naam;  
+    private String name;
+    private String parkAddress;
+
+    private String holidayStartDate; // String since date/time/datetime were not available
+    private String holidayEndDate;
 
     public String getId() {
         return id;
@@ -17,13 +21,36 @@ public class ParkEntity {
         this.id = id;
     }
 
-    public String getNaam() {
-        return naam;
+    public String getName() {
+        return name;
     }
 
-    public void setNaam(String naam) {
-        this.naam = naam;
+    public void setName(String name) {
+        this.name = name;
     }
-    
-    
+
+    public String getParkAddress() {
+        return parkAddress;
+    }
+
+    public void setParkAddress(String parkAddress) {
+        this.parkAddress = parkAddress;
+    }
+
+    public String getHolidayStartDate() {
+        return holidayStartDate;
+    }
+
+    public void setHolidayStartDate(String holidayStartDate) {
+        this.holidayStartDate = holidayStartDate;
+    }
+
+    public String getHolidayEndDate() {
+        return holidayEndDate;
+    }
+
+    public void setHolidayEndDate(String holidayEndDate) {
+        this.holidayEndDate = holidayEndDate;
+    }
+
 }
