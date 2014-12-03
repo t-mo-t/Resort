@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014 Arne
+ * Copyright (C) 2014 lucs
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,11 +18,12 @@ package org.thomasmore.oo3.course.resortui.sample.business.entity;
 
 /**
  *
- * @author Arne
+ * @author lucs
  */
 public class BungalowEntity {
     
     private String id;
+    
     private String name;
 
     public String getId() {
@@ -40,7 +41,4 @@ public class BungalowEntity {
     public void setName(String name) {
         this.name = name;
     }
-    
-    
-    
 }

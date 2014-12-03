@@ -1,6 +1,5 @@
 /*
  * Copyright (C) 2014 lucs
- * Hier zijn wat extra comments...
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -19,39 +18,50 @@ package org.thomasmore.oo3.course.resortui.controller;
 
 import java.util.Date;
 import javax.annotation.PostConstruct;
+import org.thomasmore.oo3.course.resortui.model.BungalowPageDto;
 import javax.enterprise.context.RequestScoped;
-import javax.inject.Inject;
 import javax.inject.Named;
-import org.thomasmore.oo3.course.resortui.model.IndexPageDto;
+import org.thomasmore.oo3.course.resortui.model.BungalowDetailDto;
+import org.thomasmore.oo3.course.resortui.model.BungalowListDetailDto;
+import org.thomasmore.oo3.course.resortui.model.ParkListDetailDto;
+import org.thomasmore.oo3.course.resortui.model.ParkPageDto;
 
 /**
  *
  * @author lucs
  */
-@Named(value = "index")
+@Named(value = "bungalow")
 @RequestScoped
-public class IndexController
-{
+public class ParkController {
 
-    private IndexPageDto dto;
-    
-    
-    
+    private ParkPageDto dto;
 
     @PostConstruct
-    public void init()
-    {
-        Date date = new Date();
-        System.out.println("IndexController - init");
+    public void init() {
+        
+        
+        dto = new ParkPageDto();
+        
+        for (int i = 0; i < 10; i++) {
+            ParkListDetailDto listDetail = new ParkListDetailDto();
+            listDetail.setId("@"+i);
+            listDetail.setName("B"+(i+1));
+            dto.getList().add(listDetail);
+        }
     }
 
-    public IndexPageDto getDto()
-    {
+    public void add(){
+        dto.getDetail().setId("NEW");
+        dto.getList().add(dto.getDetail());
+    }
+    
+    
+
+    public ParkPageDto getDto() {
         return dto;
     }
 
-    public void setDto(IndexPageDto dto)
-    {
+    public void setDto(ParkPageDto dto) {
         this.dto = dto;
     }
 

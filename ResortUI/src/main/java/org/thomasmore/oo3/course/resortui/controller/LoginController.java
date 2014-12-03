@@ -43,11 +43,11 @@ public class LoginController {
         dto = new LoginDto();
     }
 
-    public String logout(){
+    public String logout() {
         FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
         return "/index.xhtml?faces-redirect=true";
     }
-    
+
     public String login() {
         if (dto.getName().startsWith("a")) {
             FacesContext facesContext = FacesContext.getCurrentInstance();

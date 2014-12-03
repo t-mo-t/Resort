@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014 lucs
+ * Copyright (C) 2014 Arne
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -16,39 +16,36 @@
  */
 package org.thomasmore.oo3.course.resortui.model;
 
+import java.util.LinkedList;
+import java.util.List;
+
 /**
  *
- * @author lucs
+ * @author Arne
  */
-public class UserDto {
+public class ParkPageDto {
+    
+    private ParkDetailDto detail = new ParkDetailDto();
 
-    private String lname;
-    private String fname;
+    private List<ParkListDetailDto> list = new LinkedList<>();
 
-    private boolean loggedIn;
-
-    public String getLname() {
-        return lname;
+    public ParkDetailDto getDetail() {
+        return detail;
     }
 
-    public void setLname(String lname) {
-        this.lname = lname;
+    public void setDetail(ParkDetailDto detail) {
+        this.detail = detail;
     }
 
-    public String getFname() {
-        return fname;
+    public List<ParkListDetailDto> getList() {
+        return list;
     }
 
-    public void setFname(String fname) {
-        this.fname = fname;
+    public void setList(List<ParkListDetailDto> list) {
+        this.list = list;
     }
 
-    public boolean isLoggedIn() {
-        return loggedIn;
-    }
-
-    public void setLoggedIn(boolean loggedIn) {
-        this.loggedIn = loggedIn;
-    }
-
+    
+    
+    
 }
