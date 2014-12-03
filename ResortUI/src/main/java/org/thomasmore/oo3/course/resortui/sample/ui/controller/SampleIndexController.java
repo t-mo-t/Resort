@@ -15,30 +15,28 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.thomasmore.oo3.course.resortui.controller;
+package org.thomasmore.oo3.course.resortui.sample.ui.controller;
 
-import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.enterprise.context.RequestScoped;
-import javax.inject.Inject;
 import javax.inject.Named;
-import org.thomasmore.oo3.course.resortui.model.IndexPageDto;
 import org.thomasmore.oo3.course.resortui.sample.business.entity.SampleParkEntity;
 import org.thomasmore.oo3.course.resortui.sample.dao.SampleParkDao;
+import org.thomasmore.oo3.course.resortui.sample.ui.model.SampleIndexPageDto;
 
 /**
  *
  * @author lucs
  */
-@Named(value = "index")
+@Named(value = "sampleIndex")
 @RequestScoped
-public class IndexController
+public class SampleIndexController
 {
 
-    private IndexPageDto dto;
+    private SampleIndexPageDto dto;
     
     @EJB
     private SampleParkDao parkDao;
@@ -52,16 +50,16 @@ public class IndexController
             parkDao.save(entity);
         }
         catch (Exception ex) {
-            Logger.getLogger(IndexController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(SampleIndexController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
-    public IndexPageDto getDto()
+    public SampleIndexPageDto getDto()
     {
         return dto;
     }
 
-    public void setDto(IndexPageDto dto)
+    public void setDto(SampleIndexPageDto dto)
     {
         this.dto = dto;
     }

@@ -16,23 +16,21 @@
  */
 package org.thomasmore.oo3.course.resortui.sample.business.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlRootElement;
+import org.thomasmore.oo3.course.resortui.entity.BasicEntity;
+
 /**
  *
  * @author lucs
  */
-public class BungalowEntity {
-    
-    private String id;
+@Entity
+@Table(name = "sample_bungalow")
+@XmlRootElement
+public class SampleBungalowEntity extends BasicEntity{
     
     private String name;
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;

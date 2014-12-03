@@ -14,24 +14,25 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.thomasmore.oo3.course.resortui.model;
+package org.thomasmore.oo3.course.resortui.sample.ui.model;
+
+import org.thomasmore.oo3.course.resortui.model.*;
+import java.io.Serializable;
+import java.util.Date;
+import javax.annotation.PostConstruct;
 
 /**
  *
  * @author lucs
  */
-public class BungalowListDetailDto {
-    
-    private String id;
-    
-    private String name;
+public class SampleIndexPageDto implements Serializable {
 
-    public String getId() {
-        return id;
-    }
+    private String name = "MyName";
 
-    public void setId(String id) {
-        this.id = id;
+    @PostConstruct
+    public void init() {
+        Date date = new Date();
+        System.out.println("IndexPageDto - init");
     }
 
     public String getName() {
@@ -41,5 +42,5 @@ public class BungalowListDetailDto {
     public void setName(String name) {
         this.name = name;
     }
-    
+
 }

@@ -14,17 +14,21 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.thomasmore.oo3.course.resortui.model;
+package org.thomasmore.oo3.course.resortui.entity;
+
+import java.util.UUID;
+import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
 
 /**
  *
  * @author lucs
  */
-public class BungalowListDetailDto {
+@MappedSuperclass
+public class BasicEntity {
     
-    private String id;
-    
-    private String name;
+    @Id
+    private String id = UUID.randomUUID().toString();
 
     public String getId() {
         return id;
@@ -34,12 +38,5 @@ public class BungalowListDetailDto {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
     
 }

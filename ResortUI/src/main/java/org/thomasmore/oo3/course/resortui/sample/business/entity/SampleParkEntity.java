@@ -14,25 +14,23 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.thomasmore.oo3.course.resortui.model;
+package org.thomasmore.oo3.course.resortui.sample.business.entity;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlRootElement;
+import org.thomasmore.oo3.course.resortui.entity.BasicEntity;
 
 /**
  *
  * @author lucs
  */
-public class BungalowListDetailDto {
-    
-    private String id;
+@Entity
+@Table(name = "sample_park")
+@XmlRootElement
+public class SampleParkEntity extends BasicEntity{
     
     private String name;
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;
@@ -41,5 +39,7 @@ public class BungalowListDetailDto {
     public void setName(String name) {
         this.name = name;
     }
+    
+   
     
 }
