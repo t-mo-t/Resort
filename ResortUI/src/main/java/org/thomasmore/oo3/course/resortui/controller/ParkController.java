@@ -26,7 +26,7 @@ import org.thomasmore.oo3.course.resortui.model.ParkListDetailDto;
  *
  * @author lucs
  */
-@Named(value = "Park")
+@Named(value = "park")
 @RequestScoped
 public class ParkController {
 
