@@ -30,7 +30,7 @@ import org.thomasmore.oo3.course.resortui.model.ParkPageDto;
  *
  * @author lucs
  */
-@Named(value = "bungalow")
+@Named(value = "park")
 @RequestScoped
 public class ParkController {
 
