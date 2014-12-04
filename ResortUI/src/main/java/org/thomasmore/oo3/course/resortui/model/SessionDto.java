@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package oo3.course.resortui.model;
+package org.thomasmore.oo3.course.resortui.model;
 
 import java.io.Serializable;
 import javax.annotation.PostConstruct;

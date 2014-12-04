@@ -1,5 +1,5 @@
 
-package oo3.course.resortui.model;
+package org.thomasmore.oo3.course.resortui.model;
 
 /**
  *

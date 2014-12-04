@@ -23,7 +23,7 @@ import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
 import org.thomasmore.oo3.course.resortui.model.LoginDto;
-import oo3.course.resortui.model.SessionDto;
+import org.thomasmore.oo3.course.resortui.model.SessionDto;
 
 /**
  *
