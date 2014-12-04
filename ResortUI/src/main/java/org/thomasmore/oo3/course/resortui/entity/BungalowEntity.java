@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014 lucs
+ * Copyright (C) 2014 Stephan
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -14,21 +14,21 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.thomasmore.oo3.course.resortui.sample.business.entity;
+package org.thomasmore.oo3.course.resortui.entity;
 
 /**
  *
- * @author lucs
+ * @author Stephan
  */
 public class BungalowEntity {
     
-    private String id;
+   private String id;
+   private String name;
     
-    private String name;
-
     public String getId() {
         return id;
     }
+  
 
     public void setId(String id) {
         this.id = id;
@@ -41,4 +41,6 @@ public class BungalowEntity {
     public void setName(String name) {
         this.name = name;
     }
+   
+    
 }
