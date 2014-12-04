@@ -43,8 +43,8 @@
 					<div id="navbar" class="navbar-collapse collapse">
 						<ul class="nav navbar-nav navbar-right">
 							<li><a href="#">Parks</a></li>
-							<li><a href="#">Bungalows</a></li>
 							<ui:fragment rendered="${sessionDto.userDto.loggedIn}">
+                                                                <li><a href="bungalows.xhtml">Bungalows</a></li>
 								<li><a href="profile.xhtml">Profile</a></li>
 								<li>
 									<!-- This is true for all pages implementing the template, so we did not have a specific controller for the template.--> 
