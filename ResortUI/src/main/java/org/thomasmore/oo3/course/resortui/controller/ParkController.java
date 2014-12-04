@@ -40,7 +40,7 @@ public class ParkController {
         
         for (int i = 0; i < 10; i++) {
             ParkListDetailDto listDetail = new ParkListDetailDto();
-            listDetail.setId("@"+i);
+            listDetail.setId("QS"+i);
             listDetail.setName("B"+(i+1));
             dto.getList().add(listDetail);
             
