@@ -41,7 +41,6 @@ public class ApplicationConfig extends Application {
      */
     private void addRestResourceClasses(Set<Class<?>> resources) {
         resources.add(org.thomasmore.oo3.course.resortui.sample.ui.rest.InitDbREST.class);
-        resources.add(rest.InitDbREST.class);
     }
     
 }
