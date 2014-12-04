@@ -17,32 +17,33 @@
 package org.thomasmore.oo3.course.resortui.controller;
 
 import javax.annotation.PostConstruct;
-import org.thomasmore.oo3.course.resortui.model.BungalowPageDto;
+import org.thomasmore.oo3.course.resortui.model.ParkPageDto;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
-import org.thomasmore.oo3.course.resortui.model.BungalowListDetailDto;
+import org.thomasmore.oo3.course.resortui.model.ParkListDetailDto;
 
 /**
  *
  * @author lucs
  */
-@Named(value = "bungalow")
+@Named(value = "park")
 @RequestScoped
-public class BungalowController {
+public class ParkController {
 
-    private BungalowPageDto dto;
+    private ParkPageDto dto;
 
     @PostConstruct
     public void init() {
         
         
-        dto = new BungalowPageDto();
+        dto = new ParkPageDto();
         
         for (int i = 0; i < 10; i++) {
-            BungalowListDetailDto listDetail = new BungalowListDetailDto();
+            ParkListDetailDto listDetail = new ParkListDetailDto();
             listDetail.setId("@"+i);
             listDetail.setName("B"+(i+1));
             dto.getList().add(listDetail);
+            
         }
     }
 
@@ -53,11 +54,11 @@ public class BungalowController {
     
     
 
-    public BungalowPageDto getDto() {
+    public ParkPageDto getDto() {
         return dto;
     }
 
-    public void setDto(BungalowPageDto dto) {
+    public void setDto(ParkPageDto dto) {
         this.dto = dto;
     }
 
