@@ -16,6 +16,7 @@
  */
 package org.thomasmore.oo3.course.resortui.entity;
 
+
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -32,11 +33,16 @@ public class BungalowEntity extends BasicEntity{
    private String id;
    private String name;
     
+   @Override
     public String getId() {
         return id;
     }
   
-
+    /**
+     *
+     * @param id
+     */
+    @Override
     public void setId(String id) {
         this.id = id;
     }
