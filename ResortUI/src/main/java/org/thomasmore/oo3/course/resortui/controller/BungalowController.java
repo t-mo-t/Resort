@@ -16,10 +16,12 @@
  */
 package org.thomasmore.oo3.course.resortui.controller;
 
+import java.util.Date;
 import javax.annotation.PostConstruct;
 import org.thomasmore.oo3.course.resortui.model.BungalowPageDto;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
+import org.thomasmore.oo3.course.resortui.model.BungalowDetailDto;
 import org.thomasmore.oo3.course.resortui.model.BungalowListDetailDto;
 
 /**
