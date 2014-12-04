@@ -29,7 +29,7 @@ import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
-import org.thomasmore.oo3.course.resortui.sample.business.entity.SampleParkEntity;
+import org.thomasmore.oo3.course.resortui.entity.ParkEntity;
 
 /**
  *
@@ -45,8 +45,8 @@ public class InitDbREST{
     
     @GET
     @Produces({"application/json", "application/xml"})
-    public SampleParkEntity find(@PathParam("id") String id) {
-        SampleParkEntity parkEntity = new SampleParkEntity();
+    public ParkEntity find(@PathParam("id") String id) {
+        ParkEntity parkEntity = new ParkEntity();
         parkEntity.setName("ABC");
         
 //        List<Object> objectsToSave = new LinkedList<>();

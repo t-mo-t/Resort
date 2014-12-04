@@ -23,8 +23,8 @@ import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
-import org.thomasmore.oo3.course.resortui.sample.business.entity.SampleParkEntity;
-import org.thomasmore.oo3.course.resortui.sample.dao.SampleParkDao;
+import org.thomasmore.oo3.course.resortui.entity.ParkEntity;
+import org.thomasmore.oo3.course.resortui.dao.ParkDao;
 import org.thomasmore.oo3.course.resortui.sample.ui.model.SampleIndexPageDto;
 
 /**
@@ -39,12 +39,12 @@ public class SampleIndexController
     private SampleIndexPageDto dto;
     
     @EJB
-    private SampleParkDao parkDao;
+    private ParkDao parkDao;
 
     @PostConstruct
     public void init()
     {
-        SampleParkEntity entity =  new SampleParkEntity();
+        ParkEntity entity =  new ParkEntity();
         entity.setName("abc");
         try {
             parkDao.save(entity);
