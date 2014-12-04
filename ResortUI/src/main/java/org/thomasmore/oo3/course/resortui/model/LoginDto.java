@@ -21,7 +21,7 @@ package org.thomasmore.oo3.course.resortui.model;
  * @author lucs
  */
 public class LoginDto {
-    
+
     private String name;
     private String password;
 
@@ -40,6 +40,5 @@ public class LoginDto {
     public void setPassword(String password) {
         this.password = password;
     }
-    
-    
+
 }

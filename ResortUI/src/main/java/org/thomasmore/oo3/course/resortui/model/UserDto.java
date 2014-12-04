@@ -21,10 +21,10 @@ package org.thomasmore.oo3.course.resortui.model;
  * @author lucs
  */
 public class UserDto {
-    
+
     private String lname;
     private String fname;
-    
+
     private boolean loggedIn;
 
     public String getLname() {
@@ -50,7 +50,5 @@ public class UserDto {
     public void setLoggedIn(boolean loggedIn) {
         this.loggedIn = loggedIn;
     }
-    
-    
 
 }
