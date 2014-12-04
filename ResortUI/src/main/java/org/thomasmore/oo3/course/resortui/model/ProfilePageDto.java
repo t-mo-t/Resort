@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014 Coati
+ * Copyright (C) 2014 Stephan
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,7 +18,7 @@ package org.thomasmore.oo3.course.resortui.model;
 
 /**
  *
- * @author Coati
+ * @author Stephan
  */
 public class ProfilePageDto {
     
