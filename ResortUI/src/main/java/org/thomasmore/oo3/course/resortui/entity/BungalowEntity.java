@@ -29,11 +29,6 @@ public class BungalowEntity{
     public String getId() {
         return id;
     }
-  
-    /**
-     *
-     *@param id
-     **/
 
     public void setId(String id) {
         this.id = id;
