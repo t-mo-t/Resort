@@ -14,17 +14,17 @@
 
             <ui:define name="content">
 				<ul>
-					<ui:repeat value="${bungalow.dto.list}" var="listDetail">
+					<ui:repeat value="${park.dto.list}" var="listDetail">
 						<li>${listDetail.id} - ${listDetail.name}</li>
 					</ui:repeat>
 				</ul>
 				<h:form>
 					<span class="input-group-addon">Name</span>
 					<h:inputText label="Login" 
-								 value="${bungalow.dto.detail.name}" class="form-control"
+								 value="${park.dto.detail.name}" class="form-control"
 								 required="true">
 					</h:inputText>
-					<h:commandButton class="btn btn-primary" action="${bungalow.add()}" value="Save"></h:commandButton>
+					<h:commandButton class="btn btn-primary" action="${park.add()}" value="Save"></h:commandButton>
 
 				</h:form>
             </ui:define>
