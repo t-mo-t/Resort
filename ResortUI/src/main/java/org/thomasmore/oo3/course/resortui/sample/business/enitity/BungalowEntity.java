@@ -1,6 +1,6 @@
-package org.thomasmore.oo3.course.resortui.model;
+package org.thomasmore.oo3.course.resortui.sample.business.enitity;
 
-public class BungalowListDetailDto {
+public class BungalowEntity {
     
     private String id;
     
@@ -21,7 +21,4 @@ public class BungalowListDetailDto {
     public void setName(String name) {
         this.name = name;
     }
-    
-    
-    
 }
