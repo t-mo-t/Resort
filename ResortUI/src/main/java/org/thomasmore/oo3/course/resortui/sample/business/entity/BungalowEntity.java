@@ -1,30 +1,20 @@
-/*
- * Copyright (C) 2014 lucs
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
 package org.thomasmore.oo3.course.resortui.sample.business.entity;
 
-/**
- *
- * @author lucs
- */
 public class BungalowEntity {
-    
+
     private String id;
-    
     private String name;
+    private int maxCapacity;
+    private int luxury; // int incase we want to make an average
+    private String code;
+
+    private boolean hotTub;
+    private boolean sauna;
+    private boolean solarium;
+    private boolean dishWasher;
+
+    private String details;
+    private int amtPeoplePresent;
 
     public String getId() {
         return id;
@@ -41,4 +31,77 @@ public class BungalowEntity {
     public void setName(String name) {
         this.name = name;
     }
+
+    public int getMaxCapacity() {
+        return maxCapacity;
+    }
+
+    public void setMaxCapacity(int maxCapacity) {
+        this.maxCapacity = maxCapacity;
+    }
+
+    public int getLuxury() {
+        return luxury;
+    }
+
+    public void setLuxury(int luxury) {
+        this.luxury = luxury;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public boolean isHotTub() {
+        return hotTub;
+    }
+
+    public void setHotTub(boolean hotTub) {
+        this.hotTub = hotTub;
+    }
+
+    public boolean isSauna() {
+        return sauna;
+    }
+
+    public void setSauna(boolean sauna) {
+        this.sauna = sauna;
+    }
+
+    public boolean isSolarium() {
+        return solarium;
+    }
+
+    public void setSolarium(boolean solarium) {
+        this.solarium = solarium;
+    }
+
+    public boolean isDishWasher() {
+        return dishWasher;
+    }
+
+    public void setDishWasher(boolean dishWasher) {
+        this.dishWasher = dishWasher;
+    }
+
+    public String getDetails() {
+        return details;
+    }
+
+    public void setDetails(String details) {
+        this.details = details;
+    }
+
+    public int getAmtPeoplePresent() {
+        return amtPeoplePresent;
+    }
+
+    public void setAmtPeoplePresent(int amtPeoplePresent) {
+        this.amtPeoplePresent = amtPeoplePresent;
+    }
+
 }
