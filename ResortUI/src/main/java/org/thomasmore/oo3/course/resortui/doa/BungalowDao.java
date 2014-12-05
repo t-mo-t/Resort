@@ -23,32 +23,31 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.persistence.criteria.CriteriaQuery;
-import org.thomasmore.oo3.course.resortui.sample.business.entity.ParkEntity;
+import org.thomasmore.oo3.course.resortui.sample.business.entity.BungalowEntity;
 
 /**
  *
- * @author Japser & Nico
- */ 
+ * @author Jasper & Nico
+ */
 @Stateless
-
-public class ParkDao implements Serializable {
+public class BungalowDao implements Serializable {
 
     @PersistenceContext
     private EntityManager em;
 
-    public void save(ParkEntity parkEntity) {
-        em.persist(parkEntity);
+    public void save(BungalowEntity bungalowEntity) {
+        em.persist(bungalowEntity);
     }
 
-    public List<ParkEntity> listAll() {
+    public List<BungalowEntity> listAll() {
         CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
-        cq.select(cq.from(ParkEntity.class));
+        cq.select(cq.from(BungalowEntity.class));
         Query q = em.createQuery(cq);
         return q.getResultList();
     }
 
-    public ParkEntity findById(String id) {
-        return em.find(ParkEntity.class, id);
+    public BungalowEntity findById(String id) {
+        return em.find(BungalowEntity.class, id);
     }
 
     public void deleteById(String id) {
