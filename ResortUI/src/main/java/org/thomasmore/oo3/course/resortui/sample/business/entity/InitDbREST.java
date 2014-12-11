@@ -40,11 +40,11 @@ public class InitDbREST {
         bungalowEntity.setName("abc");
         objectsToSave.add(bungalowEntity);
         
-        //for(objectsToSave...){
+        for(Object objectsToSave1 : objectsToSave){
            
-        em.persist(parkEntity);
+        em.persist(objectsToSave1);
          
-        //}
+        }
         return parkEntity;
     }
 }
