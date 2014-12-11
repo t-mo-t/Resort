@@ -25,7 +25,7 @@ import javax.xml.bind.annotation.XmlRootElement;
  * @author lucs
  */
 @Entity
-@Table(name = "sample_park")
+@Table(name = "park")
 @XmlRootElement
 public class ParkEntity extends BasicEntity{
     
