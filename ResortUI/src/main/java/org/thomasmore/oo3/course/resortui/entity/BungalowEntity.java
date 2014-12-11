@@ -7,7 +7,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Entity
 @Table(name = "bungalow")
 @XmlRootElement
-public class BungalowEntity extends BasicEntity{
+public class BungalowEntity extends BasicEntity {
 
     private String name;
     private int maxCapacity;
@@ -21,7 +21,6 @@ public class BungalowEntity extends BasicEntity{
 
     private String details;
     private int amtPeoplePresent;
-
 
     public String getName() {
         return name;
