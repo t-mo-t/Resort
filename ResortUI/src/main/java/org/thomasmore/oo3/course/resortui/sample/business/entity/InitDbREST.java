@@ -24,14 +24,27 @@ public class InitDbREST {
     
     @GET
     @Produces({"application/json", "application/xml"})
-    public ParkEntity find (@PathParam("id") String id){
+    public ParkEntity createDB(){
+        
+        List<Object> objectsToSave = new LinkedList<>();
+        
         ParkEntity parkEntity = new ParkEntity();
         parkEntity.setName("Zemst");
+        objectsToSave.add(parkEntity);
         
+        parkEntity = new ParkEntity();
+        parkEntity.setName("Mechelen");
+        objectsToSave.add(parkEntity);
         
-        List<Object> objectToSave = new LinkedList<>();
+        BungalowEntity bungalowEntity = new BungalowEntity();
+        bungalowEntity.setName("abc");
+        objectsToSave.add(bungalowEntity);
+        
+        //for(objectsToSave...){
+           
         em.persist(parkEntity);
-        
+         
+        //}
         return parkEntity;
     }
 }
