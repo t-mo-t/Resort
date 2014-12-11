@@ -23,7 +23,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.persistence.criteria.CriteriaQuery;
-import org.thomasmore.oo3.course.resortui.sample.business.entity.BungalowEntity;
+import org.thomasmore.oo3.course.resortui.entity.BungalowEntity;
 
 /**
  *

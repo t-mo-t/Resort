@@ -24,6 +24,4 @@ public class BungalowListDetailDto {
         this.name = name;
     }
     
-    
-    
 }

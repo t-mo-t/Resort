@@ -1,6 +1,7 @@
 
 package org.thomasmore.oo3.course.resortui.sample.business.entity;
 
+import org.thomasmore.oo3.course.resortui.entity.BungalowEntity;
 import java.util.LinkedList;
 import java.util.List;
 import javax.ejb.Stateless;

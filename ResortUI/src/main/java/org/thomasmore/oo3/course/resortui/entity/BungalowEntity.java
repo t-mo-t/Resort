@@ -1,4 +1,4 @@
-package org.thomasmore.oo3.course.resortui.sample.business.entity;
+package org.thomasmore.oo3.course.resortui.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
@@ -7,10 +7,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Entity
 @Table(name = "bungalow")
 @XmlRootElement
-
 public class BungalowEntity extends BasicEntity{
 
-    private String id;
     private String name;
     private int maxCapacity;
     private int luxury; // int incase we want to make an average
@@ -24,13 +22,6 @@ public class BungalowEntity extends BasicEntity{
     private String details;
     private int amtPeoplePresent;
 
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;
