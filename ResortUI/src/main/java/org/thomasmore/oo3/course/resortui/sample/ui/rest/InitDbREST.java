@@ -38,7 +38,7 @@ import org.thomasmore.oo3.course.resortui.sample.business.entity.SampleParkEntit
  */
 @Stateless
 @Path("init-db")
-public class InitDbREST{
+public class InitDbREST {
 
     @PersistenceContext(unitName = "RESORTPU")
     private EntityManager em;
@@ -73,7 +73,5 @@ public class InitDbREST{
        
         return parkEntity;
     }
-
-   
 
 }
