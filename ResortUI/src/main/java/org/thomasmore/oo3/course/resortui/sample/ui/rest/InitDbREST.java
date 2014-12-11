@@ -29,7 +29,7 @@ import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
-import org.thomasmore.oo3.course.resortui.business.entity.BungalowEntity;
+import org.thomasmore.oo3.course.resortui.entity.BungalowEntity;
 import org.thomasmore.oo3.course.resortui.entity.ParkEntity;
 
 /**
