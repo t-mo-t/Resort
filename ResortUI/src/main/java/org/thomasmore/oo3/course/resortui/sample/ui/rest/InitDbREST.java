@@ -37,24 +37,30 @@ import org.thomasmore.oo3.course.resortui.sample.business.entity.SampleParkEntit
  */
 @Stateless
 @Path("init-db")
-public class InitDbREST{
+public class InitDbREST {
 
     @PersistenceContext(unitName = "RESORTPU")
     private EntityManager em;
 
-    
     @GET
     @Produces({"application/json", "application/xml"})
-    public SampleParkEntity find(@PathParam("id") String id) {
+    public SampleParkEntity createDB() {
+        List<Object> objectsToSave = new LinkedList<>();
+
         SampleParkEntity parkEntity = new SampleParkEntity();
         parkEntity.setName("ABC");
-        
+        objectsToSave.add(parkEntity);
+
+        parkEntity = new SampleParkEntity();
+        parkEntity.setName("Lol");
+        objectsToSave.add(parkEntity);
+
 //        List<Object> objectsToSave = new LinkedList<>();
-        em.persist(parkEntity);
-        
+        for (Object objectsToSave1 : objectsToSave) {
+            em.persist(objectsToSave1);
+        }
+
         return parkEntity;
     }
-
-   
 
 }
