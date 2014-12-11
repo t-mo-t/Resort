@@ -29,6 +29,7 @@ import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import org.thomasmore.oo3.course.resortui.sample.business.entity.SampleBungalowEntity;
 import org.thomasmore.oo3.course.resortui.sample.business.entity.SampleParkEntity;
 
 /**
@@ -41,17 +42,35 @@ public class InitDbREST{
 
     @PersistenceContext(unitName = "RESORTPU")
     private EntityManager em;
-
+    
     
     @GET
     @Produces({"application/json", "application/xml"})
-    public SampleParkEntity find(@PathParam("id") String id) {
+    public SampleParkEntity createDB() {
+        List<Object> objectsToSave= new LinkedList<>();
+        
+        
         SampleParkEntity parkEntity = new SampleParkEntity();
-        parkEntity.setName("ABC");
+        parkEntity.setName("PARK1");
+        objectsToSave.add(parkEntity);
+        
+        parkEntity = new SampleParkEntity();
+        parkEntity.setName("PARK2");
+        objectsToSave.add(parkEntity);
+        
+         SampleBungalowEntity sampleBungalowEntity = new SampleBungalowEntity();
+        sampleBungalowEntity.setName("BUNGALOW1");
+        objectsToSave.add(sampleBungalowEntity);
+        
+        sampleBungalowEntity = new SampleBungalowEntity();
+        sampleBungalowEntity.setName("BUNGALOW2");
+        objectsToSave.add(sampleBungalowEntity);
         
 //        List<Object> objectsToSave = new LinkedList<>();
-        em.persist(parkEntity);
-        
+       for(Object objectsToSave1 : objectsToSave){
+        em.persist(objectsToSave1);
+       }
+       
         return parkEntity;
     }
 
