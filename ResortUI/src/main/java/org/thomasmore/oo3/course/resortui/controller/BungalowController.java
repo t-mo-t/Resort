@@ -17,12 +17,16 @@
 package org.thomasmore.oo3.course.resortui.controller;
 
 import java.util.Date;
+import java.util.List;
 import javax.annotation.PostConstruct;
+import javax.ejb.EJB;
 import org.thomasmore.oo3.course.resortui.model.BungalowPageDto;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
 import org.thomasmore.oo3.course.resortui.model.BungalowDetailDto;
 import org.thomasmore.oo3.course.resortui.model.BungalowListDetailDto;
+import org.thomasmore.oo3.course.resortui.sample.business.entity.SampleBungalowEntity;
+import org.thomasmore.oo3.course.resortui.sample.dao.BungalowDao;
 
 /**
  *
@@ -33,17 +37,18 @@ import org.thomasmore.oo3.course.resortui.model.BungalowListDetailDto;
 public class BungalowController {
 
     private BungalowPageDto dto;
-
+    @EJB
+    private BungalowDao bungalowsDao;
     @PostConstruct
     public void init() {
         
-        
+        List<SampleBungalowEntity> bungalows=bungalowsDao.listAll();
         dto = new BungalowPageDto();
         
-        for (int i = 0; i < 10; i++) {
+        for (SampleBungalowEntity bungalow : bungalows) {
             BungalowListDetailDto listDetail = new BungalowListDetailDto();
-            listDetail.setId("@"+i);
-            listDetail.setName("B"+(i+1));
+            listDetail.setId(bungalow.getId());
+            listDetail.setName(bungalow.getName());
             dto.getList().add(listDetail);
         }
     }
