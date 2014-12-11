@@ -45,7 +45,8 @@ public class InitDbREST{
     
     @GET
     @Produces({"application/json", "application/xml"})
-    public ParkEntity find(@PathParam("id") String id) {
+    public ParkEntity createDB() {
+            
         ParkEntity parkEntity = new ParkEntity();
         parkEntity.setName("ABC");
         
