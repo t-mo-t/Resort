@@ -31,6 +31,8 @@ import org.thomasmore.oo3.course.resortui.entity.BasicEntity;
 public class SampleParkEntity extends BasicEntity{
     
     private String name;
+    
+    private String address;
 
     public String getName() {
         return name;
@@ -39,7 +41,13 @@ public class SampleParkEntity extends BasicEntity{
     public void setName(String name) {
         this.name = name;
     }
-    
-   
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
     
 }
