@@ -47,6 +47,41 @@
 								 value="${bungalow.dto.detail.name}" class="form-control"
 								 required="true">
 					</h:inputText>
+                                        <span class="input-group-addon">Code</span>
+                                        <h:inputText label="Login" 
+								 value="${bungalow.dto.detail.code}" class="form-control"
+								 required="true">
+					</h:inputText>
+                                        <span class="input-group-addon">Max amount of customers</span>
+                                        <h:inputText label="Login" 
+                                                     value="${bungalow.dto.detail.maxcustomers}" class="form-control"
+								 required="true">
+					</h:inputText>
+                                        <span class="input-group-addon">Description</span>
+                                        <h:inputTextarea label="Login" 
+                                                     value="${bungalow.dto.detail.description}" class="form-control"
+								 required="true">
+                                        </h:inputTextarea>
+                                        <span class="input-group-addon">Dishwasher</span>
+                                        <h:selectBooleanCheckbox label="login"
+                                                                 value="${bungalow.dto.detail.dishwasher}" class="form-control" 
+                                                                 required="true">
+                                        </h:selectBooleanCheckbox>
+                                        <span class="input-group-addon">Jacuzzi</span>
+                                        <h:selectBooleanCheckbox label="login"
+                                                                 value="${bungalow.dto.detail.jacuzzi}" class="form-control" 
+                                                                 required="true">
+                                        </h:selectBooleanCheckbox>
+                                        <span class="input-group-addon">Sauna</span>
+                                        <h:selectBooleanCheckbox label="login"
+                                                                 value="${bungalow.dto.detail.sauna}" class="form-control" 
+                                                                 required="true">
+                                        </h:selectBooleanCheckbox>
+                                        <span class="input-group-addon">Sunbed</span>
+                                        <h:selectBooleanCheckbox label="login"
+                                                                 value="${bungalow.dto.detail.sunbed}" class="form-control" 
+                                                                 required="true">
+                                        </h:selectBooleanCheckbox>
 					<h:commandButton class="btn btn-primary" action="${bungalow.add()}" value="Save"></h:commandButton>
 
 				</h:form>
