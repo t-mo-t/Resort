@@ -64,7 +64,7 @@ public class InitDbREST {
         }
         
 
-        return parkEntity;
+        return parkEntity;//normaal geven we nix terug dit is om  te testen.
     }
 
 }
