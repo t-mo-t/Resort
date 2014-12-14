@@ -17,12 +17,26 @@
                                     <tr>
                                         <th>ID</th>
                                         <th>Name</th>
+                                        <th>Code</th>
+                                        <th>Max amount of customers</th>
+                                        <th>Description</th>
+                                        <th>Dishwasher</th>
+                                        <th>Jacuzzi</th>
+                                        <th>Sauna</th>
+                                        <th>Sunbed</th>
                                     </tr>
                                     <tbody>
 					<ui:repeat value="${bungalow.dto.list}" var="listDetail">
                                             <tr>
 						<td>${listDetail.id}</td>
                                                 <td>${listDetail.name}</td>
+                                                <td>${listDetail.code}</td>
+                                                <td>${listDetail.maxcustomers}</td>
+                                                <td>${listDetail.description}</td>
+                                                <td>${listDetail.dishwasher}</td>
+                                                <td>${listDetail.jacuzzi}</td>
+                                                <td>${listDetail.sauna}</td>
+                                                <td>${listDetail.sunbed}</td>
                                             </tr>
 					</ui:repeat>
                                     </tbody>

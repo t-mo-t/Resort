@@ -50,6 +50,13 @@ public class BungalowController {
             BungalowListDetailDto listDetail = new BungalowListDetailDto();
             listDetail.setId(bungalow.getId());
             listDetail.setName(bungalow.getName());
+            listDetail.setCode(bungalow.getCode());
+            listDetail.setMaxcustomers(bungalow.getMaxcustomers());
+            listDetail.setDescription(bungalow.getDescription());
+            listDetail.setDishwasher(bungalow.isDishwasher());
+            listDetail.setJacuzzi(bungalow.isJacuzzi());
+            listDetail.setSauna(bungalow.isSauna());
+            listDetail.setSunbed(bungalow.isSunbed());
             dto.getList().add(listDetail);
         }
     }
