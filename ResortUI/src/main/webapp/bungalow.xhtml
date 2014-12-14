@@ -2,7 +2,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-	  xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
 
     <body>
 
@@ -50,13 +51,14 @@
                                         <span class="input-group-addon">Code</span>
                                         <h:inputText label="Login" 
 								 value="${bungalow.dto.detail.code}" class="form-control"
-								 required="true">
+                                                                 required="true" maxlength="3">
 					</h:inputText>
                                         <span class="input-group-addon">Max amount of customers</span>
-                                        <h:inputText label="Login" 
-                                                     value="${bungalow.dto.detail.maxcustomers}" class="form-control"
-								 required="true">
-					</h:inputText>
+                                        <h:selectOneMenu label="Login" value="${bungalow.dto.detail.maxcustomers}" class="form-control" required="true">
+                                            <f:selectItem itemValue="4" itemLabel="4" />
+                                            <f:selectItem itemValue="6" itemLabel="6" />
+                                            <f:selectItem itemValue="8" itemLabel="8" />
+                                        </h:selectOneMenu>
                                         <span class="input-group-addon">Description</span>
                                         <h:inputTextarea label="Login" 
                                                      value="${bungalow.dto.detail.description}" class="form-control"
