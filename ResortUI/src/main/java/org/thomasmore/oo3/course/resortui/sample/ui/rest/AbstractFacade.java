@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 package org.thomasmore.oo3.course.resortui.sample.ui.rest;
-
+/*
 import java.util.List;
 import javax.persistence.EntityManager;
 
@@ -24,7 +24,7 @@ import javax.persistence.EntityManager;
  * @author lucs
  */
 public abstract class AbstractFacade<T> {
-    private Class<T> entityClass;
+    /*private Class<T> entityClass;
 
     public AbstractFacade(Class<T> entityClass) {
         this.entityClass = entityClass;
@@ -70,5 +70,5 @@ public abstract class AbstractFacade<T> {
         javax.persistence.Query q = getEntityManager().createQuery(cq);
         return ((Long)q.getSingleResult()).intValue();
     }
-    
+    */
 }

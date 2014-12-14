@@ -26,7 +26,7 @@ import javax.ws.rs.core.Application;
 @javax.ws.rs.ApplicationPath("rest")
 public class ApplicationConfig extends Application {
 
-    @Override
+   /* @Override
     public Set<Class<?>> getClasses() {
         Set<Class<?>> resources = new java.util.HashSet<>();
         addRestResourceClasses(resources);
@@ -39,8 +39,9 @@ public class ApplicationConfig extends Application {
      * all resources defined in the project.
      * If required, comment out calling this method in getClasses().
      */
-    private void addRestResourceClasses(Set<Class<?>> resources) {
+    /*private void addRestResourceClasses(Set<Class<?>> resources) {
+        resources.add(org.thomasmore.oo3.course.resortui.rest.InitDbREST.class);
         resources.add(org.thomasmore.oo3.course.resortui.sample.ui.rest.InitDbREST.class);
     }
-    
+    */
 }
