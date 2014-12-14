@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 package org.thomasmore.oo3.course.resortui.sample.ui.rest;
-
+/*
 import java.util.LinkedList;
 import java.util.List;
 import javax.ejb.Stateless;
@@ -36,11 +36,13 @@ import org.thomasmore.oo3.course.resortui.sample.business.entity.SampleParkEntit
  *
  * @author lucs
  */
+/*
 @Stateless
-@Path("init-db")
+@Path("init-db") 
+*/
 public class InitDbREST{
 
-    @PersistenceContext(unitName = "RESORTPU")
+   /* @PersistenceContext(unitName = "RESORTPU")
     private EntityManager em;
 
     
@@ -61,7 +63,8 @@ public class InitDbREST{
         }
         
         return parkEntity;
-    }
+    
+    }*/
 
    
 
