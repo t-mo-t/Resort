@@ -12,6 +12,7 @@ public class BungalowListDetailDto {
     private boolean dishwasher;
     private boolean sunbed;
     private String description;
+    private String type;
     public String getId() {
         return id;
     }
@@ -82,6 +83,14 @@ public class BungalowListDetailDto {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
     
 }

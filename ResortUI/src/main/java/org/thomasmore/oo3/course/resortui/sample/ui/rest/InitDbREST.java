@@ -58,8 +58,9 @@ public class InitDbREST {
         SampleBungalowEntity BungalowEntity = new SampleBungalowEntity();
         BungalowEntity.setName("abc");
         BungalowEntity.setCode("edf");
+        BungalowEntity.setType("comfort");
         BungalowEntity.setDescription("Een bungalow");
-        BungalowEntity.setMaxcustomers(10);
+        BungalowEntity.setMaxcustomers(4);
         BungalowEntity.setDishwasher(true);
         BungalowEntity.setJacuzzi(true);
         BungalowEntity.setSauna(true);

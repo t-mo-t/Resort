@@ -38,6 +38,7 @@ public class SampleBungalowEntity extends BasicEntity{
     private boolean dishwasher;
     private boolean sunbed;
     private String description;
+    private String type;
     public String getName() {
         return name;
     }
@@ -100,6 +101,14 @@ public class SampleBungalowEntity extends BasicEntity{
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
     
 }

@@ -20,6 +20,7 @@
                                         <th>Name</th>
                                         <th>Code</th>
                                         <th>Max amount of customers</th>
+                                        <th>Type of Bungalow</th>
                                         <th>Description</th>
                                         <th>Dishwasher</th>
                                         <th>Jacuzzi</th>
@@ -33,6 +34,7 @@
                                                 <td>${listDetail.name}</td>
                                                 <td>${listDetail.code}</td>
                                                 <td>${listDetail.maxcustomers}</td>
+                                                <td>${listDetail.type}</td>
                                                 <td>${listDetail.description}</td>
                                                 <td>${listDetail.dishwasher}</td>
                                                 <td>${listDetail.jacuzzi}</td>
@@ -58,6 +60,11 @@
                                             <f:selectItem itemValue="4" itemLabel="4" />
                                             <f:selectItem itemValue="6" itemLabel="6" />
                                             <f:selectItem itemValue="8" itemLabel="8" />
+                                        </h:selectOneMenu>
+                                        <span class="input-group-addon">Type of Bungalow</span>
+                                        <h:selectOneMenu label="Login" value="${bungalow.dto.detail.type}" class="form-control" required="true">
+                                            <f:selectItem itemValue="comfort" itemLabel="comfort" />
+                                            <f:selectItem itemValue="luxe" itemLabel="luxe" />
                                         </h:selectOneMenu>
                                         <span class="input-group-addon">Description</span>
                                         <h:inputTextarea label="Login" 

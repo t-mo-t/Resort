@@ -52,6 +52,7 @@ public class BungalowController {
             listDetail.setName(bungalow.getName());
             listDetail.setCode(bungalow.getCode());
             listDetail.setMaxcustomers(bungalow.getMaxcustomers());
+            listDetail.setType(bungalow.getType());
             listDetail.setDescription(bungalow.getDescription());
             listDetail.setDishwasher(bungalow.isDishwasher());
             listDetail.setJacuzzi(bungalow.isJacuzzi());
