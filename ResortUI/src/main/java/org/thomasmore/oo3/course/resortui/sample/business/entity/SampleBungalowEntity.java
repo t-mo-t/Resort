@@ -31,7 +31,7 @@ import org.thomasmore.oo3.course.resortui.entity.BasicEntity;
 public class SampleBungalowEntity extends BasicEntity{
     
     private String name;
-
+    
     public String getName() {
         return name;
     }
