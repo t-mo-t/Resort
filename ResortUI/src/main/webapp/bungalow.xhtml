@@ -13,11 +13,20 @@
             </ui:define>
 
             <ui:define name="content">
-				<ul>
+				<table>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Name</th>
+                                    </tr>
+                                    <tbody>
 					<ui:repeat value="${bungalow.dto.list}" var="listDetail">
-						<li>${listDetail.id} - ${listDetail.name}</li>
+                                            <tr>
+						<td>${listDetail.id}</td>
+                                                <td>${listDetail.name}</td>
+                                            </tr>
 					</ui:repeat>
-				</ul>
+                                    </tbody>
+				</table>
 				<h:form>
 					<span class="input-group-addon">Name</span>
 					<h:inputText label="Login" 
