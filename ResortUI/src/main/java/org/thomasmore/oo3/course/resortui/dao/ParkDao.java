@@ -35,19 +35,19 @@ public class ParkDao implements Serializable {
     @PersistenceContext
     private EntityManager em;
 
-    public void save(SampleParkEntity parkEntity) {
+    public void save(ParkEntity parkEntity) {
         em.persist(parkEntity);
     }
 
-    public List<SampleParkEntity> listAll() {
+    public List<ParkEntity> listAll() {
         CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
-        cq.select(cq.from(SampleParkEntity.class));
+        cq.select(cq.from(ParkEntity.class));
         Query q = em.createQuery(cq);
         return q.getResultList();
     }
 
-    public SampleParkEntity findById(String id) {
-        return em.find(SampleParkEntity.class, id);
+    public ParkEntity findById(String id) {
+        return em.find(ParkEntity.class, id);
     }
 
     public void deleteById(String id) {
