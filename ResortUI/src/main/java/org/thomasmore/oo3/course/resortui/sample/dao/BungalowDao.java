@@ -25,8 +25,8 @@ import org.thomasmore.oo3.course.resortui.sample.business.entity.SampleParkEntit
         @PersistenceContext
         private EntityManager em;
 
-        public void save(SampleBungalowEntity parkEntity) {
-            em.persist(parkEntity);
+        public void save(SampleBungalowEntity bungalowEntity) {
+            em.persist(bungalowEntity);
         }
 
         public List<SampleBungalowEntity> listAll() {
