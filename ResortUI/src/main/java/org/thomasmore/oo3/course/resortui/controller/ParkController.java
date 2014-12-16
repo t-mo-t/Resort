@@ -17,16 +17,20 @@
 package org.thomasmore.oo3.course.resortui.controller;
 
 import java.util.Date;
+import java.util.List;
 import javax.annotation.PostConstruct;
+import javax.ejb.EJB;
 import org.thomasmore.oo3.course.resortui.model.ParkPageDto;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
+import org.thomasmore.oo3.course.resortui.business.entity.ParkEntity;
+import org.thomasmore.oo3.course.resortui.dao.ParkDao;
 import org.thomasmore.oo3.course.resortui.model.ParkDetailDto;
 import org.thomasmore.oo3.course.resortui.model.ParkListDetailDto;
 
 /**
  *
- * @author lucs
+ * @author raf
  */
 @Named(value = "park")
 @RequestScoped
@@ -34,26 +38,31 @@ public class ParkController {
 
     private ParkPageDto dto;
 
+    @EJB
+    private ParkDao parksDao;
+
     @PostConstruct
     public void init() {
-        
-        
+
+        List<ParkEntity> parks = parksDao.listAll();
         dto = new ParkPageDto();
-        
-        for (int i = 0; i < 10; i++) {
+
+        for (ParkEntity park : parks) {
             ParkListDetailDto listDetail = new ParkListDetailDto();
-            listDetail.setId("@"+i);
-            listDetail.setName("P"+(i+1));
-            dto.getList().add(listDetail);
+            listDetail.setName(park.getName());
+            listDetail.setId(park.getId());
+            listDetail.setNumber(park.getNumber());
+            listDetail.setCountry(park.getCountry());
+            listDetail.setCity(park.getCity());
+            listDetail.setClosingFrom(park.getClosingFrom());
+            listDetail.setClosingTill(park.getClosingTill());
+            
         }
     }
-
-    public void add(){
+    public void add() {
         dto.getDetail().setId("NEW");
         dto.getList().add(dto.getDetail());
     }
-    
-    
 
     public ParkPageDto getDto() {
         return dto;
