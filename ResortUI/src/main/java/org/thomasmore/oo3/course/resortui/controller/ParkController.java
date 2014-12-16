@@ -30,7 +30,7 @@ import org.thomasmore.oo3.course.resortui.model.ParkListDetailDto;
 
 /**
  *
- * @author raf
+ * @author raf en marnix ook
  */
 @Named(value = "park")
 @RequestScoped
@@ -72,4 +72,6 @@ public class ParkController {
         this.dto = dto;
     }
 
+    
+    
 }

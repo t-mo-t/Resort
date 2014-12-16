@@ -16,15 +16,21 @@
  */
 package org.thomasmore.oo3.course.resortui.model;
 
+import java.util.Date;
+
 /**
  *
  * @author lucs
  */
 public class ParkListDetailDto {
     
-    private String id;
-    
     private String name;
+    private int number;
+    private String country;
+    private Date closingFrom;
+    private Date closingTill;
+    private String city;
+    private String id;
 
     public String getId() {
         return id;
@@ -33,6 +39,7 @@ public class ParkListDetailDto {
     public void setId(String id) {
         this.id = id;
     }
+    
 
     public String getName() {
         return name;
@@ -41,6 +48,48 @@ public class ParkListDetailDto {
     public void setName(String name) {
         this.name = name;
     }
+
+    public int getNumber() {
+        return number;
+    }
+
+    public void setNumber(int number) {
+        this.number = number;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public Date getClosingFrom() {
+        return closingFrom;
+    }
+
+    public void setClosingFrom(Date closingFrom) {
+        this.closingFrom = closingFrom;
+    }
+
+    public Date getClosingTill() {
+        return closingTill;
+    }
+
+    public void setClosingTill(Date closingTill) {
+        this.closingTill = closingTill;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    
     
     
     

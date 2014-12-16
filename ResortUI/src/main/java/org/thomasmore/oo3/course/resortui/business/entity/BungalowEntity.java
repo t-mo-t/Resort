@@ -24,7 +24,7 @@ import org.thomasmore.oo3.course.resortui.entity.BasicEntity;
 
 /**
  *
- * @author marnixvanlint
+ * @author raf-marnix
  */
 @Entity
 @Table(name = "bungalow")

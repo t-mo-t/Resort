@@ -26,8 +26,8 @@ public class BungalowListDetailDto {
     
     private String name;
     private String code;
-    private Integer maxcustomers;
-    private boolean jacuzzi;
+    private Integer maxCustomers;
+    private boolean hotTub;
     private boolean sauna;
     private boolean dishwasher;
     private boolean sunbed;
@@ -52,16 +52,16 @@ public class BungalowListDetailDto {
         this.code = code;
     }
     public Integer getMaxcustomers() {
-        return maxcustomers;
+        return maxCustomers;
     }
     public void setMaxcustomers(Integer maxcustomers) {
-        this.maxcustomers = maxcustomers;
+        this.maxCustomers = maxcustomers;
     }
-    public boolean isJacuzzi() {
-        return jacuzzi;
+    public boolean isHotTub() {
+        return hotTub;
     }
-    public void setJacuzzi(boolean jacuzzi) {
-        this.jacuzzi = jacuzzi;
+    public void setHotTub(boolean HotTub) {
+        this.hotTub = hotTub;
     }
     public boolean isSauna() {
         return sauna;

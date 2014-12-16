@@ -30,7 +30,7 @@ import org.thomasmore.oo3.course.resortui.model.BungalowListDetailDto;
 
 /**
  *
- * @author raf
+ * @author raf - marnix
  */
 @Named(value = "bungalow")
 @RequestScoped
@@ -71,6 +71,7 @@ public class BungalowController {
         return dto;
     }
 
+    
     public void setDto(BungalowPageDto dto) {
         this.dto = dto;
     }
