@@ -30,7 +30,7 @@ import org.thomasmore.oo3.course.resortui.model.BungalowListDetailDto;
 
 /**
  *
- * @author lucs
+ * @author raf
  */
 @Named(value = "bungalow")
 @RequestScoped
@@ -42,7 +42,7 @@ public class BungalowController {
     private BungalowDao bungalowsDao;
     @PostConstruct
     public void init() {
-        //van hier guntherben
+        
         List<BungalowEntity> bungalows=bungalowsDao.listAll();
         dto = new BungalowPageDto();
         
@@ -55,36 +55,18 @@ public class BungalowController {
             listDetail.setType(bungalow.getType());
             listDetail.setDescription(bungalow.getDescription());
             listDetail.setDishwasher(bungalow.isDishwasher());
-            listDetail.setJacuzzi(bungalow.isJacuzzi());
+            listDetail.setHotTub(bungalow.isHotTub());
             listDetail.setSauna(bungalow.isSauna());
             listDetail.setSunbed(bungalow.isSunbed());
             dto.getList().add(listDetail);
         }
     }
-    //tot hier guntherben
-        
-        
-        
-  /*origineel
-        dto = new BungalowPageDto();
-        
-        for (int i = 0; i < 10; i++) {
-            BungalowListDetailDto listDetail = new BungalowListDetailDto();
-            listDetail.setId("@"+i);
-            listDetail.setName("B"+(i+1));
-            dto.getList().add(listDetail);
-        }
-    }
-*/
+
     public void add(){
         dto.getDetail().setId("NEW");
         dto.getList().add(dto.getDetail());
     }
   
-    
-    
-    
-
     public BungalowPageDto getDto() {
         return dto;
     }
