@@ -17,10 +17,14 @@
 package org.thomasmore.oo3.course.resortui.controller;
 
 import java.util.Date;
+import java.util.List;
 import javax.annotation.PostConstruct;
+import javax.ejb.EJB;
 import org.thomasmore.oo3.course.resortui.model.BungalowPageDto;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
+import org.thomasmore.oo3.course.resortui.business.entity.BungalowEntity;
+import org.thomasmore.oo3.course.resortui.dao.BungalowDao;
 import org.thomasmore.oo3.course.resortui.model.BungalowDetailDto;
 import org.thomasmore.oo3.course.resortui.model.BungalowListDetailDto;
 
@@ -34,10 +38,34 @@ public class BungalowController {
 
     private BungalowPageDto dto;
 
+    @EJB
+    private BungalowDao bungalowsDao;
     @PostConstruct
     public void init() {
+        //van hier guntherben
+        List<BungalowEntity> bungalows=bungalowsDao.listAll();
+        dto = new BungalowPageDto();
+        
+        for (BungalowEntity bungalow : bungalows) {
+            BungalowListDetailDto listDetail = new BungalowListDetailDto();
+            listDetail.setId(bungalow.getId());
+            listDetail.setName(bungalow.getName());
+            listDetail.setCode(bungalow.getCode());
+            listDetail.setMaxcustomers(bungalow.getMaxcustomers());
+            listDetail.setType(bungalow.getType());
+            listDetail.setDescription(bungalow.getDescription());
+            listDetail.setDishwasher(bungalow.isDishwasher());
+            listDetail.setJacuzzi(bungalow.isJacuzzi());
+            listDetail.setSauna(bungalow.isSauna());
+            listDetail.setSunbed(bungalow.isSunbed());
+            dto.getList().add(listDetail);
+        }
+    }
+    //tot hier guntherben
         
         
+        
+  /*origineel
         dto = new BungalowPageDto();
         
         for (int i = 0; i < 10; i++) {
@@ -47,11 +75,13 @@ public class BungalowController {
             dto.getList().add(listDetail);
         }
     }
-
+*/
     public void add(){
         dto.getDetail().setId("NEW");
         dto.getList().add(dto.getDetail());
     }
+  
+    
     
     
 
