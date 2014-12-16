@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014 lucs
+ * Copyright (C) 2014 raf
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -14,22 +14,26 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.thomasmore.oo3.course.resortui.entity;
+package org.thomasmore.oo3.course.resortui.business.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
+import org.thomasmore.oo3.course.resortui.entity.BasicEntity;
 
 /**
  *
- * @author lucs
+ * @author marnixvanlint
  */
 @Entity
-@Table(name = "park")
+@Table(name = "bungalow")
 @XmlRootElement
-public class ParkEntity extends BasicEntity{
+public class BungalowEntity extends BasicEntity{
     
     private String name;
+    private int number;
+
+
 
     public String getName() {
         return name;
@@ -39,6 +43,5 @@ public class ParkEntity extends BasicEntity{
         this.name = name;
     }
     
-   
     
 }
