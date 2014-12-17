@@ -28,7 +28,7 @@ import org.thomasmore.oo3.course.resortui.model.BungalowListDetailDto;
  *
  * @author lucs
  */
-@Named(value = "Bungalow")
+@Named(value = "bungalow")
 @RequestScoped
 public class BungalowController {
 
