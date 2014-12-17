@@ -51,10 +51,6 @@ public class InitDbREST {
         parkEntity.setName("ABC");
         objectsToSave.add(parkEntity);
         
-        parkEntity = new SampleParkEntity();
-        parkEntity.setName("EDF");
-        objectsToSave.add(parkEntity);
-        
         SampleBungalowEntity BungalowEntity = new SampleBungalowEntity();
         BungalowEntity.setName("abc");
         BungalowEntity.setCode("edf");

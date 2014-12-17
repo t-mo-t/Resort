@@ -26,7 +26,7 @@ import org.thomasmore.oo3.course.resortui.entity.BasicEntity;
  * @author lucs
  */
 @Entity
-@Table(name = "sample_park")
+@Table(name = "Park")
 @XmlRootElement
 public class SampleParkEntity extends BasicEntity{
     
