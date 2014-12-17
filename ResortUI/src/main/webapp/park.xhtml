@@ -24,6 +24,10 @@
                             <tr>
                                 <td>${listDetail.id}</td>
                                 <td>${listDetail.name}</td>
+                                <td>${listDetail.country}</td>
+                                <td>${listDetail.province}</td>
+                                <td>${listDetail.street}</td>
+                                <td>${listDetail.streetnumber}</td>
                             </tr>
                         </ui:repeat>
                     </tbody>
@@ -32,6 +36,26 @@
                     <span class="input-group-addon">Name</span>
                     <h:inputText label="Login" 
                                  value="${park.dto.detail.name}" class="form-control"
+                                 required="true">
+                    </h:inputText>
+                    <span class="input-group-addon">Country</span>
+                    <h:inputText label="Login" 
+                                 value="${park.dto.detail.country}" class="form-control"
+                                 required="true">
+                    </h:inputText>
+                    <span class="input-group-addon">Province</span>
+                    <h:inputText label="Login" 
+                                 value="${park.dto.detail.province}" class="form-control"
+                                 required="true">
+                    </h:inputText>
+                    <span class="input-group-addon">Street</span>
+                    <h:inputText label="Login" 
+                                 value="${park.dto.detail.street}" class="form-control"
+                                 required="true">
+                    </h:inputText>
+                    <span class="input-group-addon">Streetnumber</span>
+                    <h:inputText label="Login" 
+                                 value="${park.dto.detail.streetnumber}" class="form-control"
                                  required="true">
                     </h:inputText>
                     <h:commandButton class="btn btn-primary" action="${park.add()}" value="Save"></h:commandButton>

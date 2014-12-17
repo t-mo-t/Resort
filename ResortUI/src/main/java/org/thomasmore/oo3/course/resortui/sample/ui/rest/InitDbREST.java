@@ -49,6 +49,10 @@ public class InitDbREST {
         List<Object> objectsToSave = new LinkedList<>();
         SampleParkEntity parkEntity = new SampleParkEntity();
         parkEntity.setName("ABC");
+        parkEntity.setCountry("Belgie");
+        parkEntity.setProvince("Antwerpen");
+        parkEntity.setStreet("Boomsesteenweg");
+        parkEntity.setStreetnumber(10);
         objectsToSave.add(parkEntity);
         
         SampleBungalowEntity BungalowEntity = new SampleBungalowEntity();
