@@ -1,30 +1,36 @@
 package org.thomasmore.oo3.course.resortui.controller;
 
+import java.util.List;
+import java.util.UUID;
 import javax.annotation.PostConstruct;
+import javax.ejb.EJB;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
 import org.thomasmore.oo3.course.resortui.model.ParkListDetailDto;
+import org.thomasmore.oo3.course.resortui.sample.business.entity.SampleParkEntity;
 import org.thomasmore.oo3.course.resortui.model.ParkPageDto;
+import org.thomasmore.oo3.course.resortui.sample.dao.SampleParkDao;
 
 @Named(value = "park")
 @RequestScoped
 public class ParkController {
     
     private ParkPageDto dto;
-    
+    @EJB
+    private SampleParkDao parksDao;
     @PostConstruct
     public void init() {
-        
+        List<SampleParkEntity> parks=parksDao.listAll();
         dto = new ParkPageDto();
-        for (int i = 0; i < 10; i++) {
+        for (SampleParkEntity park : parks) {
             ParkListDetailDto listDetail = new ParkListDetailDto();
-            listDetail.setId("@"+i);
-            listDetail.setName("P"+(i+1));
+            listDetail.setId(park.getId());
+            listDetail.setName(park.getName());
             dto.getList().add(listDetail);
         }
     }
         public void add(){
-        dto.getDetail().setId("NEW");
+        dto.getDetail().setId(UUID.randomUUID().toString());
         dto.getList().add(dto.getDetail());
     }
 
