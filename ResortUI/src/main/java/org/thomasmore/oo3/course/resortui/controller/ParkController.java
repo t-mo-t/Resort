@@ -26,6 +26,10 @@ public class ParkController {
             ParkListDetailDto listDetail = new ParkListDetailDto();
             listDetail.setId(park.getId());
             listDetail.setName(park.getName());
+            listDetail.setCountry(park.getCountry());
+            listDetail.setProvince(park.getProvince());
+            listDetail.setStreet(park.getStreet());
+            listDetail.setStreetnumber(park.getStreetnumber());
             dto.getList().add(listDetail);
         }
     }
