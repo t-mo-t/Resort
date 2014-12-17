@@ -2,6 +2,7 @@ package org.thomasmore.oo3.course.resortui.controller;
 
 import java.util.List;
 import java.util.UUID;
+import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
@@ -17,7 +18,7 @@ public class CustomerController {
     private CustomerPageDto dto;
     @EJB
     private CustomerDao customersDao;
-
+    @PostConstruct
     public void init() {
         List<CustomerEntity> customers = customersDao.listAll();
         dto = new CustomerPageDto();
