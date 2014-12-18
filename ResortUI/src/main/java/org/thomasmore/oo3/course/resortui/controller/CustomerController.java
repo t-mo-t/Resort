@@ -25,8 +25,6 @@ import org.thomasmore.oo3.course.resortui.entity.CustomerEntity;
 
 import org.thomasmore.oo3.course.resortui.model.CustomerListDetailDto;
 import org.thomasmore.oo3.course.resortui.model.CustomerPageDto;
-import org.thomasmore.oo3.course.resortui.model.ParkListDetailDto;
-import org.thomasmore.oo3.course.resortui.model.ParkPageDto;
 
 
 /**
@@ -40,7 +38,7 @@ public class CustomerController {
     private CustomerDao customerDao;
     @PostConstruct
     public void init() {
-        List<CustomerEntity> parken = customerDao.listAll();
+        List<CustomerEntity> customers = customerDao.listAll();
         dto = new CustomerPageDto();
         
         for (CustomerEntity customerEntity : customers) {
@@ -66,7 +64,7 @@ public class CustomerController {
         return dto;
     }
 
-    public void setDto(ParkPageDto dto) {
+    public void setDto(CustomerPageDto dto) {
         this.dto = dto;
     }
     
