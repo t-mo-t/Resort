@@ -25,6 +25,8 @@
 								 required="true">
 					</h:inputText>
 					<h:commandButton class="btn btn-primary" action="${park.add()}" value="Save"></h:commandButton>
+                                </h:form>
+                <h:form>
                                         <span class="input-group-addon">Change</span>
                                         <h:inputText label="Te zoeken ID" 
                                                      value="${park.dto.detail.id}" class="form-control"
@@ -35,8 +37,8 @@
 								 required="true">
 					</h:inputText>
                                         <h:commandButton class="btn btn-primary" action="${park.change()}" value="Change"></h:commandButton>
-
-				</h:form>
+</h:form>
+				
             </ui:define>
 
         </ui:composition>
