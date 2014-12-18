@@ -16,23 +16,20 @@
  */
 package org.thomasmore.oo3.course.resortui.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
 /**
  *
  * @author Stephan
  */
-public class BungalowEntity {
-    
-   private String id;
-   private String name;
-    
-    public String getId() {
-        return id;
-    }
-  
 
-    public void setId(String id) {
-        this.id = id;
-    }
+@Table(name = "bungalow")
+@Entity
+public class BungalowEntity extends BasicEntity{
+    
+
+   private String name;
 
     public String getName() {
         return name;
