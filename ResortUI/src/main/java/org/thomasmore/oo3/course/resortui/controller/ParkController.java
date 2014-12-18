@@ -39,14 +39,14 @@ public class ParkController {
     public void add() {
         dto.getDetail().setId(UUID.randomUUID().toString());
         dto.getList().add(dto.getDetail());
-        SampleParkEntity parkenttity = new SampleParkEntity();
-        parkenttity.setId(dto.getDetail().getId());
-        parkenttity.setName(dto.getDetail().getName());
-        parkenttity.setCountry(dto.getDetail().getCountry());
-        parkenttity.setProvince(dto.getDetail().getProvince());
-        parkenttity.setStreet(dto.getDetail().getStreet());
-        parkenttity.setStreetnumber(dto.getDetail().getStreetnumber());
-        parksDao.save(parkenttity);
+        SampleParkEntity parkentity = new SampleParkEntity();
+        parkentity.setId(dto.getDetail().getId());
+        parkentity.setName(dto.getDetail().getName());
+        parkentity.setCountry(dto.getDetail().getCountry());
+        parkentity.setProvince(dto.getDetail().getProvince());
+        parkentity.setStreet(dto.getDetail().getStreet());
+        parkentity.setStreetnumber(dto.getDetail().getStreetnumber());
+        parksDao.save(parkentity);
     }
 
     public ParkPageDto getDto() {

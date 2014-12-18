@@ -37,6 +37,15 @@ public class CustomerController {
     public void add() {
         dto.getDetail().setId(UUID.randomUUID().toString());
         dto.getList().add(dto.getDetail());
+        CustomerEntity customerentity= new CustomerEntity();
+        customerentity.setId(dto.getDetail().getId());
+        customerentity.setFirstname(dto.getDetail().getFirstname());
+        customerentity.setLastname(dto.getDetail().getLastname());
+        customerentity.setEmail(dto.getDetail().getEmail());
+        customerentity.setCellphone(dto.getDetail().getCellphone());
+        customerentity.setPromotionpoints(dto.getDetail().getPromotionpoints());
+        customersDao.save(customerentity);
+        
     }
 
     public CustomerPageDto getDto() {
