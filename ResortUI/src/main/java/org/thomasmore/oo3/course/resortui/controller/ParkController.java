@@ -18,6 +18,7 @@ package org.thomasmore.oo3.course.resortui.controller;
 
 import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import org.thomasmore.oo3.course.resortui.model.ParkPageDto;
@@ -60,8 +61,18 @@ public class ParkController {
         }
     }
     public void add() {
-        dto.getDetail().setId("NEW");
-        dto.getList().add(dto.getDetail());
+       
+         ParkDetailDto detailDto = dto.getDetail();
+        ParkEntity parkEntity = new ParkEntity();
+        parkEntity.setName(detailDto.getName());
+        parkEntity.setId(UUID.randomUUID().toString());
+        parkEntity.setNumber(detailDto.getNumber());
+        parkEntity.setCountry(detailDto.getCountry());
+        parkEntity.setCity(detailDto.getCity());
+        parkEntity.setClosingFrom(detailDto.getClosingFrom());
+        parkEntity.setClosingTill(detailDto.getClosingTill());
+        
+        parksDao.save(parkEntity);
     }
 
     public ParkPageDto getDto() {
