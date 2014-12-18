@@ -16,7 +16,7 @@
  */
 package org.thomasmore.oo3.course.resortui.rest;
 
-import org.thomasmore.oo3.course.resortui.sample.ui.rest.*;
+import org.thomasmore.oo3.course.resortui.rest.*;
 import java.util.List;
 import javax.persistence.EntityManager;
 
