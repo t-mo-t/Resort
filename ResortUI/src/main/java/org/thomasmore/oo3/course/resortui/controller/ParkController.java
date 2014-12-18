@@ -9,18 +9,20 @@ import javax.inject.Named;
 import org.thomasmore.oo3.course.resortui.model.ParkListDetailDto;
 import org.thomasmore.oo3.course.resortui.sample.business.entity.SampleParkEntity;
 import org.thomasmore.oo3.course.resortui.model.ParkPageDto;
+import org.thomasmore.oo3.course.resortui.sample.business.enitity.ParkEntity;
 import org.thomasmore.oo3.course.resortui.sample.dao.SampleParkDao;
 
 @Named(value = "park")
 @RequestScoped
 public class ParkController {
-    
+
     private ParkPageDto dto;
     @EJB
     private SampleParkDao parksDao;
+
     @PostConstruct
     public void init() {
-        List<SampleParkEntity> parks=parksDao.listAll();
+        List<SampleParkEntity> parks = parksDao.listAll();
         dto = new ParkPageDto();
         for (SampleParkEntity park : parks) {
             ParkListDetailDto listDetail = new ParkListDetailDto();
@@ -33,9 +35,18 @@ public class ParkController {
             dto.getList().add(listDetail);
         }
     }
-        public void add(){
+
+    public void add() {
         dto.getDetail().setId(UUID.randomUUID().toString());
         dto.getList().add(dto.getDetail());
+        SampleParkEntity parkenttity = new SampleParkEntity();
+        parkenttity.setId(dto.getDetail().getId());
+        parkenttity.setName(dto.getDetail().getName());
+        parkenttity.setCountry(dto.getDetail().getCountry());
+        parkenttity.setProvince(dto.getDetail().getProvince());
+        parkenttity.setStreet(dto.getDetail().getStreet());
+        parkenttity.setStreetnumber(dto.getDetail().getStreetnumber());
+        parksDao.save(parkenttity);
     }
 
     public ParkPageDto getDto() {
@@ -45,5 +56,5 @@ public class ParkController {
     public void setDto(ParkPageDto dto) {
         this.dto = dto;
     }
-        
+
 }

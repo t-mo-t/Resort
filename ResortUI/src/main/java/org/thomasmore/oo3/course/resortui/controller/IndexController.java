@@ -46,14 +46,7 @@ public class IndexController
     @PostConstruct
     public void init()
     {
-        SampleParkEntity entity =  new SampleParkEntity();
-        entity.setName("abc");
-        try {
-            parkDao.save(entity);
-        }
-        catch (Exception ex) {
-            Logger.getLogger(IndexController.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        
     }
 
     public IndexPageDto getDto()
