@@ -28,9 +28,9 @@ import org.thomasmore.oo3.course.resortui.entity.CustomerEntity;
  *
  * @author Pepijn Mores
  */
-
 @Stateless
 public class CustomerDao {
+
     @PersistenceContext
     private EntityManager em;
 

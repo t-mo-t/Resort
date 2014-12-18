@@ -24,7 +24,8 @@ import java.util.List;
  * @author Pepijn Mores
  */
 public class CustomerPageDto {
-     private CustomerDetailDto detail = new CustomerDetailDto();
+
+    private CustomerDetailDto detail = new CustomerDetailDto();
 
     private List<CustomerListDetailDto> list = new LinkedList<>();
 

@@ -1,4 +1,3 @@
-
 package org.thomasmore.oo3.course.resortui.model;
 
 /**
@@ -6,6 +5,7 @@ package org.thomasmore.oo3.course.resortui.model;
  * @author Moegie
  */
 public class ProfileDto {
+
     String username;
     String fullname = "TESTJE";
     String sex;
@@ -33,6 +33,5 @@ public class ProfileDto {
     public void setSex(String sex) {
         this.sex = sex;
     }
-    
-    
+
 }

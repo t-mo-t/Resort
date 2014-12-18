@@ -21,5 +21,5 @@ package org.thomasmore.oo3.course.resortui.model;
  * @author Stephan
  */
 public class ProfilePageDto {
-    
+
 }

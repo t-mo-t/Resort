@@ -26,39 +26,37 @@ import org.thomasmore.oo3.course.resortui.entity.CustomerEntity;
 import org.thomasmore.oo3.course.resortui.model.CustomerListDetailDto;
 import org.thomasmore.oo3.course.resortui.model.CustomerPageDto;
 
-
 /**
  *
  * @author Pepijn Mores
  */
-
 public class CustomerController {
-     private CustomerPageDto dto;
-     @EJB
+
+    private CustomerPageDto dto;
+    @EJB
     private CustomerDao customerDao;
+
     @PostConstruct
     public void init() {
         List<CustomerEntity> customers = customerDao.listAll();
         dto = new CustomerPageDto();
-        
+
         for (CustomerEntity customerEntity : customers) {
             CustomerListDetailDto listDetail = new CustomerListDetailDto();
             listDetail.setId(customerEntity.getId());
             listDetail.setName(customerEntity.getName());
             dto.getList().add(listDetail);
         }
-       
+
     }
 
-    public void add(){
+    public void add() {
         dto = new CustomerPageDto();
         CustomerEntity customerEntity = new CustomerEntity();
         CustomerListDetailDto listDetail = new CustomerListDetailDto();
         customerEntity.setName(listDetail.getName());
         customerDao.save(customerEntity);
     }
-    
-    
 
     public CustomerPageDto getDto() {
         return dto;
@@ -67,5 +65,5 @@ public class CustomerController {
     public void setDto(CustomerPageDto dto) {
         this.dto = dto;
     }
-    
+
 }

@@ -39,12 +39,11 @@ import org.thomasmore.oo3.course.resortui.entity.ParkEntity;
  */
 @Stateless
 @Path("init-db")
-public class InitDbREST{
+public class InitDbREST {
 
     @PersistenceContext(unitName = "RESORTPU")
     private EntityManager em;
 
-    
     @GET
     @Produces({"application/json", "application/xml"})
     public ParkEntity find(@PathParam("id") String id) {
@@ -52,17 +51,16 @@ public class InitDbREST{
         ParkEntity parkEntity = new ParkEntity();
         parkEntity.setName("ABC");
         objectsToSave.add(parkEntity);
-        
+
         BungalowEntity bungalowEntity = new BungalowEntity();
         bungalowEntity.setName("EDF");
         objectsToSave.add(bungalowEntity);
-        
-        for(Object objectsToSave1 : objectsToSave){
+
+        for (Object objectsToSave1 : objectsToSave) {
             em.persist(objectsToSave1);
         }
-        
+
         return parkEntity;
     }
-   
 
 }

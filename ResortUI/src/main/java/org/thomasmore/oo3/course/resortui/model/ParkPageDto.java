@@ -25,6 +25,7 @@ import org.thomasmore.oo3.course.resortui.dao.ParkDao;
  * @author Pepijn Mores
  */
 public class ParkPageDto {
+
     private ParkDetailDto detail = new ParkDetailDto();
     private List<ParkListDetailDto> list = new LinkedList<>();
 
@@ -43,5 +44,5 @@ public class ParkPageDto {
     public void setList(List<ParkListDetailDto> list) {
         this.list = list;
     }
-    
+
 }

@@ -20,7 +20,6 @@ package org.thomasmore.oo3.course.resortui.model;
  *
  * @author lucs
  */
-public class BungalowDetailDto extends BungalowListDetailDto{
-    
-   
+public class BungalowDetailDto extends BungalowListDetailDto {
+
 }

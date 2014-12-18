@@ -30,43 +30,43 @@ import org.thomasmore.oo3.course.resortui.model.ParkPageDto;
  *
  * @author Pepijn Mores
  */
-
-@Named(value="park")
+@Named(value = "park")
 @RequestScoped
 public class ParkController {
+
     private ParkPageDto dto;
-     @EJB
+    @EJB
     private ParkDao parkDao;
+
     @PostConstruct
     public void init() {
         List<ParkEntity> parken = parkDao.listAll();
         dto = new ParkPageDto();
-        
+
         for (ParkEntity parkEntity : parken) {
             ParkListDetailDto listDetail = new ParkListDetailDto();
             listDetail.setId(parkEntity.getId());
             listDetail.setName(parkEntity.getName());
             dto.getList().add(listDetail);
         }
-       
+
     }
 
-    public void add(){
+    public void add() {
         ParkEntity parkEntity = new ParkEntity();
         parkEntity.setName(dto.getDetail().getName());
         parkDao.save(parkEntity);
     }
-    
-    public void change(){
+
+    public void change() {
         ParkEntity parkEntity = parkDao.findById(dto.getDetail().getId());
         parkEntity.setName(dto.getDetail().getName());
         parkDao.save(parkEntity);
     }
-    
-    public void delete(){
+
+    public void delete() {
         parkDao.deleteById(dto.getDetail().getId());
     }
-    
 
     public ParkPageDto getDto() {
         return dto;
@@ -75,5 +75,5 @@ public class ParkController {
     public void setDto(ParkPageDto dto) {
         this.dto = dto;
     }
-    
+
 }

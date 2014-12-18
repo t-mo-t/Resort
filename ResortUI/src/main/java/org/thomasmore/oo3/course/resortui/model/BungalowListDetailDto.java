@@ -21,9 +21,9 @@ package org.thomasmore.oo3.course.resortui.model;
  * @author lucs
  */
 public class BungalowListDetailDto {
-    
+
     private String id;
-    
+
     private String name;
 
     public String getId() {
@@ -41,5 +41,5 @@ public class BungalowListDetailDto {
     public void setName(String name) {
         this.name = name;
     }
-    
+
 }

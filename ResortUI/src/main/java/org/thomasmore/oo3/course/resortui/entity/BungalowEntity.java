@@ -24,16 +24,14 @@ import javax.xml.bind.annotation.XmlRootElement;
  *
  * @author Stephan
  */
-
 @Table(name = "bungalow")
 @Entity
 @XmlRootElement
-public class BungalowEntity extends BasicEntity{
-    
+public class BungalowEntity extends BasicEntity {
 
-   private String name;
-   private String type;
-   private String parkfk;
+    private String name;
+    private String type;
+    private String parkfk;
 
     public String getName() {
         return name;
@@ -49,5 +47,5 @@ public class BungalowEntity extends BasicEntity{
 
     public void setType(String type) {
         this.type = type;
-    }    
+    }
 }

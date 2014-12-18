@@ -21,8 +21,9 @@ package org.thomasmore.oo3.course.resortui.model;
  * @author Pepijn Mores
  */
 public class ParkListDetailDto {
+
     private String id;
-    
+
     private String name;
 
     public String getId() {

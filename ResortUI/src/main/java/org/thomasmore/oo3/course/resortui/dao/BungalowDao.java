@@ -19,7 +19,8 @@ package org.thomasmore.oo3.course.resortui.dao;
 /**
  *
  * @author Pepijn
- */import java.io.Serializable;
+ */
+import java.io.Serializable;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;

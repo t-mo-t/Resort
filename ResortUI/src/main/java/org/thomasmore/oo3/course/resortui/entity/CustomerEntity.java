@@ -27,8 +27,9 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Table(name = "bungalow")
 @Entity
 @XmlRootElement
-public class CustomerEntity extends BasicEntity{
-     private String name;
+public class CustomerEntity extends BasicEntity {
+
+    private String name;
 
     public String getName() {
         return name;
@@ -37,6 +38,5 @@ public class CustomerEntity extends BasicEntity{
     public void setName(String name) {
         this.name = name;
     }
-   
-    
+
 }

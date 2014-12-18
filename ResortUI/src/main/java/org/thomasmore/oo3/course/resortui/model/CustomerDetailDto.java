@@ -20,6 +20,6 @@ package org.thomasmore.oo3.course.resortui.model;
  *
  * @author Pepijn Mores
  */
-public class CustomerDetailDto extends CustomerListDetailDto{
-    
+public class CustomerDetailDto extends CustomerListDetailDto {
+
 }

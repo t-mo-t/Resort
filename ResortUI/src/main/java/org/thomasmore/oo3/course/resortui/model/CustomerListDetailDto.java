@@ -21,8 +21,9 @@ package org.thomasmore.oo3.course.resortui.model;
  * @author Pepijn Mores
  */
 public class CustomerListDetailDto {
-     private String id;
-    
+
+    private String id;
+
     private String name;
 
     public String getId() {
@@ -40,5 +41,5 @@ public class CustomerListDetailDto {
     public void setName(String name) {
         this.name = name;
     }
-    
+
 }

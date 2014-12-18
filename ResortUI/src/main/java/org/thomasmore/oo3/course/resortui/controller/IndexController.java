@@ -35,24 +35,20 @@ import org.thomasmore.oo3.course.resortui.dao.ParkDao;
  */
 @Named(value = "index")
 @RequestScoped
-public class IndexController
-{
+public class IndexController {
 
     private IndexPageDto dto;
 
     @PostConstruct
-    public void init()
-    {
-        
+    public void init() {
+
     }
 
-    public IndexPageDto getDto()
-    {
+    public IndexPageDto getDto() {
         return dto;
     }
 
-    public void setDto(IndexPageDto dto)
-    {
+    public void setDto(IndexPageDto dto) {
         this.dto = dto;
     }
 

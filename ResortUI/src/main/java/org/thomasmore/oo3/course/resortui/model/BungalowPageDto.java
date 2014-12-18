@@ -45,6 +45,4 @@ public class BungalowPageDto {
         this.list = list;
     }
 
-    
-    
 }

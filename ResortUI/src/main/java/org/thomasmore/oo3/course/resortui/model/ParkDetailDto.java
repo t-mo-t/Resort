@@ -20,6 +20,6 @@ package org.thomasmore.oo3.course.resortui.model;
  *
  * @author Pepijn Mores
  */
-public class ParkDetailDto extends ParkListDetailDto{
-    
+public class ParkDetailDto extends ParkListDetailDto {
+
 }
