@@ -36,8 +36,8 @@ public class ParkEntity extends BasicEntity{
     private String name;
     private int number;
     private String country;
-    private Date closingFrom;
-    private Date closingTill;
+    private String closingFrom;
+    private String closingTill;
     private String city;
 
     public String getName() {
@@ -64,19 +64,19 @@ public class ParkEntity extends BasicEntity{
         this.country = country;
     }
 
-    public Date getClosingFrom() {
+    public String getClosingFrom() {
         return closingFrom;
     }
 
-    public void setClosingFrom(Date closingFrom) {
+    public void setClosingFrom(String closingFrom) {
         this.closingFrom = closingFrom;
     }
 
-    public Date getClosingTill() {
+    public String getClosingTill() {
         return closingTill;
     }
 
-    public void setClosingTill(Date closingTill) {
+    public void setClosingTill(String closingTill) {
         this.closingTill = closingTill;
     }
 

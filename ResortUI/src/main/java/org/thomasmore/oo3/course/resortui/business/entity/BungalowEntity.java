@@ -40,6 +40,7 @@ public class BungalowEntity extends BasicEntity{
     private boolean sunbed;
     private String description;
     private String type;
+    
     public String getName() {
         return name;
     }

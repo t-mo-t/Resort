@@ -13,11 +13,18 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
+
+     
+IK, ondergetekende Raf Portael,  HEB DE WIJSHEID VAN GUNTHER VAN KELST IN PACHT 
+GENOMEN OM DEZE OPDRACHT TOT EEN PRACHTIG EINDE TE BRENGEN.
+HAIL Gunther !!!!
+     
+*/
 package org.thomasmore.oo3.course.resortui.controller;
 
 import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import org.thomasmore.oo3.course.resortui.model.BungalowPageDto;
@@ -63,8 +70,13 @@ public class BungalowController {
     }
 
     public void add(){
-        dto.getDetail().setId("NEW");
+      //  dto.getDetail().setId("NEW");
+       //gunther
+        dto.getDetail().setId(UUID.randomUUID().toString());
+        
         dto.getList().add(dto.getDetail());
+        //gunther
+       // bungalowsDao.save(BungalowEntity);
     }
   
     public BungalowPageDto getDto() {

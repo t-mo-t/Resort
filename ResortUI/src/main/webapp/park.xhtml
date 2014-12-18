@@ -1,35 +1,72 @@
-<?xml version='1.0' encoding='UTF-8' ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-	  xmlns:h="http://xmlns.jcp.org/jsf/html">
-
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
     <body>
-
         <ui:composition template="./common/template-simple.xhtml">
-
             <ui:define name="title">
                 park
             </ui:define>
-
             <ui:define name="content">
-				<ul>
-					<ui:repeat value="${park.dto.list}" var="listDetail">
-						<li>${listDetail.id} - ${listDetail.name}</li>
-					</ui:repeat>
-				</ul>
-				<h:form>
-					<span class="input-group-addon">Name</span>
-					<h:inputText label="Login" 
-								 value="${park.dto.detail.name}" class="form-control"
-								 required="true">
-					</h:inputText>
-					<h:commandButton class="btn btn-primary" action="${park.add()}" value="Save"></h:commandButton>
-
-				</h:form>
+                <table>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Number</th> 
+                        <th>Country</th>
+                        <th>Closing from</th>
+                        <th>Closing untill</th>
+                        <th>City</th>
+                    </tr>
+                    <tbody>
+                        <ui:repeat value="${park.dto.list}" var="listDetail">
+                            <tr>
+                                <td>${listDetail.id}</td>
+                                <td>${listDetail.name}</td>
+                                <td>${listDetail.number}</td>
+                                <td>${listDetail.country}</td>
+                                <td>${listDetail.closingFrom}</td>
+                                <td>${listDetail.closingTill}</td>
+                                <td>${listDetail.city}</td>
+                            </tr>
+                        </ui:repeat>
+                    </tbody>
+                </table>
+                <h:form>
+                    <span class="input-group-addon">Name</span>
+                    <h:inputText label="Login" 
+                                 value="${park.dto.detail.name}" class="form-control"
+                                 required="true">
+                    </h:inputText>
+                    <span class="input-group-addon">Number</span>
+                    <h:inputText label="Login" 
+                                 value="${park.dto.detail.number}" class="form-control"
+                                 required="true">
+                    </h:inputText>
+                    <span class="input-group-addon">Country</span>
+                    <h:inputText label="Login" 
+                                 value="${park.dto.detail.country}" class="form-control"
+                                 required="true">
+                    </h:inputText>
+                    <span class="input-group-addon">Closing from</span>
+                    <h:inputText label="Login" 
+                                 value="${park.dto.detail.closingFrom}" class="form-control"
+                                 required="true">
+                    </h:inputText>    
+                    <span class="input-group-addon">Closing untill</span>
+                    <h:inputText label="Login" 
+                                 value="${park.dto.detail.closingTill}" class="form-control"
+                                 required="true">
+                    </h:inputText>
+                    <span class="input-group-addon">City</span>
+                    <h:inputText label="Login" 
+                                 value="${park.dto.detail.city}" class="form-control"
+                                 required="true">
+                    </h:inputText>
+                    <h:commandButton class="btn btn-primary" action="${park.add()}" value="Save"></h:commandButton>
+                </h:form>
             </ui:define>
-
         </ui:composition>
-
     </body>
 </html>
