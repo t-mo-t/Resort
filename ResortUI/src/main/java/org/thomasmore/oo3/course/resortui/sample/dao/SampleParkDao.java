@@ -29,10 +29,10 @@ import org.thomasmore.oo3.course.resortui.sample.business.entity.SampleParkEntit
  *
  * @author lucs
  */
-@Stateless
+//@Stateless
 public class SampleParkDao implements Serializable {
 
-    @PersistenceContext
+   /* @PersistenceContext
     private EntityManager em;
 
     public void save(SampleParkEntity parkEntity) {
@@ -53,4 +53,6 @@ public class SampleParkDao implements Serializable {
     public void deleteById(String id) {
         em.remove(findById(id));
     }
+}
+    */
 }

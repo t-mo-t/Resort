@@ -26,7 +26,7 @@ import javax.annotation.PostConstruct;
  * @author lucs
  */
 public class SampleIndexPageDto implements Serializable {
-
+/*
     private String name = "MyName";
 
     @PostConstruct
@@ -42,5 +42,5 @@ public class SampleIndexPageDto implements Serializable {
     public void setName(String name) {
         this.name = name;
     }
-
+*/
 }

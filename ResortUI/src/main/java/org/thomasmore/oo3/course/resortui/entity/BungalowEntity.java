@@ -18,6 +18,7 @@ package org.thomasmore.oo3.course.resortui.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
@@ -26,6 +27,7 @@ import javax.persistence.Table;
 
 @Table(name = "bungalow")
 @Entity
+@XmlRootElement
 public class BungalowEntity extends BasicEntity{
     
 

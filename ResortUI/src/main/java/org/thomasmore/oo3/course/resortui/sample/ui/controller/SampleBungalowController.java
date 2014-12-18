@@ -26,10 +26,10 @@ import org.thomasmore.oo3.course.resortui.model.BungalowListDetailDto;
  *
  * @author lucs
  */
-@Named(value = "sampleBungalow")
-@RequestScoped
+/*@Named(value = "sampleBungalow")
+@RequestScoped*/
 public class SampleBungalowController {
-
+/*
     private BungalowPageDto dto;
 
     @PostConstruct
@@ -60,5 +60,5 @@ public class SampleBungalowController {
     public void setDto(BungalowPageDto dto) {
         this.dto = dto;
     }
-
+*/
 }

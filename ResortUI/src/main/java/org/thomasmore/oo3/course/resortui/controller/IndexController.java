@@ -26,8 +26,8 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 import org.thomasmore.oo3.course.resortui.model.IndexPageDto;
-import org.thomasmore.oo3.course.resortui.sample.business.entity.SampleParkEntity;
-import org.thomasmore.oo3.course.resortui.sample.dao.SampleParkDao;
+import org.thomasmore.oo3.course.resortui.entity.ParkEntity;
+import org.thomasmore.oo3.course.resortui.dao.ParkDao;
 
 /**
  *

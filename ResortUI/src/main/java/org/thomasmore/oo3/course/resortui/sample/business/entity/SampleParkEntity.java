@@ -25,11 +25,12 @@ import org.thomasmore.oo3.course.resortui.entity.BasicEntity;
  *
  * @author lucs
  */
+/*
 @Entity
 @Table(name = "sample_park")
-@XmlRootElement
+@XmlRootElement*/
 public class SampleParkEntity extends BasicEntity{
-    
+    /*
     private String name;
 
     public String getName() {
@@ -41,5 +42,5 @@ public class SampleParkEntity extends BasicEntity{
     }
     
    
-    
+    */
 }

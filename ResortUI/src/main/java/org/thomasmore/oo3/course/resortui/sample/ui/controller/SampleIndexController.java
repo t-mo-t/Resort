@@ -30,12 +30,12 @@ import org.thomasmore.oo3.course.resortui.sample.ui.model.SampleIndexPageDto;
 /**
  *
  * @author lucs
- */
+ */ /*
 @Named(value = "sampleIndex")
-@RequestScoped
+@RequestScoped*/
 public class SampleIndexController
 {
-
+/*
     private SampleIndexPageDto dto;
     
     @EJB
@@ -63,5 +63,5 @@ public class SampleIndexController
     {
         this.dto = dto;
     }
-
+*/
 }

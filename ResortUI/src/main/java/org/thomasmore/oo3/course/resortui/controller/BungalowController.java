@@ -39,13 +39,7 @@ public class BungalowController {
         
         
         dto = new BungalowPageDto();
-        
-        for (int i = 0; i < 10; i++) {
-            BungalowListDetailDto listDetail = new BungalowListDetailDto();
-            listDetail.setId("@"+i);
-            listDetail.setName("B"+(i+1));
-            dto.getList().add(listDetail);
-        }
+       
     }
 
     public void add(){
