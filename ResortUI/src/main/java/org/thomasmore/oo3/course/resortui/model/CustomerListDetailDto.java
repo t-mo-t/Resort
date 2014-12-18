@@ -16,32 +16,29 @@
  */
 package org.thomasmore.oo3.course.resortui.model;
 
-import java.util.LinkedList;
-import java.util.List;
-import org.thomasmore.oo3.course.resortui.dao.ParkDao;
-
 /**
  *
  * @author Pepijn Mores
  */
-public class ParkPageDto {
-    private ParkDetailDto detail = new ParkDetailDto();
-    private List<ParkListDetailDto> list = new LinkedList<>();
+public class CustomerListDetailDto {
+     private String id;
+    
+    private String name;
 
-    public ParkDetailDto getDetail() {
-        return detail;
+    public String getId() {
+        return id;
     }
 
-    public void setDetail(ParkDetailDto detail) {
-        this.detail = detail;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public List<ParkListDetailDto> getList() {
-        return list;
+    public String getName() {
+        return name;
     }
 
-    public void setList(List<ParkListDetailDto> list) {
-        this.list = list;
+    public void setName(String name) {
+        this.name = name;
     }
     
 }

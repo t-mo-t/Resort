@@ -14,34 +14,29 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.thomasmore.oo3.course.resortui.model;
+package org.thomasmore.oo3.course.resortui.entity;
 
-import java.util.LinkedList;
-import java.util.List;
-import org.thomasmore.oo3.course.resortui.dao.ParkDao;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
  * @author Pepijn Mores
  */
-public class ParkPageDto {
-    private ParkDetailDto detail = new ParkDetailDto();
-    private List<ParkListDetailDto> list = new LinkedList<>();
+@Table(name = "bungalow")
+@Entity
+@XmlRootElement
+public class CustomerEntity extends BasicEntity{
+     private String name;
 
-    public ParkDetailDto getDetail() {
-        return detail;
+    public String getName() {
+        return name;
     }
 
-    public void setDetail(ParkDetailDto detail) {
-        this.detail = detail;
+    public void setName(String name) {
+        this.name = name;
     }
-
-    public List<ParkListDetailDto> getList() {
-        return list;
-    }
-
-    public void setList(List<ParkListDetailDto> list) {
-        this.list = list;
-    }
+   
     
 }

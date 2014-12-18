@@ -19,49 +19,50 @@ package org.thomasmore.oo3.course.resortui.controller;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
-import javax.enterprise.context.RequestScoped;
-import javax.inject.Named;
-import org.thomasmore.oo3.course.resortui.dao.ParkDao;
-import org.thomasmore.oo3.course.resortui.entity.ParkEntity;
+import org.thomasmore.oo3.course.resortui.dao.CustomerDao;
+
+import org.thomasmore.oo3.course.resortui.entity.CustomerEntity;
+
+import org.thomasmore.oo3.course.resortui.model.CustomerListDetailDto;
+import org.thomasmore.oo3.course.resortui.model.CustomerPageDto;
 import org.thomasmore.oo3.course.resortui.model.ParkListDetailDto;
 import org.thomasmore.oo3.course.resortui.model.ParkPageDto;
+
 
 /**
  *
  * @author Pepijn Mores
  */
 
-@Named(value="park")
-@RequestScoped
-public class ParkController {
-    private ParkPageDto dto;
+public class CustomerController {
+     private CustomerPageDto dto;
      @EJB
-    private ParkDao parkDao;
+    private CustomerDao customerDao;
     @PostConstruct
     public void init() {
-        List<ParkEntity> parken = parkDao.listAll();
-        dto = new ParkPageDto();
+        List<CustomerEntity> parken = customerDao.listAll();
+        dto = new CustomerPageDto();
         
-        for (ParkEntity parkEntity : parken) {
-            ParkListDetailDto listDetail = new ParkListDetailDto();
-            listDetail.setId(parkEntity.getId());
-            listDetail.setName(parkEntity.getName());
+        for (CustomerEntity customerEntity : customers) {
+            CustomerListDetailDto listDetail = new CustomerListDetailDto();
+            listDetail.setId(customerEntity.getId());
+            listDetail.setName(customerEntity.getName());
             dto.getList().add(listDetail);
         }
        
     }
 
     public void add(){
-        dto = new ParkPageDto();
-        ParkEntity parkEntity = new ParkEntity();
-        ParkListDetailDto listDetail = new ParkListDetailDto();
-        parkEntity.setName(listDetail.getName());
-        parkDao.save(parkEntity);
+        dto = new CustomerPageDto();
+        CustomerEntity customerEntity = new CustomerEntity();
+        CustomerListDetailDto listDetail = new CustomerListDetailDto();
+        customerEntity.setName(listDetail.getName());
+        customerDao.save(customerEntity);
     }
     
     
 
-    public ParkPageDto getDto() {
+    public CustomerPageDto getDto() {
         return dto;
     }
 
