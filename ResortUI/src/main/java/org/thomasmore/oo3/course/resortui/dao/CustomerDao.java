@@ -35,7 +35,7 @@ public class CustomerDao {
     private EntityManager em;
 
     public void save(CustomerEntity customerEntity) {
-        em.persist(customerEntity);
+        em.merge(customerEntity);
     }
 
     public List<CustomerEntity> listAll() {

@@ -52,13 +52,20 @@ public class ParkController {
     }
 
     public void add(){
-        dto = new ParkPageDto();
         ParkEntity parkEntity = new ParkEntity();
-        ParkListDetailDto listDetail = new ParkListDetailDto();
-        parkEntity.setName(listDetail.getName());
+        parkEntity.setName(dto.getDetail().getName());
         parkDao.save(parkEntity);
     }
     
+    public void change(){
+        ParkEntity parkEntity = parkDao.findById(dto.getDetail().getId());
+        parkEntity.setName(dto.getDetail().getName());
+        parkDao.save(parkEntity);
+    }
+    
+    public void delete(){
+        parkDao.deleteById(dto.getDetail().getId());
+    }
     
 
     public ParkPageDto getDto() {
