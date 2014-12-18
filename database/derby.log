@@ -1,7 +1,7 @@
-Thu Dec 04 11:03:11 CET 2014 : Apache Derby Network Server - 10.9.1.0 - (1344872) started and ready to accept connections on port 1527
+Thu Dec 18 12:13:17 CET 2014 : Apache Derby Network Server - 10.9.1.0 - (1344872) started and ready to accept connections on port 1527
 ----------------------------------------------------------------
-Thu Dec 04 11:03:28 CET 2014:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.9.1.0 - (1344872): instance a816c00e-014a-14c0-dbbf-ffffdad2bf23 
+Thu Dec 18 12:13:17 CET 2014:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.9.1.0 - (1344872): instance a816c00e-014a-5d1a-1253-ffffdad2bf23 
 on database directory C:\Users\Shari\Documents\GitHub\Resort\database\resortdb  with class loader sun.misc.Launcher$AppClassLoader@107077e 
 Loaded from file:/C:/Program%20Files%20(x86)/glassfish-4.0/javadb/lib/derby.jar
 java.vendor=Oracle Corporation
@@ -10,16 +10,4 @@ user.dir=C:\Program Files (x86)\glassfish-4.0\javadb
 derby.system.home=C:\Users\Shari\Documents\GitHub\Resort\database
 Database Class Loader started - derby.database.classpath=''
 ----------------------------------------------------------------
-Thu Dec 04 11:03:30 CET 2014:
-Shutting down instance a816c00e-014a-14c0-dbbf-ffffdad2bf23 on database directory C:\Users\Shari\Documents\GitHub\Resort\database\resortdb with class loader sun.misc.Launcher$AppClassLoader@107077e 
-Thu Dec 04 11:03:30 CET 2014 Thread[DRDAConnThread_4,5,main] (DATABASE = resortdb), (DRDAID = {2}), Database 'resortdb' shutdown.
-----------------------------------------------------------------
-Thu Dec 04 11:03:32 CET 2014:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.9.1.0 - (1344872): instance 45b300a8-014a-14c0-dbbf-ffffdad2bf23 
-on database directory C:\Users\Shari\Documents\GitHub\Resort\database\resortdb  with class loader sun.misc.Launcher$AppClassLoader@107077e 
-Loaded from file:/C:/Program%20Files%20(x86)/glassfish-4.0/javadb/lib/derby.jar
-java.vendor=Oracle Corporation
-java.runtime.version=1.7.0_25-b17
-user.dir=C:\Program Files (x86)\glassfish-4.0\javadb
-derby.system.home=C:\Users\Shari\Documents\GitHub\Resort\database
-Database Class Loader started - derby.database.classpath=''
+Thu Dec 18 12:41:59 CET 2014: Shutting down Derby engine

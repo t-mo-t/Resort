@@ -16,11 +16,17 @@
  */
 package org.thomasmore.oo3.course.resortui.controller;
 
+import static java.rmi.Naming.list;
+import static java.util.Collections.list;
 import java.util.Date;
+import java.util.List;
 import javax.annotation.PostConstruct;
+import javax.ejb.EJB;
 import org.thomasmore.oo3.course.resortui.model.BungalowPageDto;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
+import org.thomasmore.oo3.course.resortui.dao.BungalowDao;
+import org.thomasmore.oo3.course.resortui.entity.BungalowEntity;
 import org.thomasmore.oo3.course.resortui.model.BungalowDetailDto;
 import org.thomasmore.oo3.course.resortui.model.BungalowListDetailDto;
 
@@ -33,12 +39,16 @@ import org.thomasmore.oo3.course.resortui.model.BungalowListDetailDto;
 public class BungalowController {
 
     private BungalowPageDto dto;
+    
+   // @EJB
+    //private BungalowDao BungalowDao;
 
     @PostConstruct
     public void init() {
         
-        
+       // List<BungalowEntity> bungalowlist = BungalowDao.listAll();
         dto = new BungalowPageDto();
+        
         
         for (int i = 0; i < 10; i++) {
             BungalowListDetailDto listDetail = new BungalowListDetailDto();
@@ -46,6 +56,15 @@ public class BungalowController {
             listDetail.setName("B"+(i+1));
             dto.getList().add(listDetail);
         }
+        
+        /*
+        for (BungalowEntity bungalow : bungalowlist) { 
+            BungalowListDetailDto listDetail = new BungalowListDetailDto();
+            listDetail.setId(bungalow.getId());
+            listDetail.setName(bungalow.getName());
+            dto.getList().add(listDetail);
+        }
+        */
     }
 
     public void add(){

@@ -29,7 +29,9 @@ import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
-import org.thomasmore.oo3.course.resortui.sample.business.entity.SampleParkEntity;
+import org.thomasmore.oo3.course.resortui.entity.BungalowEntity;
+import org.thomasmore.oo3.course.resortui.entity.ParkEntity;
+
 
 /**
  *
@@ -45,12 +47,25 @@ public class InitDbREST{
     
     @GET
     @Produces({"application/json", "application/xml"})
-    public SampleParkEntity find(@PathParam("id") String id) {
-        SampleParkEntity parkEntity = new SampleParkEntity();
-        parkEntity.setName("ABC");
+   public ParkEntity createDB() {
+               
+        List<Object> objectsToSave = new LinkedList<>();
         
-//        List<Object> objectsToSave = new LinkedList<>();
-        em.persist(parkEntity);
+        ParkEntity parkEntity = new ParkEntity();
+        parkEntity.setName("Oostende");
+        objectsToSave.add(parkEntity);
+        
+
+        BungalowEntity bungalowEntity = new BungalowEntity();
+        bungalowEntity.setName("VIP");
+        objectsToSave.add(bungalowEntity);
+        
+        
+        for (Object objectsToSave2 : objectsToSave) {
+
+            em.persist(objectsToSave2);
+
+        }
         
         return parkEntity;
     }

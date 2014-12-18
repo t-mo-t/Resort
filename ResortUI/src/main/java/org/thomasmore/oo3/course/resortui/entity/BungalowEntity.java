@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014 Stephan
+ * Copyright (C) 2014 Shari
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -16,24 +16,21 @@
  */
 package org.thomasmore.oo3.course.resortui.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlRootElement;
+
 /**
  *
- * @author Stephan
+ * @author Shari
  */
-public class BungalowEntity {
+@Entity
+@Table(name = "ShariBungalow")
+@XmlRootElement
+public class BungalowEntity extends BasicEntity{
     
-   private String id;
    private String name;
-    
-    public String getId() {
-        return id;
-    }
-  
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
+   
     public String getName() {
         return name;
     }

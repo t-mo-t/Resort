@@ -16,9 +16,14 @@
  */
 package org.thomasmore.oo3.course.resortui.controller;
 
+import java.util.List;
 import javax.annotation.PostConstruct;
+import javax.ejb.EJB;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
+import org.thomasmore.oo3.course.resortui.dao.BungalowDao;
+import org.thomasmore.oo3.course.resortui.dao.ParkDao;
+import org.thomasmore.oo3.course.resortui.entity.ParkEntity;
 import org.thomasmore.oo3.course.resortui.model.ParkDetailDto;
 import org.thomasmore.oo3.course.resortui.model.ParkListDetailDto;
 import org.thomasmore.oo3.course.resortui.model.ParkPageDto;
@@ -31,20 +36,35 @@ import org.thomasmore.oo3.course.resortui.model.ParkPageDto;
 @Named(value = "park")
 @RequestScoped
 public class ParkController {
+    
     private ParkPageDto dto;
-
+    
+    @EJB
+    private ParkDao parkDao;
+    
     @PostConstruct
     public void init() {
         
-        
+        List<ParkEntity> parklist = parkDao.listAll();
         dto = new ParkPageDto();
         
+        /*
         for (int i = 0; i < 10; i++) {
             ParkListDetailDto listDetail = new ParkListDetailDto();
             listDetail.setId("@"+i);
             listDetail.setName("B"+(i+1));
             dto.getList().add(listDetail);
         }
+        */
+        
+        
+        for (ParkEntity park : parklist) { 
+            ParkListDetailDto listDetail = new ParkListDetailDto();
+            listDetail.setId(park.getId());
+            listDetail.setName(park.getName());
+            dto.getList().add(listDetail);
+        }
+        
     }
 
     public void add(){

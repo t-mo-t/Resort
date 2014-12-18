@@ -16,21 +16,20 @@
  */
 package org.thomasmore.oo3.course.resortui.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlRootElement;
+
 /**
  *
  * @author Shari
  */
-public class ParkEntity {
-    private String id;
+@Entity
+@Table(name = "ShariPark")
+@XmlRootElement
+public class ParkEntity extends BasicEntity{
+    
     private String name;
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;
