@@ -56,28 +56,21 @@ public class InitDbREST {
         parkEntity.setName("Lol");
         objectsToSave.add(parkEntity);
 
-//        List<Object> objectsToSave = new LinkedList<>();
+        SampleBungalowEntity bungalowEntity = new SampleBungalowEntity();
+        bungalowEntity.setName("ABCbung");
+        objectsToSave.add(bungalowEntity);
+
+        bungalowEntity = new SampleBungalowEntity();
+        bungalowEntity.setName("Lolbung");
+        objectsToSave.add(bungalowEntity);
+
         for (Object objectsToSave1 : objectsToSave) {
             em.persist(objectsToSave1);
         }
 
         return parkEntity;
-    }
 
-    public SampleBungalowEntity createDB2() {
-        List<Object> objectsToSave2 = new LinkedList<>();
-        SampleBungalowEntity bungalowEntity = new SampleBungalowEntity();
-        bungalowEntity.setName("ABCbung");
-        objectsToSave2.add(bungalowEntity);
 
-        bungalowEntity = new SampleBungalowEntity();
-        bungalowEntity.setName("Lolbung");
-        objectsToSave2.add(bungalowEntity);
-        for (Object objectsToSave3 : objectsToSave2) {
-            em.persist(objectsToSave3);
-        }
-
-        return bungalowEntity;
     }
 
 }
