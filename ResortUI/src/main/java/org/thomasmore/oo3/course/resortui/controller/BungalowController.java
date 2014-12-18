@@ -18,9 +18,11 @@ package org.thomasmore.oo3.course.resortui.controller;
 
 import java.util.Date;
 import javax.annotation.PostConstruct;
+import javax.ejb.EJB;
 import org.thomasmore.oo3.course.resortui.model.BungalowPageDto;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
+import org.thomasmore.oo3.course.resortui.dao.BungalowDao;
 import org.thomasmore.oo3.course.resortui.model.BungalowDetailDto;
 import org.thomasmore.oo3.course.resortui.model.BungalowListDetailDto;
 
@@ -33,7 +35,9 @@ import org.thomasmore.oo3.course.resortui.model.BungalowListDetailDto;
 public class BungalowController {
 
     private BungalowPageDto dto;
-
+    @EJB
+    private BungalowDao bungalowDao;
+    
     @PostConstruct
     public void init() {
         
