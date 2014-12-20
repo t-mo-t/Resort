@@ -16,12 +16,16 @@
  */
 package org.thomasmore.oo3.course.resortui.controller;
 
-import java.util.Date;
+import java.util.List;
 import javax.annotation.PostConstruct;
-import org.thomasmore.oo3.course.resortui.model.ParkPageDto;
+import javax.ejb.EJB;
+
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
-import org.thomasmore.oo3.course.resortui.model.ParkDetailDto;
+
+import org.thomasmore.oo3.course.resortui.business.entity.ParkEntity;
+import org.thomasmore.oo3.course.resortui.dao.ParkDao;
+import org.thomasmore.oo3.course.resortui.model.ParkPageDto;
 import org.thomasmore.oo3.course.resortui.model.ParkListDetailDto;
 
 /**
@@ -33,24 +37,39 @@ import org.thomasmore.oo3.course.resortui.model.ParkListDetailDto;
 public class ParkController {
 
     private ParkPageDto dto;
-
+    
+    @EJB
+    private ParkDao parkDao;
+    
     @PostConstruct
     public void init() {
         
         
         dto = new ParkPageDto();
         
-        for (int i = 0; i < 10; i++) {
+        
+        List<ParkEntity> parks = parkDao.listAll();
+        dto = new ParkPageDto();
+        
+        for (ParkEntity park : parks) {
             ParkListDetailDto listDetail = new ParkListDetailDto();
-            listDetail.setId("@"+i);
-            listDetail.setName("B"+(i+1));
-            dto.getList().add(listDetail);
+            listDetail.setId(park.getId());
+            listDetail.setName(park.getName());
+            listDetail.setLocation(park.getLocation());
+            listDetail.setCapacity(park.getCapacity());
+           dto.getList().add(listDetail);
         }
     }
 
     public void add(){
         dto.getDetail().setId("NEW");
         dto.getList().add(dto.getDetail());
+        ParkEntity parkentity = new ParkEntity();
+        parkentity.setId(dto.getDetail().getId());
+        parkentity.setName(dto.getDetail().getName());
+        parkentity.setLocation(dto.getDetail().getLocation());
+        parkentity.setCapacity(dto.getDetail().getCapacity());
+        parkDao.save(parkentity);
     }
     
     

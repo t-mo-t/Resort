@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.thomasmore.oo3.course.resortui.entity;
+package org.thomasmore.oo3.course.resortui.business.entity;
 
 import java.util.UUID;
 import javax.persistence.Id;
@@ -29,7 +29,7 @@ public class BasicEntity {
     
     @Id
     private String id = UUID.randomUUID().toString();
-
+    
     public String getId() {
         return id;
     }

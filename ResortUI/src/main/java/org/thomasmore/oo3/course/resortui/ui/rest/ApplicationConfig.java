@@ -14,8 +14,9 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.thomasmore.oo3.course.resortui.sample.ui.rest;
+package org.thomasmore.oo3.course.resortui.ui.rest;
 
+import org.thomasmore.oo3.course.resortui.ui.rest.*;
 import java.util.Set;
 import javax.ws.rs.core.Application;
 
@@ -23,7 +24,7 @@ import javax.ws.rs.core.Application;
  *
  * @author lucs
  */
-@javax.ws.rs.ApplicationPath("samplerest")
+@javax.ws.rs.ApplicationPath("rest")
 public class ApplicationConfig extends Application {
 
     @Override
@@ -42,7 +43,6 @@ public class ApplicationConfig extends Application {
     private void addRestResourceClasses(Set<Class<?>> resources) {
         resources.add(org.thomasmore.oo3.course.resortui.sample.ui.rest.SampleInitDbREST.class);
         resources.add(org.thomasmore.oo3.course.resortui.ui.rest.InitDbREST.class);
-        
     }
     
 }

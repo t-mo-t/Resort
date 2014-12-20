@@ -14,28 +14,44 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.thomasmore.oo3.course.resortui.entity;
+package org.thomasmore.oo3.course.resortui.business.entity;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlRootElement;
+import org.thomasmore.oo3.course.resortui.business.entity.BasicEntity;
 
 /**
  *
  * @author Stephan
  */
-public class BungalowEntity {
+@Entity
+@Table(name = "bungalow")
+@XmlRootElement
+public class BungalowEntity extends BasicEntity{
     
-   private String id;
+   private String type;
+   private int price;
    private String name;
     
-    public String getId() {
-        return id;
-    }
-  
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
     public String getName() {
         return name;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getType() {
+        return type;
     }
 
     public void setName(String name) {

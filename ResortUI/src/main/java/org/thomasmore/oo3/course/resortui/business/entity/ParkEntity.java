@@ -14,8 +14,9 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.thomasmore.oo3.course.resortui.sample.business.entity;
+package org.thomasmore.oo3.course.resortui.business.entity;
 
+import org.thomasmore.oo3.course.resortui.business.entity.*;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -26,11 +27,28 @@ import org.thomasmore.oo3.course.resortui.business.entity.BasicEntity;
  * @author lucs
  */
 @Entity
-@Table(name = "sample_bungalow")
+@Table(name = "park")
 @XmlRootElement
-public class SampleBungalowEntity extends BasicEntity{
+public class ParkEntity extends BasicEntity{
     
+    private String location;
+    private int capacity;
     private String name;
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public int getCapacity() {
+        return capacity;
+    }
+
+    public void setCapacity(int capacity) {
+        this.capacity = capacity;
+    }
 
     public String getName() {
         return name;
@@ -39,4 +57,7 @@ public class SampleBungalowEntity extends BasicEntity{
     public void setName(String name) {
         this.name = name;
     }
+    
+   
+    
 }
