@@ -16,7 +16,6 @@
  */
 package org.thomasmore.oo3.course.resortui.model;
 
-import java.io.Serializable;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -24,25 +23,25 @@ import java.util.List;
  *
  * @author lucs
  */
-public class BungalowPageDto implements Serializable{
+public class ParkPageDto {
 
-    private BungalowDetailDto detail = new BungalowDetailDto();
+    private ParkDetailDto detail = new ParkDetailDto();
 
-    private List<BungalowListDetailDto> list = new LinkedList<>();
+    private List<ParkListDetailDto> list = new LinkedList<>();
 
-    public BungalowDetailDto getDetail() {
+    public ParkDetailDto getDetail() {
         return detail;
     }
 
-    public void setDetail(BungalowDetailDto detail) {
+    public void setDetail(ParkDetailDto detail) {
         this.detail = detail;
     }
 
-    public List<BungalowListDetailDto> getList() {
+    public List<ParkListDetailDto> getList() {
         return list;
     }
 
-    public void setList(List<BungalowListDetailDto> list) {
+    public void setList(List<ParkListDetailDto> list) {
         this.list = list;
     }
 

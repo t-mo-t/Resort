@@ -16,36 +16,29 @@
  */
 package org.thomasmore.oo3.course.resortui.model;
 
-import java.io.Serializable;
-import java.util.LinkedList;
-import java.util.List;
-
 /**
  *
  * @author lucs
  */
-public class BungalowPageDto implements Serializable{
-
-    private BungalowDetailDto detail = new BungalowDetailDto();
-
-    private List<BungalowListDetailDto> list = new LinkedList<>();
-
-    public BungalowDetailDto getDetail() {
-        return detail;
-    }
-
-    public void setDetail(BungalowDetailDto detail) {
-        this.detail = detail;
-    }
-
-    public List<BungalowListDetailDto> getList() {
-        return list;
-    }
-
-    public void setList(List<BungalowListDetailDto> list) {
-        this.list = list;
-    }
-
+public class ParkListDetailDto {
     
+    private String id;
+    private String name;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
     
 }
