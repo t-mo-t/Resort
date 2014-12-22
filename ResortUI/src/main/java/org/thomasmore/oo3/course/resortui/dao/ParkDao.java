@@ -36,7 +36,7 @@ public class ParkDao implements Serializable {
     private EntityManager em;
 
     public void save(ParkEntity parkEntity) {
-        em.persist(parkEntity);
+        em.merge(parkEntity);
     }
 
     public List<ParkEntity> listAll() {

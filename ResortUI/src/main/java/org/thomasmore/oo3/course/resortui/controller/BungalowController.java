@@ -70,13 +70,11 @@ public class BungalowController {
     }
 
     public void add(){
-      //  dto.getDetail().setId("NEW");
-       //gunther
+
         dto.getDetail().setId(UUID.randomUUID().toString());
         
         dto.getList().add(dto.getDetail());
-        //gunther
-       // bungalowsDao.save(BungalowEntity);
+       
     }
   
     public BungalowPageDto getDto() {

@@ -14,6 +14,21 @@
 
             <ui:define name="content">
 				<ul>
+                                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Code</th> 
+                        <th>Max customers</th>
+                        <th>Hot Tub</th>
+                        <th>Sauna</th>
+                        <th>Dishwasher</th>
+                        <th>Sunbed</th>
+                        <th>Description</th>
+                        <th>Type</th>
+                        
+                    </tr>
+                                    
+                                    
 					<ui:repeat value="${bungalow.dto.list}" var="listDetail">
 						<li>${listDetail.id} - ${listDetail.name}</li>
 					</ui:repeat>
