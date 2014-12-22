@@ -49,6 +49,19 @@ public class ParkController {
         parksDao.save(parkentity);
     }
 
+   /* public void remove() {verwijderen uit databank en lijst
+        String id = dto.getDetail().getId();
+        ParkListDetailDto removeFromListobject = new ParkListDetailDto();
+        for (ParkListDetailDto parkListDetailDto : dto.getList()) {
+               if(parkListDetailDto.getId().equals(id)){
+                   removeFromListobject = parkListDetailDto;
+               }
+            
+        }
+        dto.getList().remove(removeFromListobject);
+        parksDao.deleteById(id);
+    }*/
+
     public ParkPageDto getDto() {
         return dto;
     }
