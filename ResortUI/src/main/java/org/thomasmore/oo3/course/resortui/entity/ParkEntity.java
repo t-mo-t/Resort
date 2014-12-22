@@ -14,26 +14,25 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.thomasmore.oo3.course.resortui.model;
+package org.thomasmore.oo3.course.resortui.entity;
 
-import org.thomasmore.oo3.course.resortui.model.*;
 import java.io.Serializable;
-import java.util.Date;
-import javax.annotation.PostConstruct;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
  * @author lucs
  */
-public class IndexPageDto implements Serializable {
-
-    private String name = "MyName";
-
-    @PostConstruct
-    public void init() {
-        Date date = new Date();
-        System.out.println("IndexPageDto - init");
-    }
+@Entity
+@Table(name = "park")
+@XmlRootElement
+public class ParkEntity extends BasicEntity implements Serializable{
+    
+    private String name;
+    
+    private String address;
 
     public String getName() {
         return name;
@@ -43,4 +42,12 @@ public class IndexPageDto implements Serializable {
         this.name = name;
     }
 
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+    
 }

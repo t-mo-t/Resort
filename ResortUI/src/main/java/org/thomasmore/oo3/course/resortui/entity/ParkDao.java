@@ -17,27 +17,39 @@
 package org.thomasmore.oo3.course.resortui.entity;
 
 import java.io.Serializable;
-import java.util.UUID;
-import javax.persistence.Id;
-import javax.persistence.MappedSuperclass;
+import java.util.List;
+import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+import javax.persistence.criteria.CriteriaQuery;
 
 /**
  *
  * @author lucs
  */
-@MappedSuperclass
-public class BasicEntity{
-    
-    @Id
-    private String id = UUID.randomUUID().toString();
+@Stateless
+public class ParkDao implements Serializable {
 
-    public String getId() {
-        return id;
+    @PersistenceContext
+    private EntityManager em;
+
+    public void save(ParkEntity parkEntity) {
+        em.persist(parkEntity);
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public List<ParkEntity> listAll() {
+        CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
+        cq.select(cq.from(ParkEntity.class));
+        Query q = em.createQuery(cq);
+        return q.getResultList();
     }
 
-    
+    public ParkEntity findById(String id) {
+        return em.find(ParkEntity.class, id);
+    }
+
+    public void deleteById(String id) {
+        em.remove(findById(id));
+    }
 }

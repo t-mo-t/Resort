@@ -29,6 +29,7 @@ import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import org.thomasmore.oo3.course.resortui.entity.BungalowEntity;
 import org.thomasmore.oo3.course.resortui.sample.business.entity.SampleBungalowEntity;
 import org.thomasmore.oo3.course.resortui.sample.business.entity.SampleParkEntity;
 
@@ -56,14 +57,19 @@ public class InitDbREST {
         parkEntity.setName("EDF");
         objectsToSave.add(parkEntity);
 
-        SampleBungalowEntity sampleBungalowEntity = new SampleBungalowEntity();
-        sampleBungalowEntity.setName("abc");
-        objectsToSave.add(sampleBungalowEntity);
+        /*for(int i=0;i<10;i++){
+            BungalowEntity bungalowEntity = new BungalowEntity();
+            bungalowEntity.setName("abc"+(i+1));
+            bungalowEntity.setId((i+1)+"");
+            objectsToSave.add(bungalowEntity);
+        }
+        */
 
         for (Object objectsToSave1 : objectsToSave) {
             em.persist(objectsToSave1);
         }
-
+        em.clear();
+        em.close();
         return parkEntity;
     }
 

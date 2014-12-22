@@ -16,23 +16,22 @@
  */
 package org.thomasmore.oo3.course.resortui.entity;
 
+import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlRootElement;
 /**
  *
  * @author Stephan
  */
-public class BungalowEntity{
-    
-   private String id;
-   private String name;
-    
- 
-    public String getId() {
-        return id;
-    }
+@Entity
+@Table(name = "bungalow")
+@XmlRootElement
 
-    public void setId(String id) {
-        this.id = id;
-    }
+public class BungalowEntity extends BasicEntity implements Serializable{
+
+   private String name;
+   private String parkForeignId;
 
     public String getName() {
         return name;
@@ -40,6 +39,14 @@ public class BungalowEntity{
 
     public void setName(String name) {
         this.name = name;
+    }
+    
+    public String getParkForeignId(){
+        return this.parkForeignId;
+    }
+    
+    public void setParkForeignId(String parkId){
+        this.parkForeignId=parkId;
     }
    
     
