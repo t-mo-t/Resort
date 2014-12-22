@@ -20,12 +20,13 @@
                         <th>Name</th>
                         <th>Code</th> 
                         <th>Max customers</th>
+                        <th>Type</th>
                         <th>Hot Tub</th>
                         <th>Sauna</th>
                         <th>Dishwasher</th>
                         <th>Sunbed</th>
                         <th>Description</th>
-                        <th>Type</th>
+                        
 
                     </tr>
 
@@ -36,12 +37,13 @@
                         <tr>${listDetail.name}</tr>
                         <tr>${listDetail.code}</tr>
                         <tr>${listDetail.maxcustomers}</tr>
+                        <tr>${listDetail.type}</tr>
                         <tr>${listDetail.hotTub}</tr>
                         <tr>${listDetail.sauna}</tr>
                         <tr>${listDetail.dishwasher}</tr>
                         <tr>${listDetail.sunbed}</tr>
                         <tr>${listDetail.description}</tr>
-                        <tr>${listDetail.type}</tr>
+                        
                     </ui:repeat>
                 </ul>
                 <h:form>
@@ -62,6 +64,15 @@
                         <f:selectItem itemValue="6" itemLabel="6" />
                         <f:selectItem itemValue="8" itemLabel="8" />
                     </h:selectOneMenu>
+                    
+                    <span class="input-group-addon">Type</span>
+                   <h:selectOneMenu label="Login" value="${bungalow.dto.detail.type}" class="form-control" required="true">
+                        <f:selectItem itemValue="standard" itemLabel="standard" />
+                        <f:selectItem itemValue="comfort" itemLabel="comfort" />
+                        <f:selectItem itemValue="luxe" itemLabel="luxe" />
+                    </h:selectOneMenu>
+                    
+                    
                     <span class="input-group-addon">Hot tub</span>
                     <h:selectBooleanCheckbox label="Login" 
                                              value="${bungalow.dto.detail.hotTub}" class="form-control"
@@ -87,12 +98,7 @@
                                  value="${bungalow.dto.detail.description}" class="form-control"
                                  required="true">
                     </h:inputText>
-                    <span class="input-group-addon">Type</span>
-                    <h:selectOneMenu label="Login" value="${bungalow.dto.detail.type}" class="form-control" required="true">
-                        <f:selectItem itemValue="standard" itemLabel="standard" />
-                        <f:selectItem itemValue="comfort" itemLabel="comfort" />
-                        <f:selectItem itemValue="luxe" itemLabel="luxe" />
-                    </h:selectOneMenu>
+                   
                     <h:commandButton class="btn btn-primary" action="${bungalow.add()}" value="Save"></h:commandButton>
 
                 </h:form>
