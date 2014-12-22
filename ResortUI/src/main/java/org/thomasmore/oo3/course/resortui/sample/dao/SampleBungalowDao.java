@@ -24,7 +24,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.persistence.criteria.CriteriaQuery;
 import org.thomasmore.oo3.course.resortui.sample.business.entity.SampleBungalowEntity;
-import org.thomasmore.oo3.course.resortui.sample.business.entity.SampleParkEntity;
+
 
 /**
  *
