@@ -71,26 +71,34 @@
                         <f:selectItem itemValue="comfort" itemLabel="comfort" />
                         <f:selectItem itemValue="luxe" itemLabel="luxe" />
                     </h:selectOneMenu>
-                    
+                     
+                    <span class="input-group-addon">Dishwasher</span>
+                    <h:selectBooleanCheckbox label="Login" 
+                                     <!--Als "Type" notEquals "standard"  ==> "value" = true -->        
+                                  value="${bungalow.dto.detail.dishwasher}" class="form-control"
+                                             required="true">
+                    </h:selectBooleanCheckbox> 
+                   
+                    <span class="input-group-addon">Sunbed</span>
+                    <h:selectBooleanCheckbox label="Login" 
+                                             <!--Als "Type" notEquals "standard"  ==> "value" = true -->
+                                             value="${bungalow.dto.detail.sunbed}" class="form-control"
+                                             required="true">
+                    </h:selectBooleanCheckbox>
                     
                     <span class="input-group-addon">Hot tub</span>
                     <h:selectBooleanCheckbox label="Login" 
+                                             <!--Als "Type" equals "luxe"  ==> value = true -->
+                                             
                                              value="${bungalow.dto.detail.hotTub}" class="form-control"
                                              required="true">
                     </h:selectBooleanCheckbox>
+                  
                     <span class="input-group-addon">Sauna</span>
                     <h:selectBooleanCheckbox label="Login" 
+                                             <!--Als "Type" equals "luxe"  ==> value = true -->
+                                             
                                              value="${bungalow.dto.detail.sauna}" class="form-control"
-                                             required="true">
-                    </h:selectBooleanCheckbox>
-                    <span class="input-group-addon">Dishwasher</span>
-                    <h:selectBooleanCheckbox label="Login" 
-                                             value="${bungalow.dto.detail.dishwasher}" class="form-control"
-                                             required="true">
-                    </h:selectBooleanCheckbox>
-                    <span class="input-group-addon">Sunbed</span>
-                    <h:selectBooleanCheckbox label="Login" 
-                                             value="${bungalow.dto.detail.sunbed}" class="form-control"
                                              required="true">
                     </h:selectBooleanCheckbox>
                     <span class="input-group-addon">Description</span>
