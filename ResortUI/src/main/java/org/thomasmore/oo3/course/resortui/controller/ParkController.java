@@ -22,8 +22,8 @@ import javax.ejb.EJB;
 import org.thomasmore.oo3.course.resortui.model.ParkPageDto;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
-import org.thomasmore.oo3.course.resortui.DAO.ParkDao;
-import org.thomasmore.oo3.course.resortui.entity.ParkEntity;
+import org.thomasmore.oo3.course.resortui.dao.ParkDao;
+import org.thomasmore.oo3.course.resortui.business.entity.ParkEntity;
 import org.thomasmore.oo3.course.resortui.model.ParkListDetailDto;
 
 /**

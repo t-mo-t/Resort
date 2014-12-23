@@ -19,7 +19,7 @@ package org.thomasmore.oo3.course.resortui.sample.business.entity;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
-import org.thomasmore.oo3.course.resortui.entity.BasicEntity;
+import org.thomasmore.oo3.course.resortui.business.entity.BasicEntity;
 
 /**
  *

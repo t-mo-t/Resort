@@ -14,13 +14,13 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.thomasmore.oo3.course.resortui.entity;
+package org.thomasmore.oo3.course.resortui.business.entity;
 
 /**
  *
  * @author Stephan
  */
-public class BungalowEntity {
+public class ParkEntity {
     
    private String id;
    private String name;
