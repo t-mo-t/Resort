@@ -15,38 +15,38 @@
 
             <ui:define name="content">
                 <table> <ul>
-                    <tr>
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Code</th> 
-                        <th>Max customers</th>
-                        <th>Type</th>
-                        <th>Hot Tub</th>
-                        <th>Sauna</th>
-                        <th>Dishwasher</th>
-                        <th>Sunbed</th>
-                        <th>Description</th>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Code</th> 
+                            <th>Max customers</th>
+                            <th>Type</th>
+                            <th>Hot Tub</th>
+                            <th>Sauna</th>
+                            <th>Dishwasher</th>
+                            <th>Sunbed</th>
+                            <th>Description</th>
 
 
-                    </tr>
-
-
-                    <ui:repeat value="${bungalow.dto.list}" var="listDetail">
-                        <tr>  
-                        <td>${listDetail.id}</td>
-                        <td>${listDetail.name}</td>
-                        <td>${listDetail.code}</td>
-                        <td>${listDetail.maxcustomers}</td>
-                        <td>${listDetail.type}</td>
-                        <td>${listDetail.hotTub}</td>
-                        <td>${listDetail.sauna}</td>
-                        <td>${listDetail.dishwasher}</td>
-                        <td>${listDetail.sunbed}</td>
-                        <td>${listDetail.description}</td>
                         </tr>
 
-                    </ui:repeat>
-                </ul></table>
+
+                        <ui:repeat value="${bungalow.dto.list}" var="listDetail">
+                            <tr>  
+                                <td>${listDetail.id}</td>
+                                <td>${listDetail.name}</td>
+                                <td>${listDetail.code}</td>
+                                <td>${listDetail.maxcustomers}</td>
+                                <td>${listDetail.type}</td>
+                                <td>${listDetail.hotTub}</td>
+                                <td>${listDetail.sauna}</td>
+                                <td>${listDetail.dishwasher}</td>
+                                <td>${listDetail.sunbed}</td>
+                                <td>${listDetail.description}</td>
+                            </tr>
+
+                        </ui:repeat>
+                    </ul></table>
                 <h:form>
                     <span class="input-group-addon">Name</span>
                     <h:inputText label="Login" 
@@ -67,10 +67,10 @@
                     </h:selectOneMenu>
 
                     <span class="input-group-addon">Type</span>
-                    <h:selectOneMenu label="Login" id="luxe" onchange="getValue()"  value="${bungalow.dto.detail.type}" class="form-control" required="true">
+                    <h:selectOneMenu label="Login" id="lux" onchange="getValue()"  value="${bungalow.dto.detail.type}" class="form-control" required="true">
                         <f:selectItem itemValue="standard" itemLabel="standard" />
-                        <f:selectItem itemValue="comfort" itemLabel="comfort" />
-                        <f:selectItem itemValue="luxe" itemLabel="luxe" />
+                        <f:selectItem itemValue="comfort" itemLabel="comfort"/>
+                        <f:selectItem itemValue="luxe" itemLabel="luxe"/>
                     </h:selectOneMenu>
 
 
@@ -78,21 +78,26 @@
                     <script type="text/javascript">
                         /* <![CDATA[ */
                         function getValue() {
-                            var luxe = document.getElementById('luxe').value;
-                            alert(luxe.innerHTML);
-                            document.getElementById("type-echo").innerHTML = luxe;
+                            var lukse = document.getElementById('j_idt24:lux').value;
+                           
+                            if (lukse === "comfort") {
+                                document.getElementById('j_idt24:checkboxdishwash').checked = true;
+                                document.getElementById('j_idt24:checkboxsunbed').checked = true;
+                            } else if (lukse === "luxe") {
+                                document.getElementById('j_idt24:checkboxdishwash').checked = true;
+                                document.getElementById('j_idt24:checkboxsunbed').checked = true;
+                                document.getElementById('j_idt24:checkboxhottub').checked = true;
+                                document.getElementById('j_idt24:checkboxsauna').checked = true;
+                            } else {
+                                document.getElementById('j_idt24:checkboxdishwash').checked = false;
+                                document.getElementById('j_idt24:checkboxsunbed').checked = false;
+                                document.getElementById('j_idt24:checkboxhottub').checked = false;
+                                document.getElementById('j_idt24:checkboxsauna').checked = false;
+                            }
                         }
-                       /* ]]> */
+                        /* ]]> */
                     </script>
-
-                    <span class="input-group-addon">Type-echo</span>
-
-                    <h:inputText label="Login" id="type-echo"
-                                 class="form-control"
-                                 required="false">
-                    </h:inputText>
-
-
+                  
 
                     <span class="input-group-addon">Dishwasher</span>
                     <h:selectBooleanCheckbox label="Login" id="checkboxdishwash" 
@@ -101,24 +106,24 @@
                     </h:selectBooleanCheckbox> 
 
                     <span class="input-group-addon">Sunbed</span>
-                    <h:selectBooleanCheckbox label="Login" 
+                    <h:selectBooleanCheckbox label="Login" id="checkboxsunbed"
                                              value="${bungalow.dto.detail.sunbed}" class="form-control"
                                              required="true">
                     </h:selectBooleanCheckbox>
 
                     <span class="input-group-addon">Hot tub</span>
-                    <h:selectBooleanCheckbox label="Login" 
+                    <h:selectBooleanCheckbox label="Login" id="checkboxhottub"
                                              value="${bungalow.dto.detail.hotTub}" class="form-control"
                                              required="true">
                     </h:selectBooleanCheckbox>
 
                     <span class="input-group-addon">Sauna</span>
-                    <h:selectBooleanCheckbox label="Login" 
+                    <h:selectBooleanCheckbox label="Login" id="checkboxsauna"
                                              value="${bungalow.dto.detail.sauna}" class="form-control"
                                              required="true">
                     </h:selectBooleanCheckbox>
                     <span class="input-group-addon">Description</span>
-                    <h:inputText label="Login" 
+                    <h:inputText label="Login" id="descript"
                                  value="${bungalow.dto.detail.description}" class="form-control"
                                  required="true">
                     </h:inputText>
