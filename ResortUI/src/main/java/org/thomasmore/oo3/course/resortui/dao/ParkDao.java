@@ -24,13 +24,13 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.persistence.criteria.CriteriaQuery;
-
 import org.thomasmore.oo3.course.resortui.business.entity.ParkEntity;
 
 /**
  *
  * @author lucs
  */
+
 @Stateless
 public class ParkDao implements Serializable {
 
@@ -56,3 +56,4 @@ public class ParkDao implements Serializable {
         em.remove(findById(id));
     }
 }
+

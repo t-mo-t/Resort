@@ -25,15 +25,15 @@ import javax.persistence.Query;
 import javax.persistence.criteria.CriteriaQuery;
 import org.thomasmore.oo3.course.resortui.business.entity.BungalowEntity;
 
+
 /**
  *
- * @author Stephan
+ * @author lucs
  */
-
 @Stateless
-public class BungalowDao implements Serializable{
-    
-@PersistenceContext
+public class BungalowDao implements Serializable {
+
+    @PersistenceContext
     private EntityManager em;
 
     public void save(BungalowEntity bungalowEntity) {

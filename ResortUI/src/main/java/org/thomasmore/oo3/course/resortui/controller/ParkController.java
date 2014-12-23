@@ -33,22 +33,23 @@ import org.thomasmore.oo3.course.resortui.model.ParkListDetailDto;
 @Named(value = "park")
 @RequestScoped
 public class ParkController {
-
-       private ParkPageDto dto;
+private ParkPageDto dto;
 
     @EJB
-    private ParkDao parkdao;
+    private ParkDao ParkDao;
     
     @PostConstruct
     public void init() {
         
-        List<ParkEntity> parks = parkdao.listAll();
+        
+       
+        List<ParkEntity> Parks = ParkDao.listAll();
         dto = new ParkPageDto();
         
-        for (ParkEntity bungalow : parks) {
+        for (ParkEntity Park : Parks) {
             ParkListDetailDto listDetail = new ParkListDetailDto();
-            listDetail.setId(bungalow.getId());
-            listDetail.setName(bungalow.getName());
+            listDetail.setId(Park.getId());
+            listDetail.setName(Park.getName());
             dto.getList().add(listDetail);
         }
         
