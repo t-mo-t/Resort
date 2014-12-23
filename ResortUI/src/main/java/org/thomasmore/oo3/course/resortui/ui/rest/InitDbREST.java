@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.thomasmore.oo3.course.resortui.sample.ui.rest;
+package org.thomasmore.oo3.course.resortui.ui.rest;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -29,9 +29,9 @@ import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
-import org.thomasmore.oo3.course.resortui.sample.business.entity.CustomerEntity;
-import org.thomasmore.oo3.course.resortui.sample.business.entity.SampleBungalowEntity;
-import org.thomasmore.oo3.course.resortui.sample.business.entity.SampleParkEntity;
+import org.thomasmore.oo3.course.resortui.entity.CustomerEntity;
+import org.thomasmore.oo3.course.resortui.entity.BungalowEntity;
+import org.thomasmore.oo3.course.resortui.entity.ParkEntity;
 
 /**
  *
@@ -46,9 +46,9 @@ public class InitDbREST {
 
     @GET
     @Produces({"application/json", "application/xml"})
-    public SampleParkEntity createDB() {
+    public ParkEntity createDB() {
         List<Object> objectsToSave = new LinkedList<>();
-        SampleParkEntity parkEntity = new SampleParkEntity();
+        ParkEntity parkEntity = new ParkEntity();
         parkEntity.setName("ABC");
         parkEntity.setCountry("Belgie");
         parkEntity.setProvince("Antwerpen");
@@ -56,7 +56,7 @@ public class InitDbREST {
         parkEntity.setStreetnumber(10);
         objectsToSave.add(parkEntity);
         
-        SampleBungalowEntity BungalowEntity = new SampleBungalowEntity();
+        BungalowEntity BungalowEntity = new BungalowEntity();
         BungalowEntity.setName("abc");
         BungalowEntity.setCode("edf");
         BungalowEntity.setType("comfort");
@@ -81,7 +81,7 @@ public class InitDbREST {
         }
         
 
-        return parkEntity;//normaal geven we nix terug dit is om  te testen.
+        return parkEntity;
     }
 
 }

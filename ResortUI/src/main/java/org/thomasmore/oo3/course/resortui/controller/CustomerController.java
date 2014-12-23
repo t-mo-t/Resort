@@ -8,8 +8,8 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
 import org.thomasmore.oo3.course.resortui.model.CustomerListDetailDto;
 import org.thomasmore.oo3.course.resortui.model.CustomerPageDto;
-import org.thomasmore.oo3.course.resortui.sample.business.entity.CustomerEntity;
-import org.thomasmore.oo3.course.resortui.sample.dao.CustomerDao;
+import org.thomasmore.oo3.course.resortui.entity.CustomerEntity;
+import org.thomasmore.oo3.course.resortui.dao.CustomerDao;
 
 @Named(value = "customer")
 @RequestScoped

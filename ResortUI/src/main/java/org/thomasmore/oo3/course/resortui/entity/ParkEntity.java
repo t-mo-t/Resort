@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.thomasmore.oo3.course.resortui.sample.business.entity;
+package org.thomasmore.oo3.course.resortui.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
@@ -28,7 +28,7 @@ import org.thomasmore.oo3.course.resortui.entity.BasicEntity;
 @Entity
 @Table(name = "Park")
 @XmlRootElement
-public class SampleParkEntity extends BasicEntity {
+public class ParkEntity extends BasicEntity {
 
     private String name;
     private String country;

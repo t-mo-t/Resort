@@ -65,12 +65,13 @@
                     <h:commandButton class="btn btn-primary" action="${park.add()}" value="Save"></h:commandButton>
 
                 </h:form>
-               <!-- <h:form>Form voor deleting
-                <span class="input-group-addon">Geef het ID van het record dat je wil verwijderen</span>
-                <h:inputText label="Login" value="${park.dto.detail.id}" class="form-control" required="true">
-                </h:inputText>
-                <h:commandButton class="btn btn-primary" action="${park.remove()}" value="Remove"></h:commandButton>
-                </h:form>-->
+
+                <h:form>Form voor deleting
+                    <span class="input-group-addon">Geef het ID van het record dat je wil verwijderen</span>
+                    <h:inputText label="Login" value="${park.dto.detail.id}" class="form-control" required="true">
+                    </h:inputText>
+                    <h:commandButton class="btn btn-primary" action="${park.remove()}" value="Remove"></h:commandButton>
+                </h:form>
             </ui:define>
 
         </ui:composition>

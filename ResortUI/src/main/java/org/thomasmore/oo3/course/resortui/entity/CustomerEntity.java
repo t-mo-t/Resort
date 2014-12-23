@@ -1,4 +1,4 @@
-package org.thomasmore.oo3.course.resortui.sample.business.entity;
+package org.thomasmore.oo3.course.resortui.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;

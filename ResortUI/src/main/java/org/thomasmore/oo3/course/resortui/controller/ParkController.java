@@ -7,10 +7,9 @@ import javax.ejb.EJB;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
 import org.thomasmore.oo3.course.resortui.model.ParkListDetailDto;
-import org.thomasmore.oo3.course.resortui.sample.business.entity.SampleParkEntity;
+import org.thomasmore.oo3.course.resortui.entity.ParkEntity;
 import org.thomasmore.oo3.course.resortui.model.ParkPageDto;
-import org.thomasmore.oo3.course.resortui.sample.business.enitity.ParkEntity;
-import org.thomasmore.oo3.course.resortui.sample.dao.SampleParkDao;
+import org.thomasmore.oo3.course.resortui.dao.ParkDao;
 
 @Named(value = "park")
 @RequestScoped
@@ -18,13 +17,13 @@ public class ParkController {
 
     private ParkPageDto dto;
     @EJB
-    private SampleParkDao parksDao;
+    private ParkDao parksDao;
 
     @PostConstruct
     public void init() {
-        List<SampleParkEntity> parks = parksDao.listAll();
+        List<ParkEntity> parks = parksDao.listAll();
         dto = new ParkPageDto();
-        for (SampleParkEntity park : parks) {
+        for (ParkEntity park : parks) {
             ParkListDetailDto listDetail = new ParkListDetailDto();
             listDetail.setId(park.getId());
             listDetail.setName(park.getName());
@@ -39,7 +38,7 @@ public class ParkController {
     public void add() {
         dto.getDetail().setId(UUID.randomUUID().toString());
         dto.getList().add(dto.getDetail());
-        SampleParkEntity parkentity = new SampleParkEntity();
+        ParkEntity parkentity = new ParkEntity();
         parkentity.setId(dto.getDetail().getId());
         parkentity.setName(dto.getDetail().getName());
         parkentity.setCountry(dto.getDetail().getCountry());
@@ -49,7 +48,7 @@ public class ParkController {
         parksDao.save(parkentity);
     }
 
-   /* public void remove() {verwijderen uit databank en lijst
+   public void remove() {
         String id = dto.getDetail().getId();
         ParkListDetailDto removeFromListobject = new ParkListDetailDto();
         for (ParkListDetailDto parkListDetailDto : dto.getList()) {
@@ -60,7 +59,7 @@ public class ParkController {
         }
         dto.getList().remove(removeFromListobject);
         parksDao.deleteById(id);
-    }*/
+    }
 
     public ParkPageDto getDto() {
         return dto;

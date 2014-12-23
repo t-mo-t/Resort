@@ -1,4 +1,4 @@
-package org.thomasmore.oo3.course.resortui.sample.dao;
+package org.thomasmore.oo3.course.resortui.dao;
 
 import java.io.Serializable;
 import java.util.List;
@@ -7,7 +7,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.persistence.criteria.CriteriaQuery;
-import org.thomasmore.oo3.course.resortui.sample.business.entity.CustomerEntity;
+import org.thomasmore.oo3.course.resortui.entity.CustomerEntity;
 
 @Stateless
 public class CustomerDao implements Serializable {

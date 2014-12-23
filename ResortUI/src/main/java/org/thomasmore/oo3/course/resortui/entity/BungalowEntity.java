@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014 Stephan
+ * Copyright (C) 2014 lucs
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -16,24 +16,29 @@
  */
 package org.thomasmore.oo3.course.resortui.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlRootElement;
+import org.thomasmore.oo3.course.resortui.entity.BasicEntity;
+
 /**
  *
- * @author Stephan
+ * @author lucs
  */
-public class BungalowEntity {
+@Entity
+@Table(name = "Bungalow")
+@XmlRootElement
+public class BungalowEntity extends BasicEntity{
     
-   private String id;
-   private String name;
-    
-    public String getId() {
-        return id;
-    }
-  
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
+    private String name;
+    private String code;
+    private Integer maxcustomers;
+    private boolean jacuzzi;
+    private boolean sauna;
+    private boolean dishwasher;
+    private boolean sunbed;
+    private String description;
+    private String type;
     public String getName() {
         return name;
     }
@@ -41,6 +46,69 @@ public class BungalowEntity {
     public void setName(String name) {
         this.name = name;
     }
-   
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public Integer getMaxcustomers() {
+        return maxcustomers;
+    }
+
+    public void setMaxcustomers(Integer maxcustomers) {
+        this.maxcustomers = maxcustomers;
+    }
+
+    public boolean isJacuzzi() {
+        return jacuzzi;
+    }
+
+    public void setJacuzzi(boolean jacuzzi) {
+        this.jacuzzi = jacuzzi;
+    }
+
+    public boolean isSauna() {
+        return sauna;
+    }
+
+    public void setSauna(boolean sauna) {
+        this.sauna = sauna;
+    }
+
+    public boolean isDishwasher() {
+        return dishwasher;
+    }
+
+    public void setDishwasher(boolean dishwasher) {
+        this.dishwasher = dishwasher;
+    }
+
+    public boolean isSunbed() {
+        return sunbed;
+    }
+
+    public void setSunbed(boolean sunbed) {
+        this.sunbed = sunbed;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
     
 }

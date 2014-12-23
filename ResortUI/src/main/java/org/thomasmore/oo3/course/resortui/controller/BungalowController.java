@@ -26,8 +26,8 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
 import org.thomasmore.oo3.course.resortui.model.BungalowDetailDto;
 import org.thomasmore.oo3.course.resortui.model.BungalowListDetailDto;
-import org.thomasmore.oo3.course.resortui.sample.business.entity.SampleBungalowEntity;
-import org.thomasmore.oo3.course.resortui.sample.dao.BungalowDao;
+import org.thomasmore.oo3.course.resortui.entity.BungalowEntity;
+import org.thomasmore.oo3.course.resortui.dao.BungalowDao;
 
 /**
  *
@@ -43,10 +43,10 @@ public class BungalowController {
     @PostConstruct
     public void init() {
         
-        List<SampleBungalowEntity> bungalows=bungalowsDao.listAll();
+        List<BungalowEntity> bungalows=bungalowsDao.listAll();
         dto = new BungalowPageDto();
         
-        for (SampleBungalowEntity bungalow : bungalows) {
+        for (BungalowEntity bungalow : bungalows) {
             BungalowListDetailDto listDetail = new BungalowListDetailDto();
             listDetail.setId(bungalow.getId());
             listDetail.setName(bungalow.getName());
@@ -65,7 +65,7 @@ public class BungalowController {
     public void add(){
         dto.getDetail().setId(UUID.randomUUID().toString());
         dto.getList().add(dto.getDetail());
-        SampleBungalowEntity bungalowentity = new SampleBungalowEntity();
+        BungalowEntity bungalowentity = new BungalowEntity();
         bungalowentity.setId(dto.getDetail().getId());
         bungalowentity.setName(dto.getDetail().getName());
         bungalowentity.setCode(dto.getDetail().getCode());
