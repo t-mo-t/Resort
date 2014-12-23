@@ -44,13 +44,8 @@ import org.thomasmore.oo3.course.resortui.entity.ParkEntity;
 @Path("init-db")
 public class InitDbREST {
 
-    private boolean isLoaded=false;
-    
     @EJB
     private ParkDao parkdao;
-    
-    @EJB
-    private BungalowDao bungalowdao;
     
     @PersistenceContext(unitName = "RESORTPU")
     private EntityManager em;
@@ -83,14 +78,6 @@ public class InitDbREST {
         }
         em.clear();
         em.close();
-    }
-    
-    public ParkDao getparkdao(){
-        return this.parkdao;
-    }
-    
-    public Boolean dbIsLoaded(){
-        return this.isLoaded;
     }
 
 }

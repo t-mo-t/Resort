@@ -29,7 +29,6 @@ import javax.xml.bind.annotation.XmlRootElement;
 @AttributeOverride( name="id", column = @Column(name="PARK_ID") )
 @Table(name = "park")
 @XmlRootElement
-
 public class ParkEntity extends BasicEntity implements Serializable{
     
     private String name;

@@ -16,23 +16,25 @@
  */
 package org.thomasmore.oo3.course.resortui.entity;
 
+import java.io.Serializable;
+import javax.persistence.AttributeOverride;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlRootElement;
+
 /**
  *
  * @author Stephan
  */
-public class BungalowEntity {
+@Entity
+@AttributeOverride( name="id", column = @Column(name="BUNGALOW_ID") )
+@Table(name = "bungalow")
+@XmlRootElement
+public class BungalowEntity extends BasicEntity implements Serializable {
     
-   private String id;
    private String name;
-    
-    public String getId() {
-        return id;
-    }
-  
-
-    public void setId(String id) {
-        this.id = id;
-    }
+   private String PARK_FK;
 
     public String getName() {
         return name;
@@ -40,6 +42,14 @@ public class BungalowEntity {
 
     public void setName(String name) {
         this.name = name;
+    }
+    
+    public String getParkFK(){
+        return this.PARK_FK;
+    }
+    
+    public void setParkFK(String parkfk){
+        this.PARK_FK=parkfk;
     }
    
     
