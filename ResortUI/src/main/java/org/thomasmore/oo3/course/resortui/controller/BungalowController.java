@@ -58,6 +58,7 @@ public class BungalowController {
             listDetail.setJacuzzi(bungalow.isJacuzzi());
             listDetail.setSauna(bungalow.isSauna());
             listDetail.setSunbed(bungalow.isSunbed());
+            listDetail.setPark(bungalow.getPark());
             dto.getList().add(listDetail);
         }
     }

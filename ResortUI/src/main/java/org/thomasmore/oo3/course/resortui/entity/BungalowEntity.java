@@ -39,6 +39,7 @@ public class BungalowEntity extends BasicEntity{
     private boolean sunbed;
     private String description;
     private String type;
+    private String park;
     public String getName() {
         return name;
     }
@@ -109,6 +110,14 @@ public class BungalowEntity extends BasicEntity{
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public String getPark() {
+        return park;
+    }
+
+    public void setPark(String park) {
+        this.park = park;
     }
     
 }

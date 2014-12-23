@@ -26,6 +26,7 @@
                         <th>Jacuzzi</th>
                         <th>Sauna</th>
                         <th>Sunbed</th>
+                        <th>Park</th>
                     </tr>
                     <tbody>
                         <ui:repeat value="${bungalow.dto.list}" var="listDetail">
@@ -40,6 +41,7 @@
                                 <td>${listDetail.jacuzzi}</td>
                                 <td>${listDetail.sauna}</td>
                                 <td>${listDetail.sunbed}</td>
+                                <td>${listDetail.park}</td>
                             </tr>
                         </ui:repeat>
                     </tbody>
@@ -91,6 +93,14 @@
                                              value="${bungalow.dto.detail.sunbed}" class="form-control" 
                                              required="true">
                     </h:selectBooleanCheckbox>
+                    <span class="input-group-addon">Park</span>
+                    <h:selectOneMenu label="Login" value="${bungalow.dto.detail.park}" class="form-control" required="true">
+                        <ui:repeat value="${park.dto.list}" var="parklist">
+                            <f:selectItem itemValue="${parklist.name}" itemLabel="${parklist.name}">
+                            </f:selectItem>
+                        </ui:repeat>
+                    </h:selectOneMenu>
+
                     <h:commandButton class="btn btn-primary" action="${bungalow.add()}" value="Save"></h:commandButton>
 
                 </h:form>

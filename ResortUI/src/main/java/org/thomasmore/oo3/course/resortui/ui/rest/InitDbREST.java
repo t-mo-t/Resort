@@ -66,6 +66,7 @@ public class InitDbREST {
         BungalowEntity.setJacuzzi(true);
         BungalowEntity.setSauna(true);
         BungalowEntity.setSunbed(true);
+        BungalowEntity.setPark("ABC");
         objectsToSave.add(BungalowEntity);
         
         CustomerEntity CustomerEntity= new CustomerEntity();

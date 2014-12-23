@@ -13,6 +13,7 @@ public class BungalowListDetailDto {
     private boolean sunbed;
     private String description;
     private String type;
+    private String park;
     public String getId() {
         return id;
     }
@@ -91,6 +92,14 @@ public class BungalowListDetailDto {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public String getPark() {
+        return park;
+    }
+
+    public void setPark(String park) {
+        this.park = park;
     }
     
 }
