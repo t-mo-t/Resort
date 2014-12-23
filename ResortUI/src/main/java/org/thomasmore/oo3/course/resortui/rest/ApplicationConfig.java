@@ -14,8 +14,9 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.thomasmore.oo3.course.resortui.sample.ui.rest;
+package org.thomasmore.oo3.course.resortui.rest;
 
+import org.thomasmore.oo3.course.resortui.sample.ui.rest.*;
 import java.util.Set;
 import javax.ws.rs.core.Application;
 
@@ -40,7 +41,6 @@ public class ApplicationConfig extends Application {
      * If required, comment out calling this method in getClasses().
      */
     private void addRestResourceClasses(Set<Class<?>> resources) {
-        resources.add(org.thomasmore.oo3.course.resortui.rest.InitDbREST.class);
         resources.add(org.thomasmore.oo3.course.resortui.sample.ui.rest.InitDbREST.class);
     }
     
