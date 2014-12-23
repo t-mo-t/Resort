@@ -46,19 +46,19 @@ public class InitDbREST {
         
         
         SampleParkEntity parkEntity = new SampleParkEntity();
-        parkEntity.setName("PARK1");
+        parkEntity.setName("PARK 1");
         objectsToSave.add(parkEntity);
         
         parkEntity = new SampleParkEntity();
-        parkEntity.setName("PARK2");
+        parkEntity.setName("PARK 2");
         objectsToSave.add(parkEntity);
         
          SampleBungalowEntity sampleBungalowEntity = new SampleBungalowEntity();
-        sampleBungalowEntity.setName("BUNGALOW1");
+        sampleBungalowEntity.setName("BUNGALOW 1");
         objectsToSave.add(sampleBungalowEntity);
         
         sampleBungalowEntity = new SampleBungalowEntity();
-        sampleBungalowEntity.setName("BUNGALOW2");
+        sampleBungalowEntity.setName("BUNGALOW 2");
         objectsToSave.add(sampleBungalowEntity);
         
 //        List<Object> objectsToSave = new LinkedList<>();
