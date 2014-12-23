@@ -20,6 +20,7 @@ import java.io.Serializable;
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
+import org.thomasmore.oo3.course.resortui.sample.ui.rest.InitDbREST;
 
 /**
  *
@@ -44,5 +45,6 @@ public class SessionDto implements Serializable {
     public void setUserDto(UserDto UserDto) {
         this.userDto = UserDto;
     }
+    
 
 }

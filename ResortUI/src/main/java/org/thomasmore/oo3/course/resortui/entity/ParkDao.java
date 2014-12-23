@@ -31,7 +31,7 @@ import javax.persistence.criteria.CriteriaQuery;
 @Stateless
 public class ParkDao implements Serializable {
 
-    @PersistenceContext
+    @PersistenceContext(unitName = "RESORTPU")
     private EntityManager em;
 
     public void save(ParkEntity parkEntity) {

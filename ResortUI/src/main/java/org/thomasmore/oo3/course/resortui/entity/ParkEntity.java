@@ -17,8 +17,8 @@
 package org.thomasmore.oo3.course.resortui.entity;
 
 import java.io.Serializable;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import java.util.Set;
+import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
@@ -26,13 +26,26 @@ import javax.xml.bind.annotation.XmlRootElement;
  * @author lucs
  */
 @Entity
+@AttributeOverride( name="id", column = @Column(name="PARK_ID") )
 @Table(name = "park")
 @XmlRootElement
+
 public class ParkEntity extends BasicEntity implements Serializable{
     
     private String name;
     
     private String address;
+    //private Set<BungalowEntity> bungalows;
+    
+    @OneToMany
+    @JoinTable(
+            name="bungalow",
+            joinColumns = @JoinColumn( name="PARK_ID"),
+            inverseJoinColumns = @JoinColumn( name="BUNGALOW_ID")
+    )
+    /*public Set<BungalowEntity> getBungalows(){
+        return this.bungalows;
+    }*/
 
     public String getName() {
         return name;

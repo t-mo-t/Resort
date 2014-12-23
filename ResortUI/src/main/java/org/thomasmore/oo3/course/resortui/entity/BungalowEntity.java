@@ -17,7 +17,12 @@
 package org.thomasmore.oo3.course.resortui.entity;
 
 import java.io.Serializable;
+import javax.ejb.EJB;
+import javax.persistence.AttributeOverride;
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 /**
@@ -25,13 +30,16 @@ import javax.xml.bind.annotation.XmlRootElement;
  * @author Stephan
  */
 @Entity
+@AttributeOverride( name="id", column = @Column(name="BUNGALOW_ID") )
 @Table(name = "bungalow")
 @XmlRootElement
 
 public class BungalowEntity extends BasicEntity implements Serializable{
+    
 
-   private String name;
-   private String parkForeignId;
+    
+    private String name;
+    private String PARK_FK;
 
     public String getName() {
         return name;
@@ -41,12 +49,12 @@ public class BungalowEntity extends BasicEntity implements Serializable{
         this.name = name;
     }
     
-    public String getParkForeignId(){
-        return this.parkForeignId;
+    public String getParkFK(){
+        return this.PARK_FK;
     }
     
-    public void setParkForeignId(String parkId){
-        this.parkForeignId=parkId;
+    public void setParkFK(String parkFK){
+        this.PARK_FK=parkFK;
     }
    
     

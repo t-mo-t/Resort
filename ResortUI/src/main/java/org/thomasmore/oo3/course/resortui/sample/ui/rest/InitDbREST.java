@@ -18,6 +18,8 @@ package org.thomasmore.oo3.course.resortui.sample.ui.rest;
 
 import java.util.LinkedList;
 import java.util.List;
+import javax.annotation.PostConstruct;
+import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -29,9 +31,10 @@ import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import org.thomasmore.oo3.course.resortui.entity.BungalowDao;
 import org.thomasmore.oo3.course.resortui.entity.BungalowEntity;
-import org.thomasmore.oo3.course.resortui.sample.business.entity.SampleBungalowEntity;
-import org.thomasmore.oo3.course.resortui.sample.business.entity.SampleParkEntity;
+import org.thomasmore.oo3.course.resortui.entity.ParkDao;
+import org.thomasmore.oo3.course.resortui.entity.ParkEntity;
 
 /**
  *
@@ -41,19 +44,28 @@ import org.thomasmore.oo3.course.resortui.sample.business.entity.SampleParkEntit
 @Path("init-db")
 public class InitDbREST {
 
+    private boolean isLoaded=false;
+    
+    @EJB
+    private ParkDao parkdao;
+    
+    @EJB
+    private BungalowDao bungalowdao;
+    
     @PersistenceContext(unitName = "RESORTPU")
     private EntityManager em;
+    
 
     @GET
     @Produces({"application/json", "application/xml"})
-    public SampleParkEntity createDB() {
-        List<Object> objectsToSave = new LinkedList<>();
+    public void init() {
+        List<ParkEntity> objectsToSave = new LinkedList<>();
 
-        SampleParkEntity parkEntity = new SampleParkEntity();
+        ParkEntity parkEntity = new ParkEntity();
         parkEntity.setName("ABC");
         objectsToSave.add(parkEntity);
         
-        /*parkEntity = new SampleParkEntity();
+        parkEntity = new ParkEntity();
         parkEntity.setName("EDF");
         objectsToSave.add(parkEntity);
 
@@ -65,12 +77,20 @@ public class InitDbREST {
         }
         */
 
-        for (Object objectsToSave1 : objectsToSave) {
-            em.persist(objectsToSave1);
+        for (ParkEntity objectsToSave1 : objectsToSave) {
+            parkdao.save(objectsToSave1);
+            
         }
         em.clear();
         em.close();
-        return parkEntity;
+    }
+    
+    public ParkDao getparkdao(){
+        return this.parkdao;
+    }
+    
+    public Boolean dbIsLoaded(){
+        return this.isLoaded;
     }
 
 }
