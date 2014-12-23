@@ -95,5 +95,5 @@ public class BungalowEntity extends BasicEntity{
     public void setType(String type) {
         this.type = type;
     }
-    
+
 }

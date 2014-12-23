@@ -14,7 +14,7 @@
             </ui:define>
 
             <ui:define name="content">
-                <ul>
+                <table> <ul>
                     <tr>
                         <th>ID</th>
                         <th>Name</th>
@@ -26,26 +26,27 @@
                         <th>Dishwasher</th>
                         <th>Sunbed</th>
                         <th>Description</th>
-                        
+
 
                     </tr>
 
 
                     <ui:repeat value="${bungalow.dto.list}" var="listDetail">
-                        <li>${listDetail.id} - ${listDetail.name}</li>
-                        <tr>${listDetail.id}</tr>
-                        <tr>${listDetail.name}</tr>
-                        <tr>${listDetail.code}</tr>
-                        <tr>${listDetail.maxcustomers}</tr>
-                        <tr>${listDetail.type}</tr>
-                        <tr>${listDetail.hotTub}</tr>
-                        <tr>${listDetail.sauna}</tr>
-                        <tr>${listDetail.dishwasher}</tr>
-                        <tr>${listDetail.sunbed}</tr>
-                        <tr>${listDetail.description}</tr>
-                        
+                        <tr>  
+                        <td>${listDetail.id}</td>
+                        <td>${listDetail.name}</td>
+                        <td>${listDetail.code}</td>
+                        <td>${listDetail.maxcustomers}</td>
+                        <td>${listDetail.type}</td>
+                        <td>${listDetail.hotTub}</td>
+                        <td>${listDetail.sauna}</td>
+                        <td>${listDetail.dishwasher}</td>
+                        <td>${listDetail.sunbed}</td>
+                        <td>${listDetail.description}</td>
+                        </tr>
+
                     </ui:repeat>
-                </ul>
+                </ul></table>
                 <h:form>
                     <span class="input-group-addon">Name</span>
                     <h:inputText label="Login" 
@@ -64,40 +65,55 @@
                         <f:selectItem itemValue="6" itemLabel="6" />
                         <f:selectItem itemValue="8" itemLabel="8" />
                     </h:selectOneMenu>
-                    
+
                     <span class="input-group-addon">Type</span>
-                   <h:selectOneMenu label="Login" value="${bungalow.dto.detail.type}" class="form-control" required="true">
+                    <h:selectOneMenu label="Login" id="luxe" onchange="getValue()"  value="${bungalow.dto.detail.type}" class="form-control" required="true">
                         <f:selectItem itemValue="standard" itemLabel="standard" />
                         <f:selectItem itemValue="comfort" itemLabel="comfort" />
                         <f:selectItem itemValue="luxe" itemLabel="luxe" />
                     </h:selectOneMenu>
-                     
+
+
+
+                    <script type="text/javascript">
+                        /* <![CDATA[ */
+                        function getValue() {
+                            var luxe = document.getElementById('luxe').value;
+                            alert(luxe.innerHTML);
+                            document.getElementById("type-echo").innerHTML = luxe;
+                        }
+                       /* ]]> */
+                    </script>
+
+                    <span class="input-group-addon">Type-echo</span>
+
+                    <h:inputText label="Login" id="type-echo"
+                                 class="form-control"
+                                 required="false">
+                    </h:inputText>
+
+
+
                     <span class="input-group-addon">Dishwasher</span>
-                    <h:selectBooleanCheckbox label="Login" 
-                                     <!--Als "Type" notEquals "standard"  ==> "value" = true -->        
-                                  value="${bungalow.dto.detail.dishwasher}" class="form-control"
+                    <h:selectBooleanCheckbox label="Login" id="checkboxdishwash" 
+                                             value="${bungalow.dto.detail.dishwasher}"
                                              required="true">
                     </h:selectBooleanCheckbox> 
-                   
+
                     <span class="input-group-addon">Sunbed</span>
                     <h:selectBooleanCheckbox label="Login" 
-                                             <!--Als "Type" notEquals "standard"  ==> "value" = true -->
                                              value="${bungalow.dto.detail.sunbed}" class="form-control"
                                              required="true">
                     </h:selectBooleanCheckbox>
-                    
+
                     <span class="input-group-addon">Hot tub</span>
                     <h:selectBooleanCheckbox label="Login" 
-                                             <!--Als "Type" equals "luxe"  ==> value = true -->
-                                             
                                              value="${bungalow.dto.detail.hotTub}" class="form-control"
                                              required="true">
                     </h:selectBooleanCheckbox>
-                  
+
                     <span class="input-group-addon">Sauna</span>
                     <h:selectBooleanCheckbox label="Login" 
-                                             <!--Als "Type" equals "luxe"  ==> value = true -->
-                                             
                                              value="${bungalow.dto.detail.sauna}" class="form-control"
                                              required="true">
                     </h:selectBooleanCheckbox>
@@ -106,7 +122,7 @@
                                  value="${bungalow.dto.detail.description}" class="form-control"
                                  required="true">
                     </h:inputText>
-                   
+
                     <h:commandButton class="btn btn-primary" action="${bungalow.add()}" value="Save"></h:commandButton>
 
                 </h:form>
