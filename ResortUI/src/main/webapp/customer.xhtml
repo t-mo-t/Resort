@@ -36,21 +36,41 @@
                     </tbody>
                 </table>
                 <h:form>
-                    <span class="input-group-addon">First name</span>
-                    <h:inputText label="Login" value="${customer.dto.detail.firstname}" class="form-control" required="true">
-                    </h:inputText>
-                    <span class="input-group-addon">Last name</span>
-                    <h:inputText label="Login" value="${customer.dto.detail.lastname}" class="form-control" required="true">
-                    </h:inputText>
-                    <span class="input-group-addon">Email</span>
-                    <h:inputText label="Login" value="${customer.dto.detail.email}" class="form-control" required="true">
-                    </h:inputText>
-                    <span class="input-group-addon">Cellphone number</span>
-                    <h:inputText label="Login" value="${customer.dto.detail.cellphone}" class="form-control" required="true">
-                    </h:inputText>
-                    <span class="input-group-addon">Promotion points</span>
-                    <h:inputText label="Login" value="${customer.dto.detail.promotionpoints}" class="form-control" required="true">
-                    </h:inputText>
+                    <div class="col-md-6">
+                        <div class="input-group">
+                            <span class="input-group-addon">First name:</span>
+                            <h:inputText label="Login" value="${customer.dto.detail.firstname}" class="form-control" required="true">
+                            </h:inputText>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="input-group">
+                            <span class="input-group-addon">Last name:</span>
+                            <h:inputText label="Login" value="${customer.dto.detail.lastname}" class="form-control" required="true">
+                            </h:inputText>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="input-group">
+                            <span class="input-group-addon">Email:</span>
+                            <h:inputText label="Login" value="${customer.dto.detail.email}" class="form-control" required="true">
+                            </h:inputText>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="input-group">
+                            <span class="input-group-addon">Cellphone number:</span>
+                            <h:inputText label="Login" value="${customer.dto.detail.cellphone}" class="form-control" required="true">
+                            </h:inputText>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="input-group">
+                            <span class="input-group-addon">Promotion points:</span>
+                            <h:inputText label="Login" value="${customer.dto.detail.promotionpoints}" class="form-control" required="true">
+                            </h:inputText>
+                        </div>
+                    </div>
                     <h:commandButton class="btn btn-primary" action="${customer.add()}" value="Save"></h:commandButton>
                 </h:form>
             </ui:define>
