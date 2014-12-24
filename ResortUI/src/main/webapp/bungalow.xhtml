@@ -95,11 +95,10 @@
                     </h:selectBooleanCheckbox>
                     <span class="input-group-addon">Park</span>
                     <h:selectOneMenu label="Login" value="${bungalow.dto.detail.park}" class="form-control" required="true">
-                        <ui:repeat value="${park.dto.list}" var="parklist">
-                            <f:selectItem itemValue="${parklist.name}" itemLabel="${parklist.name}">
-                            </f:selectItem>
-                        </ui:repeat>
+                        <f:selectItems  value="${bungalow.dto.parkList}" var="parkName"
+                                        itemValue="${parkName}" itemLabel="${parkName}" />
                     </h:selectOneMenu>
+                    
 
                     <h:commandButton class="btn btn-primary" action="${bungalow.add()}" value="Save"></h:commandButton>
 

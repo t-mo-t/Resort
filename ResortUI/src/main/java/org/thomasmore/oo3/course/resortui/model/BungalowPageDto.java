@@ -10,7 +10,7 @@ import java.util.List;
 public class BungalowPageDto {
 
     private BungalowDetailDto detail = new BungalowDetailDto();
-
+    private List<String> parkList = new LinkedList<>();
     private List<BungalowListDetailDto> list = new LinkedList<>();
 
     public BungalowDetailDto getDetail() {
@@ -29,6 +29,13 @@ public class BungalowPageDto {
         this.list = list;
     }
 
+    public List<String> getParkList() {
+        return parkList;
+    }
+
+    public void setParkList(List<String> parkList) {
+        this.parkList = parkList;
+    }
     
-    
+
 }

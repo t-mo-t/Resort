@@ -28,6 +28,8 @@ import org.thomasmore.oo3.course.resortui.model.BungalowDetailDto;
 import org.thomasmore.oo3.course.resortui.model.BungalowListDetailDto;
 import org.thomasmore.oo3.course.resortui.entity.BungalowEntity;
 import org.thomasmore.oo3.course.resortui.dao.BungalowDao;
+import org.thomasmore.oo3.course.resortui.dao.ParkDao;
+import org.thomasmore.oo3.course.resortui.entity.ParkEntity;
 
 /**
  *
@@ -40,9 +42,14 @@ public class BungalowController {
     private BungalowPageDto dto;
     @EJB
     private BungalowDao bungalowsDao;
+    @EJB
+    private ParkDao parkDao;
     @PostConstruct
     public void init() {
-        
+        List<ParkEntity> parks = parkDao.listAll();
+        for (ParkEntity park : parks) {
+            dto.getParkList().add(park.getName());
+        }
         List<BungalowEntity> bungalows=bungalowsDao.listAll();
         dto = new BungalowPageDto();
         
@@ -62,6 +69,7 @@ public class BungalowController {
             dto.getList().add(listDetail);
         }
     }
+    
 
     public void add(){
         dto.getDetail().setId(UUID.randomUUID().toString());
