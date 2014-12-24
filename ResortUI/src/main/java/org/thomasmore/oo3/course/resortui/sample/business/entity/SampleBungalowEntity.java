@@ -25,12 +25,12 @@ import org.thomasmore.oo3.course.resortui.entity.BasicEntity;
  *
  * @author lucs
  */
-@Entity
-@Table(name = "sample_bungalow")
-@XmlRootElement
+/*@Entity
+//@Table(name = "sample_bungalow")
+@XmlRootElement*/
 public class SampleBungalowEntity extends BasicEntity{
     
-    private String name;
+   /* private String name;
 
     public String getName() {
         return name;
@@ -38,5 +38,5 @@ public class SampleBungalowEntity extends BasicEntity{
 
     public void setName(String name) {
         this.name = name;
-    }
+    }*/
 }
