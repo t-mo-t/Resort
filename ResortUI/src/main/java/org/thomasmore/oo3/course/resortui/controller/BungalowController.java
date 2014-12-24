@@ -27,7 +27,6 @@ import org.thomasmore.oo3.course.resortui.dao.BungalowDao;
 import org.thomasmore.oo3.course.resortui.entity.BungalowEntity;
 import org.thomasmore.oo3.course.resortui.model.BungalowDetailDto;
 import org.thomasmore.oo3.course.resortui.model.BungalowListDetailDto;
-import org.thomasmore.oo3.course.resortui.sample.business.entity.SampleBungalowEntity;
 
 /**
  *

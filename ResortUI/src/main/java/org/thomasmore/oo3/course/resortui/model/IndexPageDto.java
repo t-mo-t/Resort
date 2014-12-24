@@ -26,7 +26,7 @@ import javax.annotation.PostConstruct;
  */
 public class IndexPageDto implements Serializable {
 
-    private String name = "MyName";
+    private String name = "PEJ";
 
     @PostConstruct
     public void init() {
