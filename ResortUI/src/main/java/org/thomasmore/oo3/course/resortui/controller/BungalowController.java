@@ -44,15 +44,17 @@ public class BungalowController {
     private BungalowDao bungalowsDao;
     @EJB
     private ParkDao parkDao;
+
     @PostConstruct
     public void init() {
         List<ParkEntity> parks = parkDao.listAll();
         for (ParkEntity park : parks) {
             dto.getParkList().add(park.getName());
         }
-        List<BungalowEntity> bungalows=bungalowsDao.listAll();
-        dto = new BungalowPageDto();
         
+        List<BungalowEntity> bungalows = bungalowsDao.listAll();
+        dto = new BungalowPageDto();
+
         for (BungalowEntity bungalow : bungalows) {
             BungalowListDetailDto listDetail = new BungalowListDetailDto();
             listDetail.setId(bungalow.getId());
@@ -69,9 +71,8 @@ public class BungalowController {
             dto.getList().add(listDetail);
         }
     }
-    
 
-    public void add(){
+    public void add() {
         dto.getDetail().setId(UUID.randomUUID().toString());
         dto.getList().add(dto.getDetail());
         BungalowEntity bungalowentity = new BungalowEntity();
@@ -87,8 +88,6 @@ public class BungalowController {
         bungalowentity.setSunbed(dto.getDetail().isSunbed());
         bungalowsDao.save(bungalowentity);
     }
-    
-    
 
     public BungalowPageDto getDto() {
         return dto;
