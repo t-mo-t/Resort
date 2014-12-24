@@ -37,55 +37,32 @@
                     </tbody>
                 </table>
                 <h:form>
-                    <div class="col-md-6">
-                        <div class="input-group">
-                            <span class="input-group-addon">Name:</span>
-                            <h:inputText label="Login" 
-                                         value="${park.dto.detail.name}" class="form-control"
-                                         required="true">
-                            </h:inputText>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="input-group">
-                            <span class="input-group-addon">Country:</span>
-                            <h:inputText label="Login" 
-                                         value="${park.dto.detail.country}" class="form-control"
-                                         required="true">
-                            </h:inputText>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="input-group">
-                            <span class="input-group-addon">Province:</span>
-                            <h:inputText label="Login" 
-                                         value="${park.dto.detail.province}" class="form-control"
-                                         required="true">
-                            </h:inputText>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="input-group">
-                            <span class="input-group-addon">Street:</span>
-                            <h:inputText label="Login" 
-                                         value="${park.dto.detail.street}" class="form-control"
-                                         required="true">
-                            </h:inputText>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="input-group">
-                            <span class="input-group-addon">Streetnumber:</span>
-                            <h:inputText label="Login" 
-                                         value="${park.dto.detail.streetnumber}" class="form-control"
-                                         required="true">
-                            </h:inputText>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <h:commandButton class="btn btn-primary" action="${park.add()}" value="Save"></h:commandButton>
-                    </div>
-
+                    <span class="input-group-addon">Name</span>
+                    <h:inputText label="Login" 
+                                 value="${park.dto.detail.name}" class="form-control"
+                                 required="true">
+                    </h:inputText>
+                    <span class="input-group-addon">Country</span>
+                    <h:inputText label="Login" 
+                                 value="${park.dto.detail.country}" class="form-control"
+                                 required="true">
+                    </h:inputText>
+                    <span class="input-group-addon">Province</span>
+                    <h:inputText label="Login" 
+                                 value="${park.dto.detail.province}" class="form-control"
+                                 required="true">
+                    </h:inputText>
+                    <span class="input-group-addon">Street</span>
+                    <h:inputText label="Login" 
+                                 value="${park.dto.detail.street}" class="form-control"
+                                 required="true">
+                    </h:inputText>
+                    <span class="input-group-addon">Streetnumber</span>
+                    <h:inputText label="Login" 
+                                 value="${park.dto.detail.streetnumber}" class="form-control"
+                                 required="true">
+                    </h:inputText>
+                    <h:commandButton class="btn btn-primary" action="${park.add()}" value="Save"></h:commandButton>
 
                 </h:form>
 

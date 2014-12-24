@@ -47,99 +47,59 @@
                     </tbody>
                 </table>
                 <h:form>
-                    <div class="col-md-6">
-                        <div class="input-group">
-                            <span class="input-group-addon">Name:</span>
-                            <h:inputText label="Login" 
-                                         value="${bungalow.dto.detail.name}" class="form-control"
-                                         required="true">
-                            </h:inputText>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="input-group">
-                            <span class="input-group-addon">Code:</span>
-                            <h:inputText label="Login" 
-                                         value="${bungalow.dto.detail.code}" class="form-control"
-                                         required="true" maxlength="3">
-                            </h:inputText>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="input-group">
-                            <span class="input-group-addon">Max amount of customers:</span>
-                            <h:selectOneMenu label="Login" value="${bungalow.dto.detail.maxcustomers}" class="form-control" required="true">
-                                <f:selectItem itemValue="4" itemLabel="4" />
-                                <f:selectItem itemValue="6" itemLabel="6" />
-                                <f:selectItem itemValue="8" itemLabel="8" />
-                            </h:selectOneMenu>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="input-group">
-                            <span class="input-group-addon">Type of Bungalow:</span>
-                            <h:selectOneMenu label="Login" value="${bungalow.dto.detail.type}" class="form-control" required="true">
-                                <f:selectItem itemValue="comfort" itemLabel="comfort" />
-                                <f:selectItem itemValue="luxe" itemLabel="luxe" />
-                            </h:selectOneMenu>
-                        </div>
-                    </div>
-                   
-                        <div class="input-group">
-                            <span class="input-group-addon">Description:</span>
-                            <h:inputTextarea label="Login" 
-                                             value="${bungalow.dto.detail.description}" class="form-control"
+                    <span class="input-group-addon">Name</span>
+                    <h:inputText label="Login" 
+                                 value="${bungalow.dto.detail.name}" class="form-control"
+                                 required="true">
+                    </h:inputText>
+                    <span class="input-group-addon">Code</span>
+                    <h:inputText label="Login" 
+                                 value="${bungalow.dto.detail.code}" class="form-control"
+                                 required="true" maxlength="3">
+                    </h:inputText>
+                    <span class="input-group-addon">Max amount of customers</span>
+                    <h:selectOneMenu label="Login" value="${bungalow.dto.detail.maxcustomers}" class="form-control" required="true">
+                        <f:selectItem itemValue="4" itemLabel="4" />
+                        <f:selectItem itemValue="6" itemLabel="6" />
+                        <f:selectItem itemValue="8" itemLabel="8" />
+                    </h:selectOneMenu>
+                    <span class="input-group-addon">Type of Bungalow</span>
+                    <h:selectOneMenu label="Login" value="${bungalow.dto.detail.type}" class="form-control" required="true">
+                        <f:selectItem itemValue="comfort" itemLabel="comfort" />
+                        <f:selectItem itemValue="luxe" itemLabel="luxe" />
+                    </h:selectOneMenu>
+                    <span class="input-group-addon">Description</span>
+                    <h:inputTextarea label="Login" 
+                                     value="${bungalow.dto.detail.description}" class="form-control"
+                                     required="true">
+                    </h:inputTextarea>
+                    <span class="input-group-addon">Dishwasher</span>
+                    <h:selectBooleanCheckbox label="login"
+                                             value="${bungalow.dto.detail.dishwasher}" class="form-control" 
                                              required="true">
-                            </h:inputTextarea>
-                        </div>
-                   
-
-                    <div class="input-group">
-                        <span class="input-group-addon">Dishwasher:</span>
-                        <h:selectBooleanCheckbox label="login"
-                                                 value="${bungalow.dto.detail.dishwasher}" class="form-control" 
-                                                 required="true">
-                        </h:selectBooleanCheckbox>
-
-                    </div>
-
-                    <div class="input-group">
-                        <span class="input-group-addon">Jacuzzi:</span>
-                        <h:selectBooleanCheckbox label="login"
-                                                 value="${bungalow.dto.detail.jacuzzi}" class="form-control" 
-                                                 required="true">
-                        </h:selectBooleanCheckbox>
-
-                    </div>
-
-                    <div class="input-group">
-                        <span class="input-group-addon">Sauna:</span>
-                        <h:selectBooleanCheckbox label="login"
-                                                 value="${bungalow.dto.detail.sauna}" class="form-control" 
-                                                 required="true">
-                        </h:selectBooleanCheckbox>
-
-                    </div>
-
-                    <div class="input-group">
-                        <span class="input-group-addon">Sunbed:</span>
-                        <h:selectBooleanCheckbox label="login"
-                                                 value="${bungalow.dto.detail.sunbed}" class="form-control" 
-                                                 required="true">
-                        </h:selectBooleanCheckbox>
-
-                    </div>
-                    
-                        <div class="input-group">
-                            <span class="input-group-addon">Park:</span>
-                            <h:selectOneMenu label="Login" value="${bungalow.dto.detail.park}" class="form-control" required="true">
-                                <ui:repeat value="${park.dto.list}" var="parklist">
-                                    <f:selectItem itemValue="${parklist.name}" itemLabel="${parklist.name}">
-                                    </f:selectItem>
-                                </ui:repeat>
-                            </h:selectOneMenu>
-                        </div>
-                   
+                    </h:selectBooleanCheckbox>
+                    <span class="input-group-addon">Jacuzzi</span>
+                    <h:selectBooleanCheckbox label="login"
+                                             value="${bungalow.dto.detail.jacuzzi}" class="form-control" 
+                                             required="true">
+                    </h:selectBooleanCheckbox>
+                    <span class="input-group-addon">Sauna</span>
+                    <h:selectBooleanCheckbox label="login"
+                                             value="${bungalow.dto.detail.sauna}" class="form-control" 
+                                             required="true">
+                    </h:selectBooleanCheckbox>
+                    <span class="input-group-addon">Sunbed</span>
+                    <h:selectBooleanCheckbox label="login"
+                                             value="${bungalow.dto.detail.sunbed}" class="form-control" 
+                                             required="true">
+                    </h:selectBooleanCheckbox>
+                    <span class="input-group-addon">Park</span>
+                    <h:selectOneMenu label="Login" value="${bungalow.dto.detail.park}" class="form-control" required="true">
+                        <ui:repeat value="${park.dto.list}" var="parklist">
+                            <f:selectItem itemValue="${parklist.name}" itemLabel="${parklist.name}">
+                            </f:selectItem>
+                        </ui:repeat>
+                    </h:selectOneMenu>
 
                     <h:commandButton class="btn btn-primary" action="${bungalow.add()}" value="Save"></h:commandButton>
 
