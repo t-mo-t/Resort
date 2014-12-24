@@ -9,6 +9,7 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 import org.thomasmore.oo3.course.resortui.doa.ParkDao;
+import org.thomasmore.oo3.course.resortui.entity.BungalowEntity;
 import org.thomasmore.oo3.course.resortui.model.IndexPageDto;
 import org.thomasmore.oo3.course.resortui.entity.ParkEntity;
 
@@ -24,10 +25,10 @@ public class IndexController {
     @PostConstruct
     public void init()
     {
-        ParkEntity entity =  new ParkEntity();
-        entity.setName("ABC");
+        //ParkEntity entity =  new ParkEntity();
+        //entity.setName("abc");
         try {
-            parkDao.save(entity);
+           // parkDao.save(entity);
         }
         catch (Exception ex) {
             Logger.getLogger(IndexController.class.getName()).log(Level.SEVERE, null, ex);

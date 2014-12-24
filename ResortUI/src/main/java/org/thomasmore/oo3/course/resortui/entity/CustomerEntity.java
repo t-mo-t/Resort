@@ -4,22 +4,13 @@ package org.thomasmore.oo3.course.resortui.entity;
  *
  * @author Jasper & Nico
  */
-public class CustomerEntity {
+public class CustomerEntity extends BasicEntity {
 
-    private String id;
     private String name;
     private String firstName;
     private String address;
     private String email;
     private int discountPoints;
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;

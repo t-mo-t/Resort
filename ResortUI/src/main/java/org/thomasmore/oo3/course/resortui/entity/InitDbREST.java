@@ -2,6 +2,7 @@ package org.thomasmore.oo3.course.resortui.entity;
 
 import org.thomasmore.oo3.course.resortui.entity.ParkEntity;
 import org.thomasmore.oo3.course.resortui.entity.BungalowEntity;
+import org.thomasmore.oo3.course.resortui.entity.CustomerEntity;
 import java.util.LinkedList;
 import java.util.List;
 import javax.ejb.Stateless;
@@ -31,9 +32,9 @@ public class InitDbREST {
 
         // parks
         ParkEntity parkEntity = new ParkEntity();
-        parkEntity.setName("ABC");
+        parkEntity.setName("Vossemeren");
         objectsToSave.add(parkEntity);
-/*
+
         parkEntity = new ParkEntity();
         parkEntity.setName("Zeeland");
         objectsToSave.add(parkEntity);
@@ -66,7 +67,17 @@ public class InitDbREST {
         bungalowEntity = new BungalowEntity();
         bungalowEntity.setName("Children-friendly");
         objectsToSave.add(bungalowEntity);
-*/
+        
+        CustomerEntity customerEntity = new CustomerEntity();
+        customerEntity.setName("Franckx");
+        customerEntity.setFirstName("Nico");
+        objectsToSave.add(customerEntity);
+        
+        customerEntity = new CustomerEntity();
+        customerEntity.setName("Loverie");
+        customerEntity.setFirstName("Jasper");
+        objectsToSave.add(customerEntity);
+
         for (Object objectsToSave1 : objectsToSave) {
 
             em.persist(objectsToSave1);

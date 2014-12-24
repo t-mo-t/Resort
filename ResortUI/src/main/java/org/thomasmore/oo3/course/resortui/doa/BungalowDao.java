@@ -21,7 +21,7 @@ public class BungalowDao implements Serializable {
     private EntityManager em;
 
     public void save(BungalowEntity bungalowEntity) {
-        em.persist(bungalowEntity);
+        em.merge(bungalowEntity);
     }
 
     public List<BungalowEntity> listAll() {

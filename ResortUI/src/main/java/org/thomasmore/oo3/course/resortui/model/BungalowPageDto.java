@@ -3,7 +3,6 @@ package org.thomasmore.oo3.course.resortui.model;
 import java.util.LinkedList;
 import java.util.List;
 
-
 public class BungalowPageDto {
 
     private BungalowDetailDto detail = new BungalowDetailDto();
@@ -26,6 +25,4 @@ public class BungalowPageDto {
         this.list = list;
     }
 
-    
-    
 }

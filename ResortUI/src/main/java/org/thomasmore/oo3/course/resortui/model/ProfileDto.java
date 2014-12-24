@@ -3,11 +3,11 @@ package org.thomasmore.oo3.course.resortui.model;
 
 /**
  *
- * @author Moegie
+ * @author Jasper & Nico
  */
 public class ProfileDto {
     String username;
-    String fullname = "TESTJE";
+    String fullname;
     String sex;
 
     public String getUsername() {

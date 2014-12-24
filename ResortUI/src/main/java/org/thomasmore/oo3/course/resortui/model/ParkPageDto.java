@@ -8,7 +8,7 @@ import java.util.List;
  * @author Jasper & Nico
  */
 public class ParkPageDto {
-    
+
     private ParkDetailDto detail = new ParkDetailDto();
 
     private List<ParkListDetailDto> list = new LinkedList<>();
@@ -28,5 +28,5 @@ public class ParkPageDto {
     public void setList(List<ParkListDetailDto> list) {
         this.list = list;
     }
-    
+
 }
