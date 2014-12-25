@@ -48,13 +48,13 @@ public class BungalowController {
     @PostConstruct
     public void init() {
         List<ParkEntity> parks = parkDao.listAll();
-        for (ParkEntity park : parks) {
-            dto.getParkList().add(park.getName());
-        }
+
         
         List<BungalowEntity> bungalows = bungalowsDao.listAll();
         dto = new BungalowPageDto();
-
+        for (ParkEntity park : parks) {
+            dto.getParkList().add(park.getName());
+        }
         for (BungalowEntity bungalow : bungalows) {
             BungalowListDetailDto listDetail = new BungalowListDetailDto();
             listDetail.setId(bungalow.getId());
