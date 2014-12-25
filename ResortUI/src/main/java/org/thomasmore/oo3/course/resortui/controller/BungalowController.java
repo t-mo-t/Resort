@@ -22,7 +22,6 @@ HAIL Gunther !!!!
 */
 package org.thomasmore.oo3.course.resortui.controller;
 
-import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 import javax.annotation.PostConstruct;
@@ -84,7 +83,7 @@ public class BungalowController {
         bungalowEntity.setSauna(detailDto.isSauna());
         bungalowEntity.setSunbed(detailDto.isSunbed());
         bungalowsDao.save(bungalowEntity);
-        
+  
        // dto.getList().add(dto.getDetail());
        
     }
@@ -92,7 +91,7 @@ public class BungalowController {
     public BungalowPageDto getDto() {
         return dto;
     }
-
+  
     
     public void setDto(BungalowPageDto dto) {
         this.dto = dto;
