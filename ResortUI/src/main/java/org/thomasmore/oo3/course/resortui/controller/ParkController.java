@@ -30,7 +30,7 @@ import org.thomasmore.oo3.course.resortui.model.ParkPageDto;
  *
  * @author lucs
  */
-@Named(value = "bungalow")
+@Named(value = "park")
 @RequestScoped
 public class ParkController {
 
@@ -45,7 +45,7 @@ public class ParkController {
         for (int i = 0; i < 10; i++) {
             ParkListDetailDto listDetail = new ParkListDetailDto();
             listDetail.setId("@"+i);
-            listDetail.setName("B"+(i+1));
+            listDetail.setName("P"+(i+1));
             dto.getList().add(listDetail);
         }
     }
