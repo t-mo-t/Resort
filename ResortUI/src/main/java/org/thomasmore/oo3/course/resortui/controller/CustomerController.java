@@ -47,7 +47,18 @@ public class CustomerController {
         customersDao.save(customerentity);
         
     }
-
+   public void remove() {
+        String id = dto.getDetail().getId();
+        CustomerListDetailDto removeFromListobject = new CustomerListDetailDto();
+        for (CustomerListDetailDto customerListDetailDto : dto.getList()) {
+               if(customerListDetailDto.getId().equals(id)){
+                   removeFromListobject = customerListDetailDto;
+               }
+            
+        }
+        dto.getList().remove(removeFromListobject);
+        customersDao.deleteById(id);
+    }
     public CustomerPageDto getDto() {
         return dto;
     }

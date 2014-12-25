@@ -98,13 +98,17 @@
                         <f:selectItems  value="${bungalow.dto.parkList}" var="parkName"
                                         itemValue="${parkName}" itemLabel="${parkName}" />
                     </h:selectOneMenu>
-                    
-
                     <h:commandButton class="btn btn-primary" action="${bungalow.add()}" value="Save"></h:commandButton>
-
                 </h:form>
-            </ui:define>
 
+                <h:form>Form for deleting
+                    <span class="input-group-addon">Type the id of the record you want to delete</span>
+                    <h:inputText label="Login" value="${bungalow.dto.detail.id}" class="form-control" required="true">
+                    </h:inputText>
+                    <h:commandButton class="btn btn-primary" action="${bungalow.remove()}" value="Remove"></h:commandButton>
+                </h:form>
+
+            </ui:define>
         </ui:composition>
 
     </body>

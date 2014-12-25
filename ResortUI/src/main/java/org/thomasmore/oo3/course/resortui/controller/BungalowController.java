@@ -88,7 +88,18 @@ public class BungalowController {
         bungalowentity.setSunbed(dto.getDetail().isSunbed());
         bungalowsDao.save(bungalowentity);
     }
-
+   public void remove() {
+        String id = dto.getDetail().getId();
+        BungalowListDetailDto removeFromListobject = new BungalowListDetailDto();
+        for (BungalowListDetailDto BungalowListDetailDto : dto.getList()) {
+               if(BungalowListDetailDto.getId().equals(id)){
+                   removeFromListobject = BungalowListDetailDto;
+               }
+            
+        }
+        dto.getList().remove(removeFromListobject);
+        bungalowsDao.deleteById(id);
+    }
     public BungalowPageDto getDto() {
         return dto;
     }
