@@ -1744,6 +1744,7 @@ pre code {
   }
   .col-md-12 {
     width: 100%;
+    padding-bottom: 5px;
   }
   .col-md-11 {
     width: 91.66666667%;
@@ -1762,6 +1763,7 @@ pre code {
   }
   .col-md-6 {
     width: 50%;
+    padding-bottom: 5px;
   }
   .col-md-5 {
     width: 41.66666667%;
@@ -1771,6 +1773,7 @@ pre code {
   }
   .col-md-3 {
     width: 25%;
+    padding-bottom: 5px;
   }
   .col-md-2 {
     width: 16.66666667%;
