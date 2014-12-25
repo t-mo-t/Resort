@@ -14,35 +14,29 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.thomasmore.oo3.course.resortui.model;
+package org.thomasmore.oo3.course.resortui.entity;
 
-import java.io.Serializable;
-import javax.annotation.PostConstruct;
-import javax.enterprise.context.SessionScoped;
-import javax.inject.Named;
+import java.util.UUID;
+import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
 
 /**
  *
  * @author lucs
  */
-@Named
-@SessionScoped
-public class SessionDto implements Serializable {
+@MappedSuperclass
+public class BasicEntity {
+    
+    @Id
+    private String id = UUID.randomUUID().toString();
 
-    private UserDto userDto;
-
-    @PostConstruct
-    public void init() {
-        System.out.println("SessionDto - init");
-        userDto = new UserDto();
+    public String getId() {
+        return id;
     }
 
-    public UserDto getUserDto() {
-        return userDto;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public void setUserDto(UserDto UserDto) {
-        this.userDto = UserDto;
-    }
-
+    
 }

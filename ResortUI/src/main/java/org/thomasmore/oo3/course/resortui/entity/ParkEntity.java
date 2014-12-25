@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014 lucs
+ * Copyright (C) 2014 Stephan
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -14,35 +14,33 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.thomasmore.oo3.course.resortui.model;
-
-import java.io.Serializable;
-import javax.annotation.PostConstruct;
-import javax.enterprise.context.SessionScoped;
-import javax.inject.Named;
+package org.thomasmore.oo3.course.resortui.entity;
 
 /**
  *
- * @author lucs
+ * @author Stephan
  */
-@Named
-@SessionScoped
-public class SessionDto implements Serializable {
+public class ParkEntity {
+    
+   private String id;
+   private String name;
+    
+    public String getId() {
+        return id;
+    }
+  
 
-    private UserDto userDto;
-
-    @PostConstruct
-    public void init() {
-        System.out.println("SessionDto - init");
-        userDto = new UserDto();
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public UserDto getUserDto() {
-        return userDto;
+    public String getName() {
+        return name;
     }
 
-    public void setUserDto(UserDto UserDto) {
-        this.userDto = UserDto;
+    public void setName(String name) {
+        this.name = name;
     }
-
+   
+    
 }
