@@ -71,9 +71,21 @@ public class BungalowController {
 
     public void add(){
 
-        dto.getDetail().setId(UUID.randomUUID().toString());
+        BungalowDetailDto detailDto = dto.getDetail();
+        BungalowEntity bungalowEntity = new BungalowEntity();
+        bungalowEntity.setName(detailDto.getName());
+        bungalowEntity.setId(UUID.randomUUID().toString());
+        bungalowEntity.setCode(detailDto.getCode());
+        bungalowEntity.setMaxcustomers(detailDto.getMaxcustomers());
+        bungalowEntity.setType(detailDto.getType());
+        bungalowEntity.setDescription(detailDto.getDescription());
+        bungalowEntity.setDishwasher(detailDto.isDishwasher());
+        bungalowEntity.setHotTub(detailDto.isHotTub());
+        bungalowEntity.setSauna(detailDto.isSauna());
+        bungalowEntity.setSunbed(detailDto.isSunbed());
+        bungalowsDao.save(bungalowEntity);
         
-        dto.getList().add(dto.getDetail());
+       // dto.getList().add(dto.getDetail());
        
     }
   
