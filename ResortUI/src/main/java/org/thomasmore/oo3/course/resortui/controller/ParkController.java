@@ -57,12 +57,14 @@ public class ParkController {
             listDetail.setCity(park.getCity());
             listDetail.setClosingFrom(park.getClosingFrom());
             listDetail.setClosingTill(park.getClosingTill());
-            
+            dto.getList().add(listDetail);
+
         }
     }
+
     public void add() {
-       
-         ParkDetailDto detailDto = dto.getDetail();
+
+        ParkDetailDto detailDto = dto.getDetail();
         ParkEntity parkEntity = new ParkEntity();
         parkEntity.setName(detailDto.getName());
         parkEntity.setId(UUID.randomUUID().toString());
@@ -71,7 +73,7 @@ public class ParkController {
         parkEntity.setCity(detailDto.getCity());
         parkEntity.setClosingFrom(detailDto.getClosingFrom());
         parkEntity.setClosingTill(detailDto.getClosingTill());
-        
+
         parksDao.save(parkEntity);
     }
 
@@ -83,6 +85,4 @@ public class ParkController {
         this.dto = dto;
     }
 
-    
-    
 }
