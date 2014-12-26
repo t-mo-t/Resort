@@ -1,9 +1,6 @@
 
 package org.thomasmore.oo3.course.resortui.business.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
-import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
@@ -15,7 +12,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Table(name = "park")
 @XmlRootElement*/
 
-public class ParkEntity extends BasicEntity {
+public class ParkEntity {
     
    private String id;
    private String name;
