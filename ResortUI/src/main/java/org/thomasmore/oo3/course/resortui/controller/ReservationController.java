@@ -6,7 +6,11 @@ import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
+import org.thomasmore.oo3.course.resortui.dao.BungalowDao;
+import org.thomasmore.oo3.course.resortui.dao.CustomerDao;
 import org.thomasmore.oo3.course.resortui.dao.ReservationDao;
+import org.thomasmore.oo3.course.resortui.entity.BungalowEntity;
+import org.thomasmore.oo3.course.resortui.entity.CustomerEntity;
 import org.thomasmore.oo3.course.resortui.entity.ReservationEntity;
 import org.thomasmore.oo3.course.resortui.model.ReservationDetailDto;
 import org.thomasmore.oo3.course.resortui.model.ReservationListDetailDto;
@@ -19,11 +23,27 @@ public class ReservationController {
     private ReservationPageDto dto;
     @EJB
     private ReservationDao reservationsDao;
+    @EJB
+    private BungalowDao bungalowsDao;
+    @EJB
+    private CustomerDao customersDao;
 
     @PostConstruct
     public void init() {
         List<ReservationEntity> reservations = reservationsDao.listAll();
+        List<BungalowEntity> bungalows = bungalowsDao.listAll();
+        List<CustomerEntity> customers = customersDao.listAll();
+
         dto = new ReservationPageDto();
+
+        for (CustomerEntity customer : customers) {
+            dto.getCustomerList().add(customer.getFirstname() + " " + customer.getLastname());
+        }
+
+        for (BungalowEntity bungalow : bungalows) {
+            dto.getBungalowList().add(bungalow.getName());
+        }
+
         for (ReservationEntity reservation : reservations) {
             ReservationListDetailDto listDetail = new ReservationDetailDto();
             listDetail.setId(reservation.getId());

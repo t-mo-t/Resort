@@ -31,8 +31,8 @@ public class InitDbREST {
         List<Object> objectsToSave = new LinkedList<>();
         ParkEntity parkEntity = new ParkEntity();
         parkEntity.setName("ABC");
-        parkEntity.setCountry("Belgie");
-        parkEntity.setProvince("Antwerpen");
+        parkEntity.setCountry("Belgium");
+        parkEntity.setProvince("Antwerp");
         parkEntity.setStreet("Boomsesteenweg");
         parkEntity.setStreetnumber(10);
         objectsToSave.add(parkEntity);
@@ -41,7 +41,7 @@ public class InitDbREST {
         BungalowEntity.setName("abc");
         BungalowEntity.setCode("edf");
         BungalowEntity.setType("comfort");
-        BungalowEntity.setDescription("Een bungalow");
+        BungalowEntity.setDescription("A bungalow");
         BungalowEntity.setMaxcustomers(4);
         BungalowEntity.setDishwasher(true);
         BungalowEntity.setJacuzzi(true);
@@ -59,10 +59,10 @@ public class InitDbREST {
         objectsToSave.add(CustomerEntity);
 
         ReservationEntity reservationEntity = new ReservationEntity();
-        reservationEntity.setStartDate("10/10/2012");
-        reservationEntity.setStartTime("10:00");
-        reservationEntity.setEndDate("12/10/2012");
-        reservationEntity.setEndTime("11:00");
+        reservationEntity.setStartDate("monday");
+        reservationEntity.setStartTime("15:00");
+        reservationEntity.setEndDate("friday");
+        reservationEntity.setEndTime("10:30");
         reservationEntity.setCancellationInsurance(true);
         reservationEntity.setAmountCustomers(8);
         reservationEntity.setCustomerName("Jos Vermeulen");

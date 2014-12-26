@@ -1,7 +1,9 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
 
     <body>
 
@@ -41,6 +43,101 @@
                         </ui:repeat>
                     </tbody>
                 </table>
+                <h:form>
+                    <div class="col-md-6">
+                        <div class="input-group">
+                            <span class="input-group-addon">Start date</span>
+                            <h:selectOneMenu label="Login" value="${reservation.dto.detail.startDate}" class="form-control" required="true">
+                                <f:selectItem itemValue="monday" itemLabel="monday"/>
+                                <f:selectItem itemValue="friday" itemLabel="friday"/>
+                                <f:selectItem itemValue="saturday" itemLabel="saturday"/>
+                                <f:selectItem itemValue="sunday" itemLabel="sunday"/>
+                                <f:selectItem itemValue="tuesday" itemLabel="tuesday"/>
+                            </h:selectOneMenu>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="input-group">
+                            <span class="input-group-addon">Start time</span>
+                            <h:selectOneMenu label="Login" value="${reservation.dto.detail.startTime}" class="form-control" required="true">
+                                <f:selectItem itemValue="15:00" itemLabel="15:00"/>
+                            </h:selectOneMenu>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="input-group">
+                            <span class="input-group-addon">End date</span>
+                            <h:selectOneMenu label="Login" value="${reservation.dto.detail.endDate}" class="form-control" required="true">
+                                <f:selectItem itemValue="friday" itemLabel="friday"/>
+                                <f:selectItem itemValue="monday" itemLabel="monday"/>
+                                <f:selectItem itemValue="tuesday" itemLabel="tuesday"/>
+                                <f:selectItem itemValue="thursday" itemLabel="thursday"/>
+                                <f:selectItem itemValue="saturday" itemLabel="saturday"/>
+                            </h:selectOneMenu>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="input-group">
+                            <span class="input-group-addon">End time</span>
+                            <h:selectOneMenu label="Login" value="${reservation.dto.detail.endTime}" class="form-control" required="true">
+                                <f:selectItem itemValue="10:30" itemLabel="10:30"/>
+                            </h:selectOneMenu>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="input-group">
+                            <span class="input-group-addon">Amount of customers</span>
+                            <h:inputText label="Login" value="${reservation.dto.detail.amountCustomers}" class="form-control" required="true">
+                            </h:inputText>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="input-group">
+                            <span class="input-group-addon">Cancellation insurance</span>
+                            <h:selectBooleanCheckbox label="login"
+                                                     value="${reservation.dto.detail.cancellationInsurance}" class="form-control" 
+                                                     required="true">
+                            </h:selectBooleanCheckbox>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="input-group">
+                            <span class="input-group-addon">Customer</span>
+                            <h:selectOneMenu label="Login" value="${reservation.dto.detail.customerName}" class="form-control">
+                                <f:selectItems value="${reservation.dto.customerList}" var="customerName"
+                                               itemValue="${customerName}" itemLabel="${customerName}"/>
+                            </h:selectOneMenu>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="input-group">
+                            <span class="input-group-addon">Bungalow</span>
+                            <h:selectOneMenu label="Login" value="${reservation.dto.detail.bungalowName}" class="form-control">
+                                <f:selectItems value="${reservation.dto.bungalowList}" var="bungalowName"
+                                               itemValue="${bungalowName}" itemLabel="${bungalowName}"/>
+                            </h:selectOneMenu>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="input-group">
+                            <h:commandButton class="btn btn-primary" action="${reservation.add()}" value="Save"></h:commandButton>
+                        </div>
+                    </div>
+                </h:form>
+                <h:form>Form for deleting
+                    <div class="col-md-12">
+                        <div class="input-group">
+                            <span class="input-group-addon">Type the id of the record you want to delete</span>
+                            <h:inputText label="Login" value="${reservation.dto.detail.id}" class="form-control" required="true">
+                            </h:inputText>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="input-group">
+                            <h:commandButton class="btn btn-primary" action="${reservation.remove()}" value="Remove"></h:commandButton>
+                        </div>
+                    </div>
+                </h:form>
             </ui:define>
 
         </ui:composition>
