@@ -32,6 +32,7 @@ import javax.ws.rs.Produces;
 import org.thomasmore.oo3.course.resortui.entity.CustomerEntity;
 import org.thomasmore.oo3.course.resortui.entity.BungalowEntity;
 import org.thomasmore.oo3.course.resortui.entity.ParkEntity;
+import org.thomasmore.oo3.course.resortui.entity.ReservationEntity;
 
 /**
  *
@@ -55,7 +56,7 @@ public class InitDbREST {
         parkEntity.setStreet("Boomsesteenweg");
         parkEntity.setStreetnumber(10);
         objectsToSave.add(parkEntity);
-        
+
         BungalowEntity BungalowEntity = new BungalowEntity();
         BungalowEntity.setName("abc");
         BungalowEntity.setCode("edf");
@@ -68,19 +69,27 @@ public class InitDbREST {
         BungalowEntity.setSunbed(true);
         BungalowEntity.setPark("ABC");
         objectsToSave.add(BungalowEntity);
-        
-        CustomerEntity CustomerEntity= new CustomerEntity();
+
+        CustomerEntity CustomerEntity = new CustomerEntity();
         CustomerEntity.setEmail("Test@test.test");
         CustomerEntity.setPromotionpoints(100);
         CustomerEntity.setFirstname("Jos");
         CustomerEntity.setLastname("Vermeulen");
         CustomerEntity.setCellphone("0489563214");
         objectsToSave.add(CustomerEntity);
-        
-        for (Object objectToSave1 : objectsToSave){
+
+        ReservationEntity reservationEntity = new ReservationEntity();
+        reservationEntity.setStartDate("10/10/2012");
+        reservationEntity.setStartTime("10:00");
+        reservationEntity.setEndDate("12/10/2012");
+        reservationEntity.setEndTime("11:00");
+        reservationEntity.setCancellationInsurance(true);
+        reservationEntity.setAmountCustomers(8);
+        objectsToSave.add(reservationEntity);
+
+        for (Object objectToSave1 : objectsToSave) {
             em.persist(objectToSave1);
         }
-        
 
         return parkEntity;
     }

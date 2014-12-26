@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+    <body>
+
+        <ui:composition template="./common/template-simple.xhtml">
+
+            <ui:define name="title">
+                reservation
+            </ui:define>
+
+            <ui:define name="content">
+                <table>
+                    <tr>
+                        <th>ID</th>
+                        <th>Startdate</th>
+                        <th>Starttime</th>
+                        <th>Enddate</th>
+                        <th>Endtime</th>
+                        <th>Amount of customers</th>
+                        <th>Cancellation insurance</th>
+                    </tr>
+                    <tbody>
+
+                        <ui:repeat value="${reservation.dto.list}" var="listDetail">
+                            <tr>
+                                <td>${listDetail.id}</td>
+                                <td>${listDetail.startDate}</td>
+                                <td>${listDetail.startTime}</td>
+                                <td>${listDetail.endDate}</td>
+                                <td>${listDetail.endTime}</td>
+                                <td>${listDetail.amountCustomers}</td>
+                                <td>${listDetail.cancellationInsurance}</td>
+                            </tr>
+                        </ui:repeat>
+                    </tbody>
+                </table>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>
