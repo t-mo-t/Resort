@@ -23,8 +23,8 @@ import org.thomasmore.oo3.course.resortui.model.BungalowPageDto;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
 import org.thomasmore.oo3.course.resortui.model.BungalowListDetailDto;
-import org.thomasmore.oo3.course.resortui.sample.business.entity.SampleBungalowEntity;
-import org.thomasmore.oo3.course.resortui.sample.dao.SampleBungalowDao;
+import org.thomasmore.oo3.course.resortui.business.entity.BungalowEntity;
+import org.thomasmore.oo3.course.resortui.dao.BungalowDao;
 
 /**
  *
@@ -37,15 +37,15 @@ public class SampleBungalowController {
     private BungalowPageDto dto;
 
     @EJB
-    private SampleBungalowDao bungalowDao;
+    private BungalowDao bungalowDao;
     
     @PostConstruct
     public void init() {
         
-        List<SampleBungalowEntity> bungalows = bungalowDao.listAll();
+        List<BungalowEntity> bungalows = bungalowDao.listAll();
         dto = new BungalowPageDto();
         
-        for (SampleBungalowEntity bungalow : bungalows) {
+        for (BungalowEntity bungalow : bungalows) {
             BungalowListDetailDto listDetail = new BungalowListDetailDto();
             listDetail.setId(bungalow.getId());
             listDetail.setName(bungalow.getName());

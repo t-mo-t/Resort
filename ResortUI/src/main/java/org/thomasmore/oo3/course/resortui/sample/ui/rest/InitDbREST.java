@@ -24,8 +24,8 @@ import javax.persistence.PersistenceContext;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
-import org.thomasmore.oo3.course.resortui.sample.business.entity.SampleBungalowEntity;
-import org.thomasmore.oo3.course.resortui.sample.business.entity.SampleParkEntity;
+import org.thomasmore.oo3.course.resortui.business.entity.BungalowEntity;
+import org.thomasmore.oo3.course.resortui.business.entity.ParkEntity;
 
 /**
  *
@@ -41,23 +41,23 @@ public class InitDbREST {
     
     @GET
     @Produces({"application/json", "application/xml"})
-    public SampleParkEntity createDB() {
+    public ParkEntity createDB() {
         List<Object> objectsToSave= new LinkedList<>();
         
         
-        SampleParkEntity parkEntity = new SampleParkEntity();
+        ParkEntity parkEntity = new ParkEntity();
         parkEntity.setName("PARK 1");
         objectsToSave.add(parkEntity);
         
-        parkEntity = new SampleParkEntity();
+        parkEntity = new ParkEntity();
         parkEntity.setName("PARK 2");
         objectsToSave.add(parkEntity);
         
-         SampleBungalowEntity sampleBungalowEntity = new SampleBungalowEntity();
+         BungalowEntity sampleBungalowEntity = new BungalowEntity();
         sampleBungalowEntity.setName("BUNGALOW 1");
         objectsToSave.add(sampleBungalowEntity);
         
-        sampleBungalowEntity = new SampleBungalowEntity();
+        sampleBungalowEntity = new BungalowEntity();
         sampleBungalowEntity.setName("BUNGALOW 2");
         objectsToSave.add(sampleBungalowEntity);
         
