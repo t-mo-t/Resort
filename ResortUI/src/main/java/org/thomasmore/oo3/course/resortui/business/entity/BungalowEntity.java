@@ -6,9 +6,9 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 
-@Entity                                       
-@Table(name = "bungalow")
-@XmlRootElement
+//@Entity                                       
+//@Table(name = "bungalow")
+//@XmlRootElement
 
 public class BungalowEntity extends BasicEntity{
     
