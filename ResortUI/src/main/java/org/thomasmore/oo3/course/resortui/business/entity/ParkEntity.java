@@ -11,11 +11,11 @@ import javax.xml.bind.annotation.XmlRootElement;
  */
 
 
-/*@Entity                                       //misschien? ook bij bungalowentity aanpassen!
+/*@Entity                                       
 @Table(name = "park")
-@XmlRootElement
-*/
-public class ParkEntity /*extends BasicEntity*/ {
+@XmlRootElement*/
+
+public class ParkEntity extends BasicEntity {
     
    private String id;
    private String name;

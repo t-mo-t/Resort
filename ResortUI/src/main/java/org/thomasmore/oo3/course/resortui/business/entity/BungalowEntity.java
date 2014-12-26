@@ -5,13 +5,12 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 
-/**
- *
- * @author Stephan
- */
 
+/*@Entity                                       
+@Table(name = "bungalow")
+@XmlRootElement*/
 
-public class BungalowEntity  /*extends BasicEntity*/ {
+public class BungalowEntity  extends BasicEntity {
     
    private String id;
    private String name;

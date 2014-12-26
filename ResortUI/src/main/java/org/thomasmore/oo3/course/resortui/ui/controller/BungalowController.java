@@ -32,13 +32,13 @@ public class BungalowController {
         List<BungalowEntity> bungalows = bungalowDao.listAll();
         dto = new BungalowPageDto();
         
-        for (BungalowEntity bungalow : bungalows) {
+       /* for (BungalowEntity bungalow : bungalows) {
             BungalowListDetailDto listDetail = new BungalowListDetailDto();
             listDetail.setId(bungalow.getId());
             listDetail.setName(bungalow.getName());
             dto.getList().add(listDetail);
         }
-        
+        */
     }
 
     public void add(){

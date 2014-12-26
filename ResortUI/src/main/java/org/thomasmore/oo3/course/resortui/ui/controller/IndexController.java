@@ -12,10 +12,7 @@ import org.thomasmore.oo3.course.resortui.dao.ParkDao;
 import org.thomasmore.oo3.course.resortui.ui.model.IndexPageDto;
 
 
-/**
- *
- * @author lucs
- */
+
 @Named(value = "index")
 @RequestScoped
 public class IndexController
