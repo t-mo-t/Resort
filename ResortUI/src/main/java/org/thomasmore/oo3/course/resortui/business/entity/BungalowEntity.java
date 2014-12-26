@@ -1,10 +1,15 @@
 
 package org.thomasmore.oo3.course.resortui.business.entity;
-/*@Entity                                       
-@Table(name = "bungalow")
-@XmlRootElement*/
 
-public class BungalowEntity  {
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlRootElement;
+
+@Entity                                       
+@Table(name = "bungalow")
+@XmlRootElement
+
+public class BungalowEntity extends BasicEntity{
     
    private String id;
    private String name;
