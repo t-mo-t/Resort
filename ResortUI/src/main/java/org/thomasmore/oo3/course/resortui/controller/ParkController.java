@@ -38,24 +38,28 @@ public class ParkController {
 
     @PostConstruct
     public void init() {
-        
-        
+
         dto = new ParkPageDto();
-        
+
         for (int i = 0; i < 10; i++) {
             ParkListDetailDto listDetail = new ParkListDetailDto();
-            listDetail.setId("@"+i);
-            listDetail.setName("B"+(i+1));
+            listDetail.setId("@" + i);
+            listDetail.setName("P" + (i + 1));
             dto.getList().add(listDetail);
         }
     }
 
-    public void add(){
-        dto.getDetail().setId("NEW");
+    public void add() {
+        int i = dto.getList().size();
+        ParkListDetailDto listDetail = new ParkListDetailDto();
+        dto.getDetail().setId("@" + i);
         dto.getList().add(dto.getDetail());
     }
-    
-    
+
+    public void delete() {
+
+        dto.getList().remove(dto.getDetail());
+    }
 
     public ParkPageDto getDto() {
         return dto;

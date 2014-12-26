@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.thomasmore.oo3.course.resortui.sample.ui.rest;
+package org.thomasmore.oo3.course.resortui.ui.rest;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -29,8 +29,8 @@ import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
-import org.thomasmore.oo3.course.resortui.sample.business.entity.SampleBungalowEntity;
-import org.thomasmore.oo3.course.resortui.sample.business.entity.SampleParkEntity;
+import org.thomasmore.oo3.course.resortui.entity.BungalowEntity;
+import org.thomasmore.oo3.course.resortui.entity.ParkEntity;
 
 /**
  *
@@ -45,22 +45,22 @@ public class InitDbREST {
 
     @GET
     @Produces({"application/json", "application/xml"})
-    public SampleParkEntity createDB() {
+    public ParkEntity createDB() {
         List<Object> objectsToSave = new LinkedList<>();
 
-        SampleParkEntity parkEntity = new SampleParkEntity();
+        ParkEntity parkEntity = new ParkEntity();
         parkEntity.setName("ABC");
         objectsToSave.add(parkEntity);
 
-        parkEntity = new SampleParkEntity();
+        parkEntity = new ParkEntity();
         parkEntity.setName("Lol");
         objectsToSave.add(parkEntity);
 
-        SampleBungalowEntity bungalowEntity = new SampleBungalowEntity();
+        BungalowEntity bungalowEntity = new BungalowEntity();
         bungalowEntity.setName("ABCbung");
         objectsToSave.add(bungalowEntity);
 
-        bungalowEntity = new SampleBungalowEntity();
+        bungalowEntity = new BungalowEntity();
         bungalowEntity.setName("Lolbung");
         objectsToSave.add(bungalowEntity);
 
