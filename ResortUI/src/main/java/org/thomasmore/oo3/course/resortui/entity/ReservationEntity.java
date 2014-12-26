@@ -15,6 +15,8 @@ public class ReservationEntity extends BasicEntity {
     private String endTime;
     private Integer amountCustomers;
     private boolean cancellationInsurance;
+    private String bungalowName;
+    private String customerName;
 
     public String getStartDate() {
         return startDate;
@@ -64,6 +66,20 @@ public class ReservationEntity extends BasicEntity {
         this.cancellationInsurance = cancellationInsurance;
     }
 
+    public String getBungalowName() {
+        return bungalowName;
+    }
 
+    public void setBungalowName(String bungalowName) {
+        this.bungalowName = bungalowName;
+    }
+
+    public String getCustomerName() {
+        return customerName;
+    }
+
+    public void setCustomerName(String customerName) {
+        this.customerName = customerName;
+    }
 
 }

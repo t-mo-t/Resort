@@ -8,7 +8,8 @@ public class ReservationListDetailDto {
     private String endTime;
     private Integer amountCustomers;
     private boolean cancellationInsurance;
-
+    private String bungalowName;
+    private String customerName;
     public String getId() {
         return id;
     }
@@ -63,6 +64,22 @@ public class ReservationListDetailDto {
 
     public void setCancellationInsurance(boolean cancellationInsurance) {
         this.cancellationInsurance = cancellationInsurance;
+    }
+
+    public String getBungalowName() {
+        return bungalowName;
+    }
+
+    public void setBungalowName(String bungalowName) {
+        this.bungalowName = bungalowName;
+    }
+
+    public String getCustomerName() {
+        return customerName;
+    }
+
+    public void setCustomerName(String customerName) {
+        this.customerName = customerName;
     }
 
 
