@@ -1,5 +1,5 @@
 
-package org.thomasmore.oo3.course.resortui.business.entity;
+package org.thomasmore.oo3.course.resortui.entity;
 
 import java.util.UUID;
 import javax.persistence.Id;
