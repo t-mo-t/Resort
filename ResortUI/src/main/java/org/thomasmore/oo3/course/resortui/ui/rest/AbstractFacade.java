@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.thomasmore.oo3.course.resortui.sample.ui.rest;
+package org.thomasmore.oo3.course.resortui.ui.rest;
 
 import java.util.List;
 import javax.persistence.EntityManager;

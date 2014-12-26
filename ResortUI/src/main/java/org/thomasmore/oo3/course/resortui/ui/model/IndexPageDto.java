@@ -1,6 +1,5 @@
 /*
  * Copyright (C) 2014 lucs
- * Hier zijn wat extra comments...
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -15,38 +14,29 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.thomasmore.oo3.course.resortui.controller;
+package org.thomasmore.oo3.course.resortui.ui.model;
 
+import java.io.Serializable;
+import java.util.Date;
 import javax.annotation.PostConstruct;
-import javax.enterprise.context.RequestScoped;
-import javax.inject.Named;
-import org.thomasmore.oo3.course.resortui.model.IndexPageDto;
 
-/**
- *
- * @author lucs
- */
-@Named(value = "index")
-@RequestScoped
-public class IndexController
-{
 
-    private IndexPageDto dto;
+public class IndexPageDto implements Serializable {
+
+    private String name = "MyName";
 
     @PostConstruct
-    public void init()
-    {
-       
+    public void init() {
+        Date date = new Date();
+        System.out.println("IndexPageDto - init");
     }
 
-    public IndexPageDto getDto()
-    {
-        return dto;
+    public String getName() {
+        return name;
     }
 
-    public void setDto(IndexPageDto dto)
-    {
-        this.dto = dto;
+    public void setName(String name) {
+        this.name = name;
     }
 
 }

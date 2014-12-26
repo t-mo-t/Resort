@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.thomasmore.oo3.course.resortui.sample.ui.rest;
+package org.thomasmore.oo3.course.resortui.ui.rest;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -53,13 +53,13 @@ public class InitDbREST {
         parkEntity.setName("PARK 2");
         objectsToSave.add(parkEntity);
         
-         BungalowEntity sampleBungalowEntity = new BungalowEntity();
-        sampleBungalowEntity.setName("BUNGALOW 1");
-        objectsToSave.add(sampleBungalowEntity);
+         BungalowEntity BungalowEntity = new BungalowEntity();
+        BungalowEntity.setName("BUNGALOW 1");
+        objectsToSave.add(BungalowEntity);
         
-        sampleBungalowEntity = new BungalowEntity();
-        sampleBungalowEntity.setName("BUNGALOW 2");
-        objectsToSave.add(sampleBungalowEntity);
+        BungalowEntity = new BungalowEntity();
+        BungalowEntity.setName("BUNGALOW 2");
+        objectsToSave.add(BungalowEntity);
         
 //        List<Object> objectsToSave = new LinkedList<>();
        for(Object objectsToSave1 : objectsToSave){
