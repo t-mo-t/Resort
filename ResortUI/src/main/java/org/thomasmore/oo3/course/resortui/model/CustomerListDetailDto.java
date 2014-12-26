@@ -23,7 +23,8 @@ package org.thomasmore.oo3.course.resortui.model;
 public class CustomerListDetailDto {
 
     private String id;
-
+    private String username;
+    private String password;
     private String name;
 
     public String getId() {
@@ -41,5 +42,22 @@ public class CustomerListDetailDto {
     public void setName(String name) {
         this.name = name;
     }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+    
 
 }
