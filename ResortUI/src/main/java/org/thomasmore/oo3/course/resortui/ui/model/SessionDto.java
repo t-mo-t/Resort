@@ -6,7 +6,10 @@ import javax.annotation.PostConstruct;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 
-
+/**
+ *
+ * @author lucs
+ */
 @Named
 @SessionScoped
 public class SessionDto implements Serializable {

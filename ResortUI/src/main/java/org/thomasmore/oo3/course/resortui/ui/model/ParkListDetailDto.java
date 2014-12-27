@@ -1,14 +1,12 @@
 
 
-package org.thomasmore.oo3.course.resortui.ui.controller;
+package org.thomasmore.oo3.course.resortui.ui.model;
 
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
-import org.thomasmore.oo3.course.resortui.ui.model.BungalowPageDto;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
-import org.thomasmore.oo3.course.resortui.ui.model.BungalowListDetailDto;
 import org.thomasmore.oo3.course.resortui.entity.BungalowEntity;
 import org.thomasmore.oo3.course.resortui.dao.BungalowDao;
 
