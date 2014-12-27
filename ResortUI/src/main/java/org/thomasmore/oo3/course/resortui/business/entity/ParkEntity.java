@@ -11,10 +11,10 @@ import javax.xml.bind.annotation.XmlRootElement;
  * * @author Stephan
  */
 
-//
-//@Entity                                       
-//@Table(name = "park")
-//@XmlRootElement
+
+@Entity                                       
+@Table(name = "park")
+@XmlRootElement
 
 public class ParkEntity extends BasicEntity{
     
