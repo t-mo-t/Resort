@@ -31,17 +31,11 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class BungalowEntity extends BasicEntity {
     
 
-   private String id;
    private String name;
+   private String BungalowFancyName;
+   private int BungalowTypeID;
+   private int ParkID;
     
-    public String getId() {
-        return id;
-    }
-  
-
-    public void setId(String id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;
@@ -50,6 +44,31 @@ public class BungalowEntity extends BasicEntity {
     public void setName(String name) {
         this.name = name;
     }
+
+    public String getBungalowFancyName() {
+        return BungalowFancyName;
+    }
+
+    public void setBungalowFancyName(String BungalowFancyName) {
+        this.BungalowFancyName = BungalowFancyName;
+    }
+
+    public int getBungalowTypeID() {
+        return BungalowTypeID;
+    }
+
+    public void setBungalowTypeID(int BungalowTypeID) {
+        this.BungalowTypeID = BungalowTypeID;
+    }
+
+    public int getParkID() {
+        return ParkID;
+    }
+
+    public void setParkID(int ParkID) {
+        this.ParkID = ParkID;
+    }
+    
    
     
 }

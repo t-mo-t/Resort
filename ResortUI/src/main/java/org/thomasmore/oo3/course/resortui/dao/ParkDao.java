@@ -34,13 +34,13 @@ import org.thomasmore.oo3.course.resortui.entity.ParkEntity;
 public class ParkDao implements Serializable {
 
     @PersistenceContext
-    private EntityManager em;
+    private  EntityManager em;
 
     public void save(ParkEntity parkEntity) {
         em.persist(parkEntity);
     }
 
-    public List<ParkEntity> listAll() {
+    public  List<ParkEntity> listAll() {
         CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
         cq.select(cq.from(ParkEntity.class));
         Query q = em.createQuery(cq);

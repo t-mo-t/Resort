@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014 Stephan
+ * Copyright (C) 2014 Arne
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -22,51 +22,43 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author lucs
+ * @author Arne
  */
+
 @Entity
-@Table(name = "Park")
+@Table(name = "BungalowReservation")
 @XmlRootElement
 
-public class ParkEntity extends BasicEntity {
+public class BungalowReservationEntity extends BasicEntity{
     
-   private String ParkName;
-   private String ParkClosureStart;
-   private String ParkClosureEnd;
-   
+    private int BungalowReservationID;
+    private int ReservationID;
+    private int BungalowID;
+
+    public int getBungalowReservationID() {
+        return BungalowReservationID;
+    }
+
+    public void setBungalowReservationID(int BungalowReservationID) {
+        this.BungalowReservationID = BungalowReservationID;
+    }
+
+    public int getReservationID() {
+        return ReservationID;
+    }
+
+    public void setReservationID(int ReservationID) {
+        this.ReservationID = ReservationID;
+    }
+
+    public int getBungalowID() {
+        return BungalowID;
+    }
+
+    public void setBungalowID(int BungalowID) {
+        this.BungalowID = BungalowID;
+    }
     
-
-    public String getName() {
-        return ParkName;
-    }
-
-    public void setName(String name) {
-        this.ParkName = name;
-    }
-
-    public String getParkName() {
-        return ParkName;
-    }
-
-    public void setParkName(String ParkName) {
-        this.ParkName = ParkName;
-    }
-
-    public String getParkClosureStart() {
-        return ParkClosureStart;
-    }
-
-    public void setParkClosureStart(String ParkClosureStart) {
-        this.ParkClosureStart = ParkClosureStart;
-    }
-
-    public String getParkClosureEnd() {
-        return ParkClosureEnd;
-    }
-
-    public void setParkClosureEnd(String ParkClosureEnd) {
-        this.ParkClosureEnd = ParkClosureEnd;
-    }
-   
+    
     
 }

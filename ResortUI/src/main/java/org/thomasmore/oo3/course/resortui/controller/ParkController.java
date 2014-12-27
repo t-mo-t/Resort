@@ -42,11 +42,8 @@ public class ParkController {
     @PostConstruct
     public void init() {
 
-        
         List<ParkEntity> Parks = ParkDao.listAll();
         dto = new ParkPageDto();
-        
-        
 
         for (ParkEntity Park : Parks) {
             ParkListDetailDto listDetail = new ParkListDetailDto();
@@ -54,30 +51,42 @@ public class ParkController {
             listDetail.setName(Park.getName());
             dto.getList().add(listDetail);
         }
-
     }
+
+    public void add() {
+        dto.getDetail().setId("NEW");
+        dto.getList().add(dto.getDetail());
+    }
+
+    public ParkPageDto getDto() {
+        return dto;
+    }
+
+    public void setDto(ParkPageDto dto) {
+        this.dto = dto;
+    }
+
 }
 
-/* dto = new ParkPageDto();
+/*       private ParkPageDto dto;
 
- for (int i = 0; i < 10; i++) {
+ @PostConstruct
+ public void init() {
+
+ List<ParkEntity> Parks = ParkDao.listAll();
+ dto = new ParkPageDto();
+
+ for (ParkEntity Park : Parks) {
  ParkListDetailDto listDetail = new ParkListDetailDto();
- listDetail.setId("@" + i);
- listDetail.setName("P" + (i + 1));
+ listDetail.setId(Park.getId());
+ listDetail.setName(Park.getName());
  dto.getList().add(listDetail);
  }
-    
-
- public void add() {
- int i = dto.getList().size();
- ParkListDetailDto listDetail = new ParkListDetailDto();
- dto.getDetail().setId("@" + i);
- dto.getList().add(dto.getDetail());
  }
 
- public void delete() {
-
- dto.getList().remove(dto.getDetail());
+ public void add() {
+ dto.getDetail().setId("NEW");
+ dto.getList().add(dto.getDetail());
  }
 
  public ParkPageDto getDto() {
@@ -86,4 +95,5 @@ public class ParkController {
 
  public void setDto(ParkPageDto dto) {
  this.dto = dto;
- }   */
+ }
+ }*/
