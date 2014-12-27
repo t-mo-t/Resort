@@ -9,8 +9,8 @@ import javax.persistence.PersistenceContext;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
-import org.thomasmore.oo3.course.resortui.entity.BungalowEntity;
-import org.thomasmore.oo3.course.resortui.business.entity.ParkEntity;
+import org.thomasmore.oo3.course.resortui.entity.*;
+
 
 
 @Stateless
