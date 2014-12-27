@@ -24,7 +24,7 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
 import org.thomasmore.oo3.course.resortui.model.BungalowListDetailDto;
 import org.thomasmore.oo3.course.resortui.sample.business.entity.SampleBungalowEntity;
-import org.thomasmore.oo3.course.resortui.sample.dao.SampleBungalowDao;
+import org.thomasmore.oo3.course.resortui.sample.dao.BungalowDao;
 
 /**
  *
@@ -37,7 +37,7 @@ public class SampleBungalowController {
     private BungalowPageDto dto;
 
     @EJB
-    private SampleBungalowDao bungalowDao;
+    private BungalowDao bungalowDao;
     
     @PostConstruct
     public void init() {

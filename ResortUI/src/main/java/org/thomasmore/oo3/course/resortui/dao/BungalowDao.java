@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.thomasmore.oo3.course.resortui.sample.dao;
+package org.thomasmore.oo3.course.resortui.dao;
 
 import java.io.Serializable;
 import java.util.List;
@@ -23,15 +23,15 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.persistence.criteria.CriteriaQuery;
+import org.thomasmore.oo3.course.resortui.entity.BungalowEntity;
 import org.thomasmore.oo3.course.resortui.sample.business.entity.SampleBungalowEntity;
-import org.thomasmore.oo3.course.resortui.sample.business.entity.SampleParkEntity;
 
 /**
  *
  * @author lucs
  */
 @Stateless
-public class SampleBungalowDao implements Serializable {
+public class BungalowDao implements Serializable {
 
     @PersistenceContext
     private EntityManager em;
@@ -40,7 +40,7 @@ public class SampleBungalowDao implements Serializable {
         em.persist(bungalowEntity);
     }
 
-    public List<SampleBungalowEntity> listAll() {
+    public List<BungalowEntity> listAll() {
         CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
         cq.select(cq.from(SampleBungalowEntity.class));
         Query q = em.createQuery(cq);
