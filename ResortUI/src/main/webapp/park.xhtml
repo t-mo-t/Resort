@@ -6,25 +6,25 @@
 
     <body>
 
-        <ui:composition template="./common/template-simple.xhtml">
+        <ui:composition template="./common/template.xhtml">
 
             <ui:define name="title">
-                Park
+                park
             </ui:define>
 
             <ui:define name="content">
 				<ul>
-					<ui:repeat value="${park.dto.list}" var="listDetail">
+					<ui:repeat value="${sampleBungalow.dto.list}" var="listDetail">
 						<li>${listDetail.id} - ${listDetail.name}</li>
 					</ui:repeat>
 				</ul>
 				<h:form>
-					<span class="input-group-addon">Park Name</span>
+					<span class="input-group-addon">Parkname</span>
 					<h:inputText label="Login" 
-								 value="${park.dto.detail.name}" class="form-control"
+								 value="${bungalow.dto.detail.name}" class="form-control"
 								 required="true">
 					</h:inputText>
-					<h:commandButton class="btn btn-primary" action="${park.add()}" value="Save"></h:commandButton>
+					<h:commandButton class="btn btn-primary" action="${bungalow.add()}" value="Save"></h:commandButton>
 
 				</h:form>
             </ui:define>
