@@ -34,7 +34,7 @@ public class BungalowReservationEntity extends BasicEntity{
 
    private String name;
    
-   private int BungalowReservationid;
+   private int bungalowReservationId;
    
    private int reservationId;
    
@@ -48,13 +48,15 @@ public class BungalowReservationEntity extends BasicEntity{
         this.name = name;
     }
 
-    public int getBungalowReservationid() {
-        return BungalowReservationid;
+    public int getBungalowReservationId() {
+        return bungalowReservationId;
     }
 
-    public void setBungalowReservationid(int BungalowReservationid) {
-        this.BungalowReservationid = BungalowReservationid;
+    public void setBungalowReservationId(int bungalowReservationId) {
+        this.bungalowReservationId = bungalowReservationId;
     }
+
+
 
     public int getReservationId() {
         return reservationId;

@@ -16,6 +16,7 @@
  */
 package org.thomasmore.oo3.course.resortui.entity;
 
+import java.sql.Date;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -24,18 +25,45 @@ import javax.xml.bind.annotation.XmlRootElement;
  *
  * @author Stephan
  */
+
 @Entity
-@Table(name = "bungalow")
+@Table(name = "Customer")
 @XmlRootElement
-public class BungalowEntity extends BasicEntity{
+public class Customer extends BasicEntity{
     
+
    private String name;
+   private String FirstName;
+   private String Sex;
+   private Date Birthdate;
+
+    public String getFirstName() {
+        return FirstName;
+    }
+
+    public void setFirstName(String FirstName) {
+        this.FirstName = FirstName;
+    }
+
+    public String getSex() {
+        return Sex;
+    }
+
+    public void setSex(String Sex) {
+        this.Sex = Sex;
+    }
+
+    public Date getBirthdate() {
+        return Birthdate;
+    }
+
+    public void setBirthdate(Date Birthdate) {
+        this.Birthdate = Birthdate;
+    }
    
-   private int bungalowCode;
-   
-   private String fancyName;
    
     
+
 
     public String getName() {
         return name;
@@ -43,22 +71,6 @@ public class BungalowEntity extends BasicEntity{
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public int getBungalowCode() {
-        return bungalowCode;
-    }
-
-    public void setBungalowCode(int bungalowCode) {
-        this.bungalowCode = bungalowCode;
-    }
-
-    public String getFancyName() {
-        return fancyName;
-    }
-
-    public void setFancyName(String fancyName) {
-        this.fancyName = fancyName;
     }
    
     

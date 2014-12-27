@@ -12,7 +12,7 @@ import javax.inject.Named;
  */
 @Named
 @SessionScoped
-public class SessionDto implements Serializable {
+public class SessionDto implements Serializable{
 
     private UserDto userDto;
 

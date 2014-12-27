@@ -32,7 +32,7 @@ import org.thomasmore.oo3.course.resortui.entity.ParkEntity;
  * @author lucs
  */
 @Stateless
-public class ParkDao implements Serializable {
+public class ParkDao implements Serializable{
 
     @PersistenceContext
     private EntityManager em;

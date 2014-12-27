@@ -16,6 +16,8 @@
  */
 package org.thomasmore.oo3.course.resortui.entity;
 
+import java.sql.Date;
+import java.sql.Time;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -24,42 +26,51 @@ import javax.xml.bind.annotation.XmlRootElement;
  *
  * @author Stephan
  */
+
 @Entity
-@Table(name = "bungalow")
+@Table(name = "Reservation")
 @XmlRootElement
-public class BungalowEntity extends BasicEntity{
-    
-   private String name;
-   
-   private int bungalowCode;
-   
-   private String fancyName;
-   
+
+public class ReservationEntity extends BasicEntity{
     
 
-    public String getName() {
-        return name;
+  private Date startDate;
+  private Time startTime;
+  private Time endTime;
+  private Date EndDate;
+
+    public Date getStartDate() {
+        return startDate;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setStartDate(Date startDate) {
+        this.startDate = startDate;
     }
 
-    public int getBungalowCode() {
-        return bungalowCode;
+    public Time getStartTime() {
+        return startTime;
     }
 
-    public void setBungalowCode(int bungalowCode) {
-        this.bungalowCode = bungalowCode;
+    public void setStartTime(Time startTime) {
+        this.startTime = startTime;
     }
 
-    public String getFancyName() {
-        return fancyName;
+    public Time getEndTime() {
+        return endTime;
     }
 
-    public void setFancyName(String fancyName) {
-        this.fancyName = fancyName;
+    public void setEndTime(Time endTime) {
+        this.endTime = endTime;
     }
-   
+
+    public Date getEndDate() {
+        return EndDate;
+    }
+
+    public void setEndDate(Date EndDate) {
+        this.EndDate = EndDate;
+    }
+  
+  
     
 }

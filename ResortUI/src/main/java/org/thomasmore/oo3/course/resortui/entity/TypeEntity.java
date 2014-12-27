@@ -24,42 +24,21 @@ import javax.xml.bind.annotation.XmlRootElement;
  *
  * @author Stephan
  */
+
 @Entity
-@Table(name = "bungalow")
+@Table(name = "Type")
 @XmlRootElement
-public class BungalowEntity extends BasicEntity{
-    
-   private String name;
-   
-   private int bungalowCode;
-   
-   private String fancyName;
-   
+public class TypeEntity extends BasicEntity{
     
 
-    public String getName() {
-        return name;
+   private String bungalowTypeOmschrijving;
+
+    public String getBungalowTypeOmschrijving() {
+        return bungalowTypeOmschrijving;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setBungalowTypeOmschrijving(String bungalowTypeOmschrijving) {
+        this.bungalowTypeOmschrijving = bungalowTypeOmschrijving;
     }
-
-    public int getBungalowCode() {
-        return bungalowCode;
-    }
-
-    public void setBungalowCode(int bungalowCode) {
-        this.bungalowCode = bungalowCode;
-    }
-
-    public String getFancyName() {
-        return fancyName;
-    }
-
-    public void setFancyName(String fancyName) {
-        this.fancyName = fancyName;
-    }
-   
-    
+        
 }
