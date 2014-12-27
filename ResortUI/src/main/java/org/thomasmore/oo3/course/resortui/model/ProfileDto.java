@@ -1,10 +1,5 @@
-
 package org.thomasmore.oo3.course.resortui.model;
 
-/**
- *
- * @author Moegie
- */
 public class ProfileDto {
     String username;
     String fullname = "TESTJE";
