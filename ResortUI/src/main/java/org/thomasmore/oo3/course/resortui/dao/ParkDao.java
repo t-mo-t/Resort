@@ -14,7 +14,8 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.thomasmore.oo3.course.resortui.dao;
+package org.thomasmore.oo3.course.resortui.DAO;
+
 
 import java.io.Serializable;
 import java.util.List;
@@ -23,6 +24,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.persistence.criteria.CriteriaQuery;
+
 import org.thomasmore.oo3.course.resortui.entity.ParkEntity;
 
 /**

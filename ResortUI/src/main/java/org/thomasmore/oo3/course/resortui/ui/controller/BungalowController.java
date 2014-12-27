@@ -9,7 +9,7 @@ import org.thomasmore.oo3.course.resortui.ui.model.BungalowPageDto;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
 import org.thomasmore.oo3.course.resortui.ui.model.BungalowListDetailDto;
-import org.thomasmore.oo3.course.resortui.business.entity.BungalowEntity;
+import org.thomasmore.oo3.course.resortui.entity.BungalowEntity;
 import org.thomasmore.oo3.course.resortui.dao.BungalowDao;
 
 /**

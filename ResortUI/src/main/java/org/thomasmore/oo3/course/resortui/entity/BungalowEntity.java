@@ -20,7 +20,7 @@ package org.thomasmore.oo3.course.resortui.entity;
  *
  * @author Stephan
  */
-public class ParkEntity {
+public class BungalowEntity {
     
    private String id;
    private String name;
