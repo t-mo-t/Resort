@@ -23,7 +23,9 @@ import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import org.thomasmore.oo3.course.resortui.model.BungalowPageDto;
 import javax.enterprise.context.RequestScoped;
+import javax.faces.context.FacesContext;
 import javax.inject.Named;
+import javax.servlet.http.HttpServletRequest;
 import org.thomasmore.oo3.course.resortui.model.BungalowDetailDto;
 import org.thomasmore.oo3.course.resortui.model.BungalowListDetailDto;
 import org.thomasmore.oo3.course.resortui.entity.BungalowEntity;
@@ -47,17 +49,35 @@ public class BungalowController {
 
     @PostConstruct
     public void init() {
-        List<ParkEntity> parks = parkDao.listAll();
-
-        
-        List<BungalowEntity> bungalows = bungalowsDao.listAll();
+  
+List<BungalowEntity> bungalows = bungalowsDao.listAll();
         dto = new BungalowPageDto();
-        for (ParkEntity park : parks) {
+           List<ParkEntity> parks = parkDao.listAll();
+
+     for (ParkEntity park : parks) {
             dto.getParkList().add(park.getName());
         }
+        HttpServletRequest req = (HttpServletRequest) FacesContext.getCurrentInstance().getExternalContext().getRequest();
+   
+        String editId = req.getParameter("edit");
+ 
+        if (editId != null) {
+            BungalowEntity bungalowEntity = bungalowsDao.findById(editId);
+            if (bungalowEntity != null) {
+                copyEntityToListDto(bungalowEntity, dto.getDetail());
+
+            }
+        }
+
         for (BungalowEntity bungalow : bungalows) {
             BungalowListDetailDto listDetail = new BungalowListDetailDto();
-            listDetail.setId(bungalow.getId());
+            copyEntityToListDto(bungalow, listDetail);
+            dto.getList().add(listDetail);
+        }
+    }
+
+    private void copyEntityToListDto(BungalowEntity bungalow, BungalowListDetailDto listDetail) {
+       listDetail.setId(bungalow.getId());
             listDetail.setName(bungalow.getName());
             listDetail.setCode(bungalow.getCode());
             listDetail.setMaxcustomers(bungalow.getMaxcustomers());
@@ -69,9 +89,7 @@ public class BungalowController {
             listDetail.setSunbed(bungalow.isSunbed());
             listDetail.setPark(bungalow.getPark());
             dto.getList().add(listDetail);
-        }
     }
-
     public void add() {
         dto.getDetail().setId(UUID.randomUUID().toString());
         dto.getList().add(dto.getDetail());
