@@ -20,22 +20,39 @@ import java.io.Serializable;
 import javax.persistence.AttributeOverride;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
+import static javax.persistence.GenerationType.IDENTITY;
+import javax.persistence.Id;
 
 /**
  *
  * @author Stephan
  */
 @Entity
-@AttributeOverride( name="id", column = @Column(name="BUNGALOW_ID") )
 @Table(name = "bungalow")
 @XmlRootElement
 public class BungalowEntity extends BasicEntity implements Serializable {
     
-   private String name;
-   private String PARK_FK;
-
+    private String name;
+    private ParkEntity park;
+    
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "PARK_ID", nullable = false)
+    public ParkEntity getPark() {
+        return this.park;
+    }
+   
+    public void setPark(ParkEntity park){
+        this.park=park;
+    }
+    
+   
+    @Column(name = "BUNGALOW_NAAM")
     public String getName() {
         return name;
     }
@@ -43,14 +60,4 @@ public class BungalowEntity extends BasicEntity implements Serializable {
     public void setName(String name) {
         this.name = name;
     }
-    
-    public String getParkFK(){
-        return this.PARK_FK;
-    }
-    
-    public void setParkFK(String parkfk){
-        this.PARK_FK=parkfk;
-    }
-   
-    
 }

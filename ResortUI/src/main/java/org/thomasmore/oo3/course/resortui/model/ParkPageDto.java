@@ -44,6 +44,10 @@ public class ParkPageDto {
     public void setList(List<ParkListDetailDto> list) {
         this.list = list;
     }
+    
+    public String getFirstPark(){
+        return this.list.get(0).getName();
+    }
 
     
     

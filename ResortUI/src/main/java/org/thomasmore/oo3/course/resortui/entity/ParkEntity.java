@@ -17,8 +17,10 @@
 package org.thomasmore.oo3.course.resortui.entity;
 
 import java.io.Serializable;
+import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.*;
+import static javax.persistence.GenerationType.IDENTITY;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
@@ -34,17 +36,12 @@ public class ParkEntity extends BasicEntity implements Serializable{
     private String name;
     
     private String address;
-    //private Set<BungalowEntity> bungalows;
+    private Set<BungalowEntity> bungalows=new HashSet<BungalowEntity>();
     
-    @OneToMany
-    @JoinTable(
-            name="bungalow",
-            joinColumns = @JoinColumn( name="PARK_ID"),
-            inverseJoinColumns = @JoinColumn( name="BUNGALOW_ID")
-    )
-    /*public Set<BungalowEntity> getBungalows(){
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "park")
+    public Set<BungalowEntity> getBungalows(){
         return this.bungalows;
-    }*/
+    }
 
     public String getName() {
         return name;

@@ -16,6 +16,8 @@
  */
 package org.thomasmore.oo3.course.resortui.model;
 
+import org.thomasmore.oo3.course.resortui.entity.ParkEntity;
+
 /**
  *
  * @author lucs
@@ -23,8 +25,8 @@ package org.thomasmore.oo3.course.resortui.model;
 public class BungalowListDetailDto {
     
     private String id;
-    
     private String name;
+    private ParkEntity park;
 
     public String getId() {
         return id;
@@ -40,6 +42,14 @@ public class BungalowListDetailDto {
 
     public void setName(String name) {
         this.name = name;
+    }
+    
+    public ParkEntity getPark(){
+        return this.park;
+    }
+    
+    public void setPark(ParkEntity park){
+        this.park=park;
     }
     
 }

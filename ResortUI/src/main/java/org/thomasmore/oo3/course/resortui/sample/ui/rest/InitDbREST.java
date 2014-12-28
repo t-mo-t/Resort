@@ -75,6 +75,7 @@ public class InitDbREST {
         for (ParkEntity objectsToSave1 : objectsToSave) {
             parkdao.save(objectsToSave1);
             
+            
         }
         em.clear();
         em.close();

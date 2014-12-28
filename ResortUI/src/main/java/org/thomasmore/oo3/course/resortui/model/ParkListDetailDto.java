@@ -16,6 +16,9 @@
  */
 package org.thomasmore.oo3.course.resortui.model;
 
+import java.util.List;
+import org.thomasmore.oo3.course.resortui.entity.BungalowEntity;
+
 /**
  *
  * @author lucs
@@ -24,6 +27,7 @@ public class ParkListDetailDto {
     
     private String id;
     private String name;
+    private List<BungalowEntity> bungalows;
 
     public String getId() {
         return id;
@@ -39,6 +43,14 @@ public class ParkListDetailDto {
 
     public void setName(String name) {
         this.name = name;
+    }
+    
+    public List<BungalowEntity> getBungalows(){
+        return this.bungalows;
+    }
+    
+    public void setBungalows(List <BungalowEntity> bungalows){
+        this.bungalows=bungalows;
     }
     
 }
