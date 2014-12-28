@@ -43,6 +43,8 @@ public class InitDbREST {
         BungalowEntity.setName("BUNGALOW 2");
         objectsToSave.add(BungalowEntity);
         
+      
+        
 //        List<Object> objectsToSave = new LinkedList<>();
        for(Object objectsToSave1 : objectsToSave){
         em.persist(objectsToSave1);
