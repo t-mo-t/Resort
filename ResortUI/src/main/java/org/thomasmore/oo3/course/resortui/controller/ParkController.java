@@ -5,7 +5,9 @@ import java.util.UUID;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.enterprise.context.RequestScoped;
+import javax.faces.context.FacesContext;
 import javax.inject.Named;
+import javax.servlet.http.HttpServletRequest;
 import org.thomasmore.oo3.course.resortui.model.ParkListDetailDto;
 import org.thomasmore.oo3.course.resortui.entity.ParkEntity;
 import org.thomasmore.oo3.course.resortui.model.ParkPageDto;
@@ -21,21 +23,39 @@ public class ParkController {
 
     @PostConstruct
     public void init() {
-        List<ParkEntity> parks = parksDao.listAll();
+      
+List<ParkEntity> parks = parksDao.listAll();
         dto = new ParkPageDto();
+        HttpServletRequest req = (HttpServletRequest) FacesContext.getCurrentInstance().getExternalContext().getRequest();
+
+        String editId = req.getParameter("edit");
+
+        if (editId != null) {
+            ParkEntity parkEntity = parksDao.findById(editId);
+            if (parkEntity != null) {
+                copyEntityToListDto(parkEntity, dto.getDetail());
+
+            }
+        }
+
         for (ParkEntity park : parks) {
             ParkListDetailDto listDetail = new ParkListDetailDto();
-            listDetail.setId(park.getId());
-            listDetail.setName(park.getName());
-            listDetail.setCountry(park.getCountry());
-            listDetail.setProvince(park.getProvince());
-            listDetail.setStreet(park.getStreet());
-            listDetail.setStreetnumber(park.getStreetnumber());
+            copyEntityToListDto(park, listDetail);
             dto.getList().add(listDetail);
         }
     }
 
+    private void copyEntityToListDto(ParkEntity park, ParkListDetailDto listDetail) {
+        listDetail.setId(park.getId());
+        listDetail.setName(park.getName());
+        listDetail.setCountry(park.getCountry());
+        listDetail.setProvince(park.getProvince());
+        listDetail.setStreet(park.getStreet());
+        listDetail.setStreetnumber(park.getStreetnumber());
+        dto.getList().add(listDetail);
+    }
     public void add() {
+        
         dto.getDetail().setId(UUID.randomUUID().toString());
         dto.getList().add(dto.getDetail());
         ParkEntity parkentity = new ParkEntity();
