@@ -35,7 +35,7 @@ public class InitDbREST {
         parkEntity.setName("PARK 2");
         objectsToSave.add(parkEntity);
         
-         BungalowEntity BungalowEntity = new BungalowEntity();
+        BungalowEntity BungalowEntity = new BungalowEntity();
         BungalowEntity.setName("BUNGALOW 1");
         objectsToSave.add(BungalowEntity);
         
@@ -43,7 +43,9 @@ public class InitDbREST {
         BungalowEntity.setName("BUNGALOW 2");
         objectsToSave.add(BungalowEntity);
         
-      
+      CustomerEntity customerEntity = new CustomerEntity();
+      customerEntity.setFirstName("Test1");
+      objectsToSave.add(customerEntity);
         
 //        List<Object> objectsToSave = new LinkedList<>();
        for(Object objectsToSave1 : objectsToSave){
