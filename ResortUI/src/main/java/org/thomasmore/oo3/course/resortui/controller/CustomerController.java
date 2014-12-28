@@ -5,7 +5,9 @@ import java.util.UUID;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.enterprise.context.RequestScoped;
+import javax.faces.context.FacesContext;
 import javax.inject.Named;
+import javax.servlet.http.HttpServletRequest;
 import org.thomasmore.oo3.course.resortui.model.CustomerListDetailDto;
 import org.thomasmore.oo3.course.resortui.model.CustomerPageDto;
 import org.thomasmore.oo3.course.resortui.entity.CustomerEntity;
@@ -21,18 +23,36 @@ public class CustomerController {
 
     @PostConstruct
     public void init() {
+
         List<CustomerEntity> customers = customersDao.listAll();
         dto = new CustomerPageDto();
+        HttpServletRequest req = (HttpServletRequest) FacesContext.getCurrentInstance().getExternalContext().getRequest();
+
+        String editId = req.getParameter("edit");
+
+        if (editId != null) {
+            CustomerEntity customerEntity = customersDao.findById(editId);
+            if (customerEntity != null) {
+                copyEntityToListDto(customerEntity, dto.getDetail());
+
+            }
+        }
+
         for (CustomerEntity customer : customers) {
             CustomerListDetailDto listDetail = new CustomerListDetailDto();
-            listDetail.setId(customer.getId());
-            listDetail.setEmail(customer.getEmail());
-            listDetail.setPromotionpoints(customer.getPromotionpoints());
-            listDetail.setFirstname(customer.getFirstname());
-            listDetail.setLastname(customer.getLastname());
-            listDetail.setCellphone(customer.getCellphone());
+            copyEntityToListDto(customer, listDetail);
             dto.getList().add(listDetail);
         }
+    }
+
+    private void copyEntityToListDto(CustomerEntity customer, CustomerListDetailDto listDetail) {
+        listDetail.setId(customer.getId());
+        listDetail.setEmail(customer.getEmail());
+        listDetail.setPromotionpoints(customer.getPromotionpoints());
+        listDetail.setFirstname(customer.getFirstname());
+        listDetail.setLastname(customer.getLastname());
+        listDetail.setCellphone(customer.getCellphone());
+        dto.getList().add(listDetail);
     }
 
     public void add() {
@@ -46,6 +66,7 @@ public class CustomerController {
         customerentity.setCellphone(dto.getDetail().getCellphone());
         customerentity.setPromotionpoints(dto.getDetail().getPromotionpoints());
         customersDao.save(customerentity);
+
     }
 
     public void remove() {
