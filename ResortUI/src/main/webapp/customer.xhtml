@@ -2,7 +2,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
 
     <body>
 
@@ -37,10 +39,12 @@
                     </tbody>
                 </table>
                 <h:form>
+                    <h:messages styleClass="alert alert-danger" p:role="alert"></h:messages>
                     <div class="col-md-6">
                         <div class="input-group">
                             <span class="input-group-addon">First name</span>
                             <h:inputText label="customerFirstname" value="${customer.dto.detail.firstname}" class="form-control" required="true">
+                                <f:validateLength minimum="2" maximum="30"></f:validateLength>
                             </h:inputText>
                         </div>
                     </div>
@@ -48,20 +52,24 @@
                         <div class="input-group">
                             <span class="input-group-addon">Last name</span>
                             <h:inputText label="customerLastname" value="${customer.dto.detail.lastname}" class="form-control" required="true">
+                                <f:validateLength minimum="2" maximum="30"></f:validateLength>
                             </h:inputText>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="input-group">
                             <span class="input-group-addon">Email</span>
-                            <h:inputText label="customerEmail" value="${customer.dto.detail.email}" class="form-control" required="true">
+                            <h:inputText label="customerEmail" value="${customer.dto.detail.email}" class="form-control" required="true" validatorMessage="customerEmail: Validation Error: The given email is not valid">
+                                <f:validateRegex pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$"/>
                             </h:inputText>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="input-group">
                             <span class="input-group-addon">Cellphone number</span>
-                            <h:inputText label="customerCellphone" value="${customer.dto.detail.cellphone}" class="form-control" required="true">
+                            <h:inputText label="customerCellphone" value="${customer.dto.detail.cellphone}" class="form-control" required="true" validatorMessage="customerCellphone: Validation Error: The given number was not valid">
+                                <f:validateLength minimum="7" maximum="20"></f:validateLength>
+                                <f:validateRegex pattern="[0-9]"/>
                             </h:inputText>
                         </div>
                     </div>
