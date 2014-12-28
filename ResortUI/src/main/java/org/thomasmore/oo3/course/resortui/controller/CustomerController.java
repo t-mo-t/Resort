@@ -18,6 +18,7 @@ public class CustomerController {
     private CustomerPageDto dto;
     @EJB
     private CustomerDao customersDao;
+
     @PostConstruct
     public void init() {
         List<CustomerEntity> customers = customersDao.listAll();
@@ -37,7 +38,7 @@ public class CustomerController {
     public void add() {
         dto.getDetail().setId(UUID.randomUUID().toString());
         dto.getList().add(dto.getDetail());
-        CustomerEntity customerentity= new CustomerEntity();
+        CustomerEntity customerentity = new CustomerEntity();
         customerentity.setId(dto.getDetail().getId());
         customerentity.setFirstname(dto.getDetail().getFirstname());
         customerentity.setLastname(dto.getDetail().getLastname());
@@ -45,20 +46,21 @@ public class CustomerController {
         customerentity.setCellphone(dto.getDetail().getCellphone());
         customerentity.setPromotionpoints(dto.getDetail().getPromotionpoints());
         customersDao.save(customerentity);
-        
     }
-   public void remove() {
+
+    public void remove() {
         String id = dto.getDetail().getId();
         CustomerListDetailDto removeFromListobject = new CustomerListDetailDto();
         for (CustomerListDetailDto customerListDetailDto : dto.getList()) {
-               if(customerListDetailDto.getId().equals(id)){
-                   removeFromListobject = customerListDetailDto;
-               }
-            
+            if (customerListDetailDto.getId().equals(id)) {
+                removeFromListobject = customerListDetailDto;
+            }
+
         }
         dto.getList().remove(removeFromListobject);
         customersDao.deleteById(id);
     }
+
     public CustomerPageDto getDto() {
         return dto;
     }
@@ -66,5 +68,5 @@ public class CustomerController {
     public void setDto(CustomerPageDto dto) {
         this.dto = dto;
     }
-    
+
 }

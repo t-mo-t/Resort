@@ -36,6 +36,7 @@ public class ParkController {
     }
 
     public void add() {
+        
         dto.getDetail().setId(UUID.randomUUID().toString());
         dto.getList().add(dto.getDetail());
         ParkEntity parkentity = new ParkEntity();
