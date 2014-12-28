@@ -21,10 +21,12 @@ import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import org.thomasmore.oo3.course.resortui.model.BungalowPageDto;
 import javax.enterprise.context.RequestScoped;
+import javax.faces.context.FacesContext;
 import javax.inject.Named;
+import javax.servlet.http.HttpServletRequest;
 import org.thomasmore.oo3.course.resortui.model.BungalowListDetailDto;
 import org.thomasmore.oo3.course.resortui.sample.business.entity.SampleBungalowEntity;
-import org.thomasmore.oo3.course.resortui.sample.dao.BungalowDao;
+import org.thomasmore.oo3.course.resortui.sample.dao.SampleBungalowDao;
 
 /**
  *
@@ -34,39 +36,58 @@ import org.thomasmore.oo3.course.resortui.sample.dao.BungalowDao;
 @RequestScoped
 public class SampleBungalowController {
 
-    private BungalowPageDto dto;
+	private BungalowPageDto dto;
 
-    @EJB
-    private BungalowDao bungalowDao;
-    
-    @PostConstruct
-    public void init() {
-        
-        List<SampleBungalowEntity> bungalows = bungalowDao.listAll();
-        dto = new BungalowPageDto();
-        
-        for (SampleBungalowEntity bungalow : bungalows) {
-            BungalowListDetailDto listDetail = new BungalowListDetailDto();
-            listDetail.setId(bungalow.getId());
-            listDetail.setName(bungalow.getName());
-            dto.getList().add(listDetail);
-        }
-        
-    }
+	@EJB
+	private SampleBungalowDao bungalowDao;
 
-    public void add(){
-        dto.getDetail().setId("NEW");
-        dto.getList().add(dto.getDetail());
-    }
-    
-    
+	@PostConstruct
+	public void init() {
+		dto = new BungalowPageDto();
 
-    public BungalowPageDto getDto() {
-        return dto;
-    }
+		HttpServletRequest req = (HttpServletRequest) FacesContext.getCurrentInstance().getExternalContext().getRequest();
+		String editId = req.getParameter("edit");
 
-    public void setDto(BungalowPageDto dto) {
-        this.dto = dto;
-    }
+		SampleBungalowEntity sbe = bungalowDao.findById(editId);
+		if (sbe != null) {
+			dto.getDetail().setId(sbe.getId());
+			dto.getDetail().setName(sbe.getName());
+		}
+
+		List<SampleBungalowEntity> bungalows = bungalowDao.listAll();
+		
+
+		for (SampleBungalowEntity bungalow : bungalows) {
+			BungalowListDetailDto listDetail = new BungalowListDetailDto();
+			listDetail.setId(bungalow.getId());
+			listDetail.setName(bungalow.getName());
+			dto.getList().add(listDetail);
+		}
+
+	}
+
+	public String save() {
+		String id = dto.getDetail().getId();
+		SampleBungalowEntity sbe = null;
+		if (id != null) {
+			sbe = bungalowDao.findById(id);
+		}
+		if (sbe == null) {
+			sbe = new SampleBungalowEntity();
+		}
+		sbe.setName(dto.getDetail().getName());
+		bungalowDao.save(sbe);
+
+		// Forces page refresh
+		return "bungalow.xhtml??faces-redirect=true";
+	}
+
+	public BungalowPageDto getDto() {
+		return dto;
+	}
+
+	public void setDto(BungalowPageDto dto) {
+		this.dto = dto;
+	}
 
 }

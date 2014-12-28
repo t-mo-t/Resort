@@ -6,25 +6,28 @@
 
     <body>
 
-        <ui:composition template="./common/template-simple.xhtml">
+        <ui:composition template="./common/template.xhtml">
 
             <ui:define name="title">
-                title
+                Bungalow
             </ui:define>
 
             <ui:define name="content">
 				<ul>
 					<ui:repeat value="${sampleBungalow.dto.list}" var="listDetail">
-						<li>${listDetail.id} - ${listDetail.name}</li>
+						<li>${listDetail.id} - ${listDetail.name} - <a href="bungalow.xhtml?edit=${listDetail.id}">edit</a>
+						</li>
 					</ui:repeat>
 				</ul>
 				<h:form>
-					<span class="input-group-addon">Name</span>
+					<h:inputHidden value="${sampleBungalow.dto.detail.id}"/>
+					<span class="input-group-addon">bungalowname</span>
 					<h:inputText label="Login" 
-								 value="${bungalow.dto.detail.name}" class="form-control"
+								 value="${sampleBungalow.dto.detail.name}" class="form-control"
 								 required="true">
 					</h:inputText>
-					<h:commandButton class="btn btn-primary" action="${bungalow.add()}" value="Save"></h:commandButton>
+
+					<h:commandButton class="btn btn-primary" action="${sampleBungalow.save()}" value="Save"></h:commandButton>
 
 				</h:form>
             </ui:define>

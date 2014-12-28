@@ -31,13 +31,13 @@ import org.thomasmore.oo3.course.resortui.sample.business.entity.SampleParkEntit
  * @author lucs
  */
 @Stateless
-public class BungalowDao implements Serializable {
+public class SampleBungalowDao implements Serializable {
 
     @PersistenceContext
     private EntityManager em;
 
     public void save(SampleBungalowEntity bungalowEntity) {
-        em.persist(bungalowEntity);
+        em.merge(bungalowEntity);
     }
 
     public List<SampleBungalowEntity> listAll() {
@@ -48,6 +48,9 @@ public class BungalowDao implements Serializable {
     }
 
     public SampleBungalowEntity findById(String id) {
+		if(id == null){
+			return null;
+		}
         return em.find(SampleBungalowEntity.class, id);
     }
 
