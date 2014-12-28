@@ -16,7 +16,7 @@ import org.thomasmore.oo3.course.resortui.dao.BungalowDao;
  *
  * @author lucs
  */
-@Named(value = "test")
+//@Named(value = "test")
 
 @RequestScoped
 public class BungalowController {
