@@ -14,7 +14,7 @@ import org.thomasmore.oo3.course.resortui.ui.model.SessionDto;
  *
  * @author lucs
  */
-//@Named(value = "test2")
+@Named(value = "Login")
 @RequestScoped
 public class LoginController {
 

@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.thomasmore.oo3.course.resortui.DAO;
+package org.thomasmore.oo3.course.resortui.dao;
 
 
 import java.io.Serializable;
