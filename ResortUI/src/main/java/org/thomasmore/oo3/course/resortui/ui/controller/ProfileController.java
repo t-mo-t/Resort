@@ -12,10 +12,8 @@ import javax.inject.Inject;
 import javax.inject.Named;
 import org.thomasmore.oo3.course.resortui.ui.model.ProfileDto;
 import org.thomasmore.oo3.course.resortui.ui.model.SessionDto;
-import org.thomasmore.oo3.course.resortui.ui.model.ProfileDto;
-import org.thomasmore.oo3.course.resortui.ui.model.SessionDto;
 
-@Named(value="profile")
+//@Named(value="profile")
 @RequestScoped
 public class ProfileController {
     private ProfileDto dto;
