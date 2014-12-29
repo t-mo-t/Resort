@@ -68,8 +68,7 @@
                         <div class="input-group">
                             <span class="input-group-addon">Cellphone number</span>
                             <h:inputText label="customerCellphone" value="${customer.dto.detail.cellphone}" class="form-control" required="true" validatorMessage="customerCellphone: Validation Error: The given number was not valid">
-                                <f:validateLength minimum="7" maximum="20"></f:validateLength>
-                                <f:validateRegex pattern="[0-9]"/>
+                                <f:validateRegex pattern="([0-9].{6,20})"/>
                             </h:inputText>
                         </div>
                     </div>

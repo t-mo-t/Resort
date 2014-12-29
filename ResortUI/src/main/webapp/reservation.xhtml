@@ -3,7 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
 
     <body>
 
@@ -44,6 +45,7 @@
                     </tbody>
                 </table>
                 <h:form>
+                    <h:messages styleClass="alert alert-danger" p:role="alert"></h:messages>
                     <div class="col-md-6">
                         <div class="input-group">
                             <span class="input-group-addon">Start date</span>
