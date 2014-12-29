@@ -1,56 +1,27 @@
 
-
 package org.thomasmore.oo3.course.resortui.ui.model;
 
-import java.util.List;
-import javax.annotation.PostConstruct;
-import javax.ejb.EJB;
-import javax.enterprise.context.RequestScoped;
-import javax.inject.Named;
-import org.thomasmore.oo3.course.resortui.entity.BungalowEntity;
-import org.thomasmore.oo3.course.resortui.dao.BungalowDao;
 
-/**
- *
- * @author lucs
- */
-@Named(value = "bungalow")
-
-@RequestScoped
 public class ParkListDetailDto {
-
-       private BungalowPageDto dto;
-
-    @EJB
-    private BungalowDao bungalowDao;
     
-    @PostConstruct
-    public void init() {
-        
-        List<BungalowEntity> bungalows = bungalowDao.listAll();
-        dto = new BungalowPageDto();
-        
-     for (BungalowEntity bungalow : bungalows) {
-            BungalowListDetailDto listDetail = new BungalowListDetailDto();
-            listDetail.setId(bungalow.getId());
-            listDetail.setName(bungalow.getName());
-            dto.getList().add(listDetail);
-        }
-       
+    private String id;
+    
+    private String name;
+
+    public String getId() {
+        return id;
     }
 
-    public void add(){
-        dto.getDetail().setId("NEW");
-        dto.getList().add(dto.getDetail());
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
     
-    
-
-    public BungalowPageDto getDto() {
-        return dto;
-    }
-
-    public void setDto(BungalowPageDto dto) {
-        this.dto = dto;
-    }
 }
