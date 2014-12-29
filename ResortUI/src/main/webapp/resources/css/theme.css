@@ -6440,7 +6440,7 @@ button.close {
   -webkit-filter: none;
           filter: none;
   border: 1px solid #2e8a19;
-  
+  width:100%;
 }
 
 .btn-success:hover {
