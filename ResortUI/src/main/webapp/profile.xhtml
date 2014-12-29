@@ -17,8 +17,17 @@
 
             <ui:define name="content">
                 <h3>Uw profiel: </h3>
-                content: 
-                ${profile.dto.fullname}
+                <ul>
+                    <li>voornaam:</li>
+                    <ul>
+                    <li>${sessionDto.userDto.fname}</li>
+                    </ul>
+                    
+                    <li>familienaam:</li>
+                    <ul>
+                    <li>${sessionDto.userDto.lname}</li>
+                    </ul>
+                </ul>
             </ui:define>
 
         </ui:composition>
