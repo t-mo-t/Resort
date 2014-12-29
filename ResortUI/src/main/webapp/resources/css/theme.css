@@ -6429,6 +6429,7 @@ button.close {
           filter: none;
   border: 1px solid #2e4b69;
 }
+
 .btn-success {
   background-image: -webkit-linear-gradient(#61dd45, #3cb521 50%, #36a41e);
   background-image: -o-linear-gradient(#61dd45, #3cb521 50%, #36a41e);
@@ -6439,7 +6440,9 @@ button.close {
   -webkit-filter: none;
           filter: none;
   border: 1px solid #2e8a19;
+  
 }
+
 .btn-success:hover {
   background-image: -webkit-linear-gradient(#52da34, #36a41e 50%, #31921b);
   background-image: -o-linear-gradient(#52da34, #36a41e 50%, #31921b);
