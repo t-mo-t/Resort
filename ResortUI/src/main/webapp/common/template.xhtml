@@ -15,7 +15,7 @@
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css" />
-
+        
 
 		<!--		<link rel="stylesheet" href="./resources/css/default.css" />
 						<link rel="stylesheet" href="./resources/css/theme.css" />-->
@@ -48,7 +48,7 @@
                                                             <li><a href="profile.xhtml">Profile</a></li>
 								<li>
 									<!-- This is true for all pages implementing the template, so we did not have a specific controller for the template.--> 
-									<h:commandLink action="${login.logout()}">Logout</h:commandLink>
+									<h:commandLink action="${Login.logout()}">Logout</h:commandLink>
 								</li>
 							</ui:fragment>
 							<ui:fragment rendered="${!sessionDto.userDto.loggedIn}">

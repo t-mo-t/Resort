@@ -12,7 +12,7 @@
         <ui:composition template="./common/template.xhtml">
 
             <ui:define name="title">
-                Login in the application
+                Login
             </ui:define>
 
             <ui:define name="navbar">
@@ -26,7 +26,7 @@
 						<div class="input-group">
 							<span class="input-group-addon">Login:</span>
 							<h:inputText label="Login" p:placeholder="jhon@doe.org"
-										 value="${login.dto.name}" class="form-control"
+										 value="${Login.dto.name}" class="form-control"
 										 required="true">
 								<f:validateLength minimum="4" maximum="30" >
 								</f:validateLength>
@@ -37,7 +37,7 @@
 						<div class="input-group">
 							<span class="input-group-addon">Password:</span>
 							<h:inputSecret label="Login" p:placeholder="******"
-										   value="${login.dto.password}" class="form-control"
+										   value="${Login.dto.password}" class="form-control"
 										   required="true">
 								<f:validateLength minimum="4"  >
 								</f:validateLength>
@@ -46,7 +46,7 @@
 					</div>
 					<div class="col-md-12">
 						<p style="margin-top: 10px">
-							<h:commandButton class="btn btn-primary" action="${login.login()}" value="Save"></h:commandButton>
+                                                    <h:commandButton class="btn btn-primary" action="${Login.login()}" value="Save"></h:commandButton>
 						</p>
 					</div>
 				</h:form>
