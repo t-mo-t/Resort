@@ -17,10 +17,18 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class CustomerEntity extends BasicEntity{
     
 
-   private String name;
    private String FirstName;
+   private String LastName;
    private String Sex;
    private Date Birthdate;
+
+    public String getLastName() {
+        return LastName;
+    }
+
+    public void setLastName(String LastName) {
+        this.LastName = LastName;
+    }
 
     public String getFirstName() {
         return FirstName;
@@ -47,13 +55,7 @@ public class CustomerEntity extends BasicEntity{
     }
    
 
-    public String getName() {
-        return name;
-    }
 
-    public void setName(String name) {
-        this.name = name;
-    }
    
     
 }
