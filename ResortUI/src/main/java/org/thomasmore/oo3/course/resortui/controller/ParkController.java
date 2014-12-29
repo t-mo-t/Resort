@@ -1,7 +1,6 @@
 package org.thomasmore.oo3.course.resortui.controller;
 
 import java.util.List;
-import java.util.UUID;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.enterprise.context.RequestScoped;
@@ -13,8 +12,10 @@ import org.thomasmore.oo3.course.resortui.entity.ParkEntity;
 import org.thomasmore.oo3.course.resortui.model.ParkPageDto;
 import org.thomasmore.oo3.course.resortui.dao.ParkDao;
 
+
 @Named(value = "park")
 @RequestScoped
+
 public class ParkController {
 
     private ParkPageDto dto;
@@ -23,59 +24,63 @@ public class ParkController {
 
     @PostConstruct
     public void init() {
-      
-List<ParkEntity> parks = parksDao.listAll();
+
         dto = new ParkPageDto();
         HttpServletRequest req = (HttpServletRequest) FacesContext.getCurrentInstance().getExternalContext().getRequest();
 
         String editId = req.getParameter("edit");
 
-        if (editId != null) {
-            ParkEntity parkEntity = parksDao.findById(editId);
-            if (parkEntity != null) {
-                copyEntityToListDto(parkEntity, dto.getDetail());
+        ParkEntity parkEntity = parksDao.findById(editId);
+        if (parkEntity != null) {
+            dto.getDetail().setId(parkEntity.getId());
+            dto.getDetail().setId(parkEntity.getName());
+            dto.getDetail().setId(parkEntity.getCountry());
+            dto.getDetail().setId(parkEntity.getProvince());
+            dto.getDetail().setId(parkEntity.getStreet());
+            parkEntity.setStreetnumber(dto.getDetail().getStreetnumber());
 
-            }
         }
-
+        List<ParkEntity> parks = parksDao.listAll();
         for (ParkEntity park : parks) {
             ParkListDetailDto listDetail = new ParkListDetailDto();
-            copyEntityToListDto(park, listDetail);
+            listDetail.setId(park.getId());
+            listDetail.setName(park.getName());
+            listDetail.setCountry(park.getCountry());
+            listDetail.setProvince(park.getProvince());
+            listDetail.setStreet(park.getStreet());
+            listDetail.setStreetnumber(park.getStreetnumber());
             dto.getList().add(listDetail);
         }
     }
 
-    private void copyEntityToListDto(ParkEntity park, ParkListDetailDto listDetail) {
-        listDetail.setId(park.getId());
-        listDetail.setName(park.getName());
-        listDetail.setCountry(park.getCountry());
-        listDetail.setProvince(park.getProvince());
-        listDetail.setStreet(park.getStreet());
-        listDetail.setStreetnumber(park.getStreetnumber());
-        dto.getList().add(listDetail);
-    }
-    public void add() {
-        
-        dto.getDetail().setId(UUID.randomUUID().toString());
-        dto.getList().add(dto.getDetail());
-        ParkEntity parkentity = new ParkEntity();
-        parkentity.setId(dto.getDetail().getId());
-        parkentity.setName(dto.getDetail().getName());
-        parkentity.setCountry(dto.getDetail().getCountry());
-        parkentity.setProvince(dto.getDetail().getProvince());
-        parkentity.setStreet(dto.getDetail().getStreet());
-        parkentity.setStreetnumber(dto.getDetail().getStreetnumber());
-        parksDao.save(parkentity);
+    public String add() {
+        String id = dto.getDetail().getId();
+        ParkEntity parkEntity = null;
+        if (id != null) {
+            parkEntity = parksDao.findById(id);
+        }
+        if (parkEntity == null) {
+            parkEntity = new ParkEntity();
+        }
+
+        parkEntity.setId(dto.getDetail().getId());
+        parkEntity.setName(dto.getDetail().getName());
+        parkEntity.setCountry(dto.getDetail().getCountry());
+        parkEntity.setProvince(dto.getDetail().getProvince());
+        parkEntity.setStreet(dto.getDetail().getStreet());
+        parkEntity.setStreetnumber(dto.getDetail().getStreetnumber());
+        parksDao.save(parkEntity);
+      return "bungalow.xhtml??faces-redirect=true"; 
     }
 
-   public void remove() {
+    public void remove() {
         String id = dto.getDetail().getId();
         ParkListDetailDto removeFromListobject = new ParkListDetailDto();
         for (ParkListDetailDto parkListDetailDto : dto.getList()) {
-               if(parkListDetailDto.getId().equals(id)){
-                   removeFromListobject = parkListDetailDto;
-               }
-            
+            if (parkListDetailDto.getId().equals(id)) {
+                removeFromListobject = parkListDetailDto;
+            }
+
         }
         dto.getList().remove(removeFromListobject);
         parksDao.deleteById(id);
@@ -88,5 +93,4 @@ List<ParkEntity> parks = parksDao.listAll();
     public void setDto(ParkPageDto dto) {
         this.dto = dto;
     }
-
 }
