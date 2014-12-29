@@ -48,7 +48,7 @@
                                                             <li><a href="profile.xhtml">Profile</a></li>
 								<li>
 									<!-- This is true for all pages implementing the template, so we did not have a specific controller for the template.--> 
-									<h:commandLink action="${Login.logout()}">Logout | ${sessionDto.userDto.fname}</h:commandLink>
+									<h:commandLink action="${Login.logout()}">Logout |  ${sessionDto.userDto.fname}</h:commandLink>
 								</li>
 							</ui:fragment>
 							<ui:fragment rendered="${!sessionDto.userDto.loggedIn}">
