@@ -26,8 +26,8 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 import org.thomasmore.oo3.course.resortui.model.IndexPageDto;
-import org.thomasmore.oo3.course.resortui.sample.business.entity.SampleParkEntity;
-import org.thomasmore.oo3.course.resortui.sample.dao.SampleParkDao;
+import org.thomasmore.oo3.course.resortui.business.entity.ParkEntity;
+import org.thomasmore.oo3.course.resortui.dao.ParkDao;
 
 /**
  *
@@ -41,12 +41,12 @@ public class IndexController
     private IndexPageDto dto;
     
     @EJB
-    private SampleParkDao parkDao;
+    private ParkDao parkDao;
 
     @PostConstruct
     public void init()
     {
-        SampleParkEntity entity =  new SampleParkEntity();
+        ParkEntity entity =  new ParkEntity();
         entity.setName("abc");
         try {
             parkDao.save(entity);
