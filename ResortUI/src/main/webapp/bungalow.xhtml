@@ -20,7 +20,7 @@
                 <ul>
                     <!--Je geeft een parameter in de url, in dit geval de id-->
                                           <ui:repeat value="${Bungalow.dto.list}" var="listDetail">
-                        <li>${listDetail.id} - ${listDetail.name} - <a href="bungalow.xhtml?edit=${listDetail.id}">edit</a>
+                        <li>${listDetail.name} - <a href="bungalow.xhtml?edit=${listDetail.id}">edit</a>
                         </li>
                     </ui:repeat>
                 </ul>
