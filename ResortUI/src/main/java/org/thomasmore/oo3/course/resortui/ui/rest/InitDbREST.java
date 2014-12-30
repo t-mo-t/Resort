@@ -26,7 +26,6 @@ public class InitDbREST {
     public ParkEntity createDB() {
         List<Object> objectsToSave= new LinkedList<>();
         
-        
         ParkEntity parkEntity = new ParkEntity();
         parkEntity.setName("PARK 1");
         objectsToSave.add(parkEntity);
