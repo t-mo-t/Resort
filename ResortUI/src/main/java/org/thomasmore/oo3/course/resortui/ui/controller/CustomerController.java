@@ -35,7 +35,13 @@ public class CustomerController {
      for (CustomerEntity Customer : Customers) {
             CustomerListDetailDto listDetail = new CustomerListDetailDto();
             listDetail.setId(Customer.getId());
-            listDetail.setName(Customer.getLastName());
+            listDetail.setLastName(Customer.getLastName());
+            listDetail.setFirstName(Customer.getFirstName());
+            listDetail.setBirthdate(Customer.getBirthdate());
+            listDetail.setPassword(Customer.getPassword());
+            listDetail.setSex(Customer.getSex());
+            listDetail.setUsername(Customer.getUsername());
+            
             dto.getList().add(listDetail);
         }
        

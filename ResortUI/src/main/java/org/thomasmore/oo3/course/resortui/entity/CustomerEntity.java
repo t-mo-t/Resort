@@ -21,6 +21,16 @@ public class CustomerEntity extends BasicEntity{
    private String LastName;
    private String Sex;
    private Date Birthdate;
+   private String Password;
+   private String Username;
+
+    public String getUsername() {
+        return Username;
+    }
+
+    public void setUsername(String Username) {
+        this.Username = Username;
+    }
 
     public String getLastName() {
         return LastName;
@@ -52,6 +62,14 @@ public class CustomerEntity extends BasicEntity{
 
     public void setBirthdate(Date Birthdate) {
         this.Birthdate = Birthdate;
+    }
+
+    public String getPassword() {
+        return Password;
+    }
+
+    public void setPassword(String Password) {
+        this.Password = Password;
     }
    
 
