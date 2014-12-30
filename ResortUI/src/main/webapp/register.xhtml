@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns:f="http://xmlns.jcp.org/jsf/core"
-    xmlns="http://www.w3.org/1999/xhtml"
+      xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       >
@@ -13,57 +13,35 @@
             <ui:define name="title">
                 register
             </ui:define>
-            
+
             <ui:define name="navbar">
-				Register Page
+                Register Page
             </ui:define>
 
             <ui:define name="content">
-<legend> Register Here </legend> 
+                <legend> Register Here </legend> 
                 <h:form>
-                  
 
-                    <span class="input-group-addon">Firstname</span>
-                    <h:inputText label="First name" 
-                                 value="${Customer.dto.detail.firstName}" class="form-control" required="true">
-                    </h:inputText>
 
-                    <span class="input-group-addon">Last name</span>
-                    <h:inputText label="Last name" 
-                                 value="${Customer.dto.detail.lastName}" class="form-control" required="true">
-                    </h:inputText>
-                    
-                    <span class="input-group-addon">Username</span>
-                    <h:inputText label="Last name" 
-                                 value="${Customer.dto.detail.username}" class="form-control" required="true">
-                        <f:validateLength minimum="4" maximum="30" ></f:validateLength>
-                    </h:inputText>
+                    First Name: <input type="text" name="first_name" value="${Customer.dto.detail.firstName}" />
+                    <br />
+                    Last Name: <input type="text" name="last_name" value="${Customer.dto.detail.lastName}"/>
+                    <br />
+                    User name: <input type="text" name="User_name" value="${Customer.dto.detail.username}"/>
+                    <br />
+                    Birth date: <input type="date" name="birth_date" value="${Customer.dto.detail.birthdate}"/>
+                    <br />
+                    Password: <input type="password" name="password"  value="${Customer.dto.detail.password}" />
+                    <br />
+                    Repeat password: <input type="password" name="repeatPassword" value="${Customer.dto.detail.password}" />
+                    <br />
+                    <fieldset><span >   <p><input type="radio" name= "sex" value= "Man" id="Man" checked="checked"/><label for="Man">Man</label> 
+                                <input type="radio" name= "sex" value= "Woman" id="Woman" /><label for="Woman">Woman</label> </p> 
+                        </span></fieldset>
 
-                 
-                    <span class="input-group-addon">BirthDate</span>
-                    <h:inputText label="BirthDate" 
-                                 value="${Customer.dto.detail.birthdate}" class="form-control" required="true">
-                    </h:inputText>
-                    
-                    <span class="input-group-addon">Password</span>
-                    <h:inputText label="Password" 
-                                 value="${Customer.dto.detail.password}" class="form-control" required="true">
-                        <f:validateLength minimum="4" ></f:validateLength>
-                    </h:inputText>
-                    
-                    <span class="input-group-addon">Repeat Password</span>
-                    <h:inputText label="Repaet password" 
-                                 value="${Customer.dto.detail.password}" class="form-control" required="true">
-                        <f:validateLength minimum="4" ></f:validateLength>
-                    </h:inputText>
-                    
-                    <fieldset><span class="input-group-addon">   <p><input type="radio" name= "sex" value= "Man" id="Man" checked="checked"/><label for="Man">Man</label> 
-                                 <input type="radio" name= "sex" value= "Woman" id="Woman" /><label for="Woman">Woman</label> </p> 
-                      </span></fieldset>
 
-                   
 
-                    <h:commandButton class="btn btn-primary" action="${Customer.add()}" style="width:100%" value="Save"></h:commandButton>
+                    <h:commandButton class="btn btn-primary" action="${Customer.add()}" style="width:100%" value="register"></h:commandButton>
 
                 </h:form>
             </ui:define>
