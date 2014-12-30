@@ -30,7 +30,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class BungalowEntity extends BasicEntity{
     
    private String name;
-   
+
     public String getName() {
         return name;
     }

@@ -17,6 +17,7 @@
 package org.thomasmore.oo3.course.resortui.dao;
 
 import java.util.List;
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
@@ -28,6 +29,7 @@ import org.thomasmore.oo3.course.resortui.entity.BungalowEntity;
  *
  * @author Shari
  */
+@Stateless
 public class BungalowDao {
      @PersistenceContext
     private EntityManager em;

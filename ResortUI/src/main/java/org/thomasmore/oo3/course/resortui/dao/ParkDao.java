@@ -18,6 +18,7 @@ package org.thomasmore.oo3.course.resortui.dao;
 
 import java.io.Serializable;
 import java.util.List;
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
@@ -29,6 +30,7 @@ import org.thomasmore.oo3.course.resortui.entity.ParkEntity;
  *
  * @author Shari
  */
+@Stateless
 public class ParkDao implements Serializable{
     @PersistenceContext
     private EntityManager em;

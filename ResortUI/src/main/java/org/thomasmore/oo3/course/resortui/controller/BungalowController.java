@@ -40,31 +40,31 @@ public class BungalowController {
 
     private BungalowPageDto dto;
     
-   // @EJB
-    //private BungalowDao BungalowDao;
+    @EJB
+    private BungalowDao BungalowDao;
 
     @PostConstruct
     public void init() {
         
-       // List<BungalowEntity> bungalowlist = BungalowDao.listAll();
+        List<BungalowEntity> bungalowlist = BungalowDao.listAll();
         dto = new BungalowPageDto();
         
-        
+        /*
         for (int i = 0; i < 10; i++) {
             BungalowListDetailDto listDetail = new BungalowListDetailDto();
             listDetail.setId("@"+i);
             listDetail.setName("B"+(i+1));
             dto.getList().add(listDetail);
         }
+        */
         
-        /*
         for (BungalowEntity bungalow : bungalowlist) { 
             BungalowListDetailDto listDetail = new BungalowListDetailDto();
             listDetail.setId(bungalow.getId());
             listDetail.setName(bungalow.getName());
             dto.getList().add(listDetail);
         }
-        */
+        
     }
 
     public void add(){
@@ -72,8 +72,16 @@ public class BungalowController {
         dto.getList().add(dto.getDetail());
     }
     
+    public void remove(){
+        dto.getDetail().getId();
+        dto.getList().remove(dto.getDetail());
+    }
     
-
+    public void edit(){
+        dto.getDetail().getId();
+       
+    }
+    
     public BungalowPageDto getDto() {
         return dto;
     }

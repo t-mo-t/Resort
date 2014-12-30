@@ -58,11 +58,11 @@ public class InitDbREST{
 
         BungalowEntity bungalowEntity = new BungalowEntity();
         bungalowEntity.setName("VIP");
+
         objectsToSave.add(bungalowEntity);
         
         
         for (Object objectsToSave2 : objectsToSave) {
-
             em.persist(objectsToSave2);
 
         }

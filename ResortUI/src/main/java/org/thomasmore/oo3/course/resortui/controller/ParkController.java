@@ -72,7 +72,10 @@ public class ParkController {
         dto.getList().add(dto.getDetail());
     }
     
-    
+    public void remove(){
+        dto.getDetail().getId();
+        dto.getList().remove(dto.getDetail());
+    }
 
     public ParkPageDto getDto() {
         return dto;
