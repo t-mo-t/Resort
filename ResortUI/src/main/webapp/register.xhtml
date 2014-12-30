@@ -21,25 +21,21 @@
             <ui:define name="content">
                 <legend> Register Here </legend> 
                 <h:form>
-
-
-                    First Name: <input type="text" name="first_name" value="${Customer.dto.detail.firstName}" />
+               First Name: <input type="text" name="first_name" value="${Customer.dto.detail.firstName}" />
                     <br />
                     Last Name: <input type="text" name="last_name" value="${Customer.dto.detail.lastName}"/>
                     <br />
                     User name: <input type="text" name="User_name" value="${Customer.dto.detail.username}"/>
-                    <br />
-                    Birth date: <input type="date" name="birth_date" value="${Customer.dto.detail.birthdate}"/>
-                    <br />
-                    Password: <input type="password" name="password"  value="${Customer.dto.detail.password}" />
+                    <br />     Password: <input type="password" name="password"  value="${Customer.dto.detail.password}" />
                     <br />
                     Repeat password: <input type="password" name="repeatPassword" value="${Customer.dto.detail.password}" />
                     <br />
+                    Birth date: <input type="date" name="birth_date" value="${Customer.dto.detail.birthdate}"/>
+                    <br />
+               
                     <fieldset><span >   <p><input type="radio" name= "sex" value= "Man" id="Man" checked="checked"/><label for="Man">Man</label> 
                                 <input type="radio" name= "sex" value= "Woman" id="Woman" /><label for="Woman">Woman</label> </p> 
                         </span></fieldset>
-
-
 
                     <h:commandButton class="btn btn-primary" action="${Customer.add()}" style="width:100%" value="register"></h:commandButton>
 
