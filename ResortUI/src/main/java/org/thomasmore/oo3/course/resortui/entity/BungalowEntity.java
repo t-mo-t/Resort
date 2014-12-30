@@ -2,6 +2,8 @@
 package org.thomasmore.oo3.course.resortui.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -9,6 +11,9 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Table(name = "bungalow")
 @XmlRootElement
 public class BungalowEntity extends BasicEntity{
+    
+    @ManyToOne(targetEntity=ParkEntity.class,fetch = FetchType.LAZY)
+    private ParkEntity park;
     
    private String name;
    
