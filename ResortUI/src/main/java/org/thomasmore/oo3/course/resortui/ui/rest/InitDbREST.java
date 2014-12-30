@@ -1,6 +1,6 @@
-
 package org.thomasmore.oo3.course.resortui.ui.rest;
 
+import java.sql.Date;
 import java.util.LinkedList;
 import java.util.List;
 import javax.ejb.Stateless;
@@ -34,17 +34,8 @@ public class InitDbREST {
         parkEntity.setName("PARK 2");
         objectsToSave.add(parkEntity);
         
-        BungalowEntity BungalowEntity = new BungalowEntity();
-        BungalowEntity.setName("BUNGALOW 1");
-        objectsToSave.add(BungalowEntity);
-        
-        BungalowEntity = new BungalowEntity();
-        BungalowEntity.setName("BUNGALOW 2");
-        objectsToSave.add(BungalowEntity);
-        
-      CustomerEntity customerEntity = new CustomerEntity();
-      customerEntity.setFirstName("Test1");
-      objectsToSave.add(customerEntity);
+        createBungalow();
+  
         
 //        List<Object> objectsToSave = new LinkedList<>();
        for(Object objectsToSave1 : objectsToSave){
@@ -53,5 +44,28 @@ public class InitDbREST {
        
         return parkEntity;
     }
+
+
+       
+ 
+     public  void createBungalow(){
+     
+    List<Object> objectsToSave= new LinkedList<>();
+    
+     BungalowEntity BungalowEntity = new BungalowEntity();
+        BungalowEntity.setName("BUNGALOW 1");
+        BungalowEntity.setFancyName("You are a troll");
+        objectsToSave.add(BungalowEntity);
+     
+         for(Object objectsToSave1 : objectsToSave){
+        em.persist(objectsToSave1);
+         }
+         
+           
+                 
+     }
+     
+     
+     
 
 }

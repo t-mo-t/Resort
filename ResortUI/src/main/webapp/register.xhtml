@@ -21,7 +21,8 @@
             <ui:define name="content">
                 <legend> Register Here </legend> 
                 <h:form>
-               First Name: <input type="text" name="first_name" value="${Customer.dto.detail.firstName}" />
+                    <form method="post">
+                    First Name: <input type="text" name="first_name"  value="${Customer.dto.detail.firstName}" />
                     <br />
                     Last Name: <input type="text" name="last_name" value="${Customer.dto.detail.lastName}"/>
                     <br />
@@ -36,7 +37,7 @@
                     <fieldset><span >   <p><input type="radio" name= "sex" value= "Man" id="Man" checked="checked"/><label for="Man">Man</label> 
                                 <input type="radio" name= "sex" value= "Woman" id="Woman" /><label for="Woman">Woman</label> </p> 
                         </span></fieldset>
-
+                     </form>
                     <h:commandButton class="btn btn-primary" action="${Customer.add()}" style="width:100%" value="register"></h:commandButton>
 
                 </h:form>

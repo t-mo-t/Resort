@@ -11,6 +11,7 @@ import javax.inject.Named;
 import org.thomasmore.oo3.course.resortui.ui.model.CustomerListDetailDto;
 import org.thomasmore.oo3.course.resortui.entity.CustomerEntity;
 import org.thomasmore.oo3.course.resortui.dao.CustomerDao;
+import org.thomasmore.oo3.course.resortui.ui.rest.InitDbREST;
 
 /**
  *
